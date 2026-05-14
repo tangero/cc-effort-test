@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Claude Code Effort Benchmark</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --low: #22c55e; --medium: #3b82f6; --high: #f59e0b; --max: #ef4444;
+    --bg: #0f172a; --card: #1e293b; --border: #334155; --text: #f1f5f9; --muted: #94a3b8;
+    --accent: #6366f1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); }
+
+  header { background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); border-bottom: 1px solid var(--border); padding: 2rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  header h1 { font-size: 2rem; font-weight: 700; color: #fff; }
+  header p { color: var(--muted); margin-top: .4rem; font-size: 1.05rem; }
+  .badge { display: inline-block; background: var(--accent); color: #fff; font-size: .75rem; font-weight: 600; padding: .2rem .6rem; border-radius: 99px; margin-left: .5rem; vertical-align: middle; }
+
+  .lang-switch { float: right; margin-top: .5rem; }
+  .lang-switch button { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: .3rem .8rem; border-radius: 6px; cursor: pointer; font-size: .85rem; transition: .2s; }
+  .lang-switch button.active, .lang-switch button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+  h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: .6rem; color: #e2e8f0; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media(max-width:700px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .card h3 { margin-bottom: .4rem; }
+
+  .kpi { text-align: center; }
+  .kpi .num { font-size: 2.2rem; font-weight: 800; color: var(--accent); }
+  .kpi .label { font-size: .8rem; color: var(--muted); margin-top: .2rem; }
+
+  .effort-label { display: inline-block; padding: .15rem .55rem; border-radius: 6px; font-size: .78rem; font-weight: 700; }
+  .eff-low    { background: #14532d; color: #86efac; }
+  .eff-medium { background: #1e3a5f; color: #93c5fd; }
+  .eff-high   { background: #451a03; color: #fcd34d; }
+  .eff-max    { background: #450a0a; color: #fca5a5; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th { background: #0f172a; color: var(--muted); font-weight: 600; text-align: left; padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+  td { padding: .5rem .8rem; border-bottom: 1px solid #1e293b; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(99,102,241,.06); }
+
+  .chart-wrap { position: relative; height: 260px; }
+  .chart-wrap-tall { position: relative; height: 320px; }
+
+  .finding { background: var(--card); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+  .finding .tag { font-size: .72rem; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+  .finding p { color: #cbd5e1; font-size: .9rem; }
+
+  .anomaly { border-left-color: #ef4444; }
+  .anomaly .tag { color: #ef4444; }
+
+  .task-desc { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: .5rem; }
+  .task-icon { font-size: 2rem; flex-shrink: 0; }
+
+  footer { padding: 2rem 0; color: var(--muted); font-size: .85rem; text-align: center; }
+
+  .variance-bar { display: flex; align-items: center; gap: .5rem; font-size: .82rem; }
+  .vbar-outer { flex: 1; height: 6px; background: #334155; border-radius: 3px; overflow: hidden; }
+  .vbar-inner { height: 100%; border-radius: 3px; }
+
+  .note { font-size: .8rem; color: var(--muted); margin-top: .5rem; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="lang-switch">
+      <button id="btn-cs" class="active" onclick="setLang('cs')">🇨🇿 CZ</button>
+      <button id="btn-en" onclick="setLang('en')">🇬🇧 EN</button>
+    </div>
+    <h1>Claude Code Effort Benchmark <span class="badge">Phase 1</span></h1>
+    <p data-i18n="subtitle">Empirické měření dopadu parametru <code>--effort</code> na výkon Claude Code (Opus 4.7)</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <section>
+    <div class="grid2">
+      <div>
+        <h2 data-i18n="intro_h">O projektu</h2>
+        <p data-i18n="intro_p1" style="color:#cbd5e1;margin-bottom:.8rem;">
+          Tento benchmark měří, jak parametr <code>--effort</code> v Claude Code ovlivňuje spotřebu tokenů, čas, náklady a kvalitu výsledku. Testovali jsme model <strong>Claude Opus 4.7</strong> na dvou úlohách s úrovněmi <code>low</code>, <code>medium</code>, <code>high</code> a <code>max</code>, každou 3× opakovaně.
+        </p>
+        <p data-i18n="intro_p2" style="color:#cbd5e1;">
+          Cílem je nahradit komunitní anekdoty reálnými čísly a pomoci vývojářům zvolit optimální effort level pro jejich use case.
+        </p>
+      </div>
+      <div class="grid3" style="grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="card kpi"><div class="num">28</div><div class="label" data-i18n="kpi_runs">úspěšných runů</div></div>
+        <div class="card kpi"><div class="num">2</div><div class="label" data-i18n="kpi_tasks">testované úlohy</div></div>
+        <div class="card kpi"><div class="num">100%</div><div class="label" data-i18n="kpi_pass">verify pass rate</div></div>
+        <div class="card kpi"><div class="num">$11.1</div><div class="label" data-i18n="kpi_cost">celkové náklady</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TASKS -->
+  <section>
+    <h2 data-i18n="tasks_h">Testované úlohy</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="task-desc">
+          <div class="task-icon">🔤</div>
+          <div>
+            <h3>01_rename <span style="color:var(--muted);font-weight:400;font-size:.85rem;">mechanical</span></h3>
+            <p data-i18n="task01_desc" style="color:#cbd5e1;font-size:.9rem;">
+              Přejmenovat identifikátor <code>userId</code> → <code>accountId</code> v syntetickém TypeScript projektu. 57 výskytů napříč 8 soubory. Záměrné „pasti": <code>userIdentifier</code>, <code>useridx</code>, <code>UserID</code> musí zůstat beze změny. TypeScript musí kompilovat, testy procházet.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top:.8rem;">
+          <div class="variance-bar"><span style="width:60px;color:var(--muted);font-size:.78rem;">Verify:</span><span style="color:#22c55e;font-weight:700;">7 checks ✓</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="task-desc">
+          <div class="task-icon">🏗️</div>
+          <div>
+            <h3>02_implement_ico <span style="color:var(--muted);font-weight:400;font-size:.85rem;">specified implementation</span></h3>
+            <p data-i18n="task02_desc" style="color:#cbd5e1;font-size:.9rem;">
+              Implementovat TypeScript funkci <code>validateICO()</code> pro validaci českého IČO (8 číslic, kontrolní součet mod 11). Projekt obsahuje existující validátory (email, phone) jako vzor. Model musí implementovat funkci i vlastní testy. Skrytá sada 9 test cases ověřuje správnost.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top:.8rem;">
+          <div class="variance-bar"><span style="width:60px;color:var(--muted);font-size:.78rem;">Verify:</span><span style="color:#22c55e;font-weight:700;">5 checks ✓</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS 01_rename -->
+  <section>
+    <h2>01_rename — <span data-i18n="results_h">Výsledky</span></h2>
+    <div class="grid2" style="margin-bottom:1.5rem;">
+      <div class="card">
+        <h3 data-i18n="chart_time">Průměrný čas (s)</h3>
+        <div class="chart-wrap"><canvas id="c1time"></canvas></div>
+        <p class="note" data-i18n="chart_time_note">n=3 per effort level. Chybové úsečky = min/max.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="chart_cost">Průměrná cena (USD)</h3>
+        <div class="chart-wrap"><canvas id="c1cost"></canvas></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3 data-i18n="chart_tools">Tool calls per run (detail)</h3>
+      <div class="chart-wrap-tall"><canvas id="c1tools"></canvas></div>
+    </div>
+    <div class="card">
+      <h3 data-i18n="table_h">Detailní tabulka</h3>
+      <table>
+        <thead><tr>
+          <th data-i18n="th_effort">Effort</th>
+          <th data-i18n="th_run">Run</th>
+          <th data-i18n="th_time">Čas (s)</th>
+          <th data-i18n="th_cost">Cena ($)</th>
+          <th data-i18n="th_tools">Tool calls</th>
+          <th data-i18n="th_strategy">Strategie</th>
+        </tr></thead>
+        <tbody id="t1body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- RESULTS 02_implement_ico -->
+  <section>
+    <h2>02_implement_ico — <span data-i18n="results_h">Výsledky</span></h2>
+    <div class="grid2" style="margin-bottom:1.5rem;">
+      <div class="card">
+        <h3 data-i18n="chart_time">Průměrný čas (s)</h3>
+        <div class="chart-wrap"><canvas id="c2time"></canvas></div>
+        <p class="note" data-i18n="chart_time_note2">Median u medium je 55s — dvě pomalé instance zvyšují průměr.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="chart_cost">Průměrná cena (USD)</h3>
+        <div class="chart-wrap"><canvas id="c2cost"></canvas></div>
+      </div>
+    </div>
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3 data-i18n="chart_tools">Tool calls per run (detail)</h3>
+      <div class="chart-wrap-tall"><canvas id="c2tools"></canvas></div>
+    </div>
+    <div class="card">
+      <h3 data-i18n="table_h">Detailní tabulka</h3>
+      <table>
+        <thead><tr>
+          <th data-i18n="th_effort">Effort</th>
+          <th data-i18n="th_run">Run</th>
+          <th data-i18n="th_time">Čas (s)</th>
+          <th data-i18n="th_cost">Cena ($)</th>
+          <th data-i18n="th_tools">Tool calls</th>
+          <th data-i18n="th_strategy">Strategie</th>
+        </tr></thead>
+        <tbody id="t2body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FINDINGS -->
+  <section>
+    <h2 data-i18n="findings_h">Klíčová zjištění</h2>
+    <div id="findings-list"></div>
+  </section>
+
+  <!-- INTERPRETATION -->
+  <section>
+    <h2 data-i18n="interp_h">Interpretace a doporučení</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3 data-i18n="interp_mech_h">Mechanické úlohy (rename)</h3>
+        <p data-i18n="interp_mech" style="color:#cbd5e1;font-size:.9rem;">
+          Pro úlohy s jasným scope a bez potřeby uvažování je <strong>low</strong> nebo <strong>medium</strong> optimální volba. Vyšší effort nepřináší lepší výsledek — všechny levely dosáhly 100% verify score. <code>max</code> je kontraproduktivní: dramaticky vyšší čas, cena a počet tool callů, přičemž model v jednom běhu použil nástroje mimo povolený seznam (TodoWrite, ToolSearch).
+        </p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="interp_impl_h">Implementační úlohy (ICO validator)</h3>
+        <p data-i18n="interp_impl" style="color:#cbd5e1;font-size:.9rem;">
+          I pro implementaci dle přesné specifikace platí, že <strong>low</strong> a <strong>high</strong> produkují srovnatelný výsledek. <code>max</code> používá 2,5× více tool callů a stojí 2× více — bez jakéhokoliv zlepšení quality score. <strong>high</strong> se ukázal jako nejkonzistentnější (nejmenší rozptyl času i ceny).
+        </p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:1.5rem;">
+      <h3 data-i18n="rec_h">Doporučení pro vývojáře</h3>
+      <table style="margin-top:.5rem;">
+        <thead><tr>
+          <th data-i18n="rec_usecase">Use case</th>
+          <th data-i18n="rec_effort">Doporučený effort</th>
+          <th data-i18n="rec_why">Proč</th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-i18n="rec1_uc">Jednoduchý refaktoring, rename, formátování</td><td><span class="effort-label eff-low">low</span></td><td data-i18n="rec1_why">Nejlevnější, nejrychlejší, 100% úspěšnost</td></tr>
+          <tr><td data-i18n="rec2_uc">Implementace dle specifikace</td><td><span class="effort-label eff-medium">medium</span> / <span class="effort-label eff-high">high</span></td><td data-i18n="rec2_why">high je nejkonzistentnější, medium levnější</td></tr>
+          <tr><td data-i18n="rec3_uc">Debugging, architektura, open-ended design</td><td><span class="effort-label eff-high">high</span> / <span class="effort-label eff-max">max</span></td><td data-i18n="rec3_why">Těžší úlohy (zatím netestováno v Phase 1)</td></tr>
+          <tr><td data-i18n="rec4_uc">Produkční použití — batch úlohy</td><td><span class="effort-label eff-low">low</span></td><td data-i18n="rec4_why">Řádově nižší náklady při zachované kvalitě</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CAVEATS -->
+  <section>
+    <h2 data-i18n="caveats_h">Limity studie</h2>
+    <div class="grid2">
+      <div class="card">
+        <ul style="color:#cbd5e1;font-size:.88rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:.5rem;">
+          <li data-i18n="cav1">n=3 nedává statistickou signifikanci — výsledky jsou observational</li>
+          <li data-i18n="cav2">Pouze 2 úlohy — mechanické a specifikované implementace; chybí debugging, design, open-ended</li>
+          <li data-i18n="cav3">CLAUDE.md byl aktivní během runů a mohl ovlivnit chování modelu</li>
+          <li data-i18n="cav4">Anthropic-side variabilita: prompt caching, latence API</li>
+        </ul>
+      </div>
+      <div class="card">
+        <ul style="color:#cbd5e1;font-size:.88rem;padding-left:1.2rem;display:flex;flex-direction:column;gap:.5rem;">
+          <li data-i18n="cav5">Verify skóre je binární — nezachytí kvalitativní rozdíly (over-engineering, styl)</li>
+          <li data-i18n="cav6">Pouze model claude-opus-4-7; Sonnet 4.6 plánován v Phase 2</li>
+          <li data-i18n="cav7">Effort level xhigh nebyl testován (testovací matice zahrnovala jen low/medium/high/max)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>Claude Code Effort Benchmark — Phase 1 · claude-opus-4-7 · 2026-05-14</p>
+  </div>
+</footer>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const EFFORTS = ['low','medium','high','max'];
+const COLORS = { low:'#22c55e', medium:'#3b82f6', high:'#f59e0b', max:'#ef4444' };
+
+const data = {
+  '01_rename': {
+    low:    { runs:[{t:40,c:.248,tc:8,br:'Bash=4;Edit=2;Grep=1;Read=1'},{t:29,c:.180,tc:5,br:'Bash=3;Grep=2'},{t:110,c:.784,tc:23,br:'Bash=4;Edit=1;Grep=2;Read=8;Write=8'}] },
+    medium: { runs:[{t:34,c:.228,tc:7,br:'Bash=3;Grep=3;Read=1'},{t:117,c:.679,tc:20,br:'Bash=2;Edit=1;Grep=2;Read=8;Write=7'},{t:98,c:.673,tc:20,br:'Bash=2;Edit=1;Grep=2;Read=8;Write=7'}] },
+    high:   { runs:[{t:86,c:.458,tc:22,br:'Bash=3;Edit=1;Grep=3;Read=8;Write=7'},{t:122,c:.718,tc:21,br:'Bash=3;Edit=1;Grep=2;Read=8;Write=7'},{t:116,c:.705,tc:21,br:'Bash=3;Edit=1;Grep=2;Read=8;Write=7'}] },
+    max:    { runs:[{t:629,c:1.526,tc:33,br:'Bash=5;Edit=8;Grep=2;Read=8;TodoWrite=9;ToolSearch=1',anomaly:true},{t:901,c:.823,tc:28,br:'Bash=4;Grep=5;Read=11;Write=8',anomaly:true},{t:158,c:.917,tc:24,br:'Bash=5;Grep=2;Read=9;Write=8'}] }
+  },
+  '02_implement_ico': {
+    low:    { runs:[{t:43,c:.236,tc:6,br:'Bash=2;Read=2;Write=2'},{t:46,c:.256,tc:7,br:'Bash=3;Read=1;Write=3'},{t:68,c:.323,tc:9,br:'Bash=4;Edit=1;Read=1;Write=3'}] },
+    medium: { runs:[{t:395,c:.258,tc:6,br:'Bash=2;Read=2;Write=2',anomaly:true},{t:665,c:.338,tc:10,br:'Bash=4;Read=3;Write=3',anomaly:true},{t:55,c:.293,tc:8,br:'Bash=4;Read=2;Write=2'}] },
+    high:   { runs:[{t:59,c:.322,tc:9,br:'Bash=4;Read=3;Write=2'},{t:61,c:.324,tc:9,br:'Bash=4;Read=3;Write=2'},{t:55,c:.304,tc:12,br:'Bash=4;Read=6;Write=2'}] },
+    max:    { runs:[{t:104,c:.551,tc:18,br:'Bash=6;Edit=1;Read=8;Write=3'},{t:121,c:.600,tc:18,br:'Bash=5;Edit=2;Read=8;Write=3'},{t:120,c:.602,tc:19,br:'Bash=5;Edit=1;Read=10;Write=3'}] }
+  }
+};
+
+function avg(arr) { return arr.reduce((a,b)=>a+b,0)/arr.length; }
+function mn(arr)  { return Math.min(...arr); }
+function mx(arr)  { return Math.max(...arr); }
+
+// ── I18N ─────────────────────────────────────────────────────────────────────
+const i18n = {
+  cs: {
+    title: 'Claude Code Effort Benchmark',
+    subtitle: 'Empirické měření dopadu parametru --effort na výkon Claude Code (Opus 4.7)',
+    intro_h: 'O projektu',
+    intro_p1: 'Tento benchmark měří, jak parametr <code>--effort</code> v Claude Code ovlivňuje spotřebu tokenů, čas, náklady a kvalitu výsledku. Testovali jsme model <strong>Claude Opus 4.7</strong> na dvou úlohách s úrovněmi <code>low</code>, <code>medium</code>, <code>high</code> a <code>max</code>, každou 3× opakovaně.',
+    intro_p2: 'Cílem je nahradit komunitní anekdoty reálnými čísly a pomoci vývojářům zvolit optimální effort level pro jejich use case.',
+    kpi_runs: 'úspěšných runů', kpi_tasks: 'testované úlohy', kpi_pass: 'verify pass rate', kpi_cost: 'celkové náklady',
+    tasks_h: 'Testované úlohy',
+    task01_desc: 'Přejmenovat identifikátor <code>userId</code> → <code>accountId</code> v syntetickém TypeScript projektu. 57 výskytů napříč 8 soubory. Záměrné „pasti": <code>userIdentifier</code>, <code>useridx</code>, <code>UserID</code> musí zůstat beze změny. TypeScript musí kompilovat, testy procházet.',
+    task02_desc: 'Implementovat TypeScript funkci <code>validateICO()</code> pro validaci českého IČO. Model dostane prázdný soubor a vzorové validátory. Skrytá sada 9 test cases ověřuje správnost algoritmu.',
+    results_h: 'Výsledky',
+    chart_time: 'Průměrný čas (s)', chart_time_note: 'n=3 per effort level.', chart_time_note2: 'Median u medium je 55s — 2 pomalé instance zvyšují průměr.',
+    chart_cost: 'Průměrná cena (USD)', chart_tools: 'Tool calls per run (detail)',
+    table_h: 'Detailní tabulka', th_effort: 'Effort', th_run: 'Run', th_time: 'Čas (s)', th_cost: 'Cena ($)', th_tools: 'Tool calls', th_strategy: 'Strategie',
+    findings_h: 'Klíčová zjištění',
+    interp_h: 'Interpretace a doporučení',
+    interp_mech_h: 'Mechanické úlohy (rename)',
+    interp_mech: 'Pro úlohy s jasným scope je <strong>low</strong> nebo <strong>medium</strong> optimální volba. Vyšší effort nepřináší lepší výsledek — všechny levely dosáhly 100% verify score. <code>max</code> je kontraproduktivní: výrazně vyšší čas i cena, přičemž model v jednom běhu použil nástroje mimo povolený seznam (TodoWrite, ToolSearch).',
+    interp_impl_h: 'Implementační úlohy (ICO validator)',
+    interp_impl: 'I pro implementaci dle přesné specifikace platí, že <strong>low</strong> a <strong>high</strong> produkují srovnatelný výsledek. <code>max</code> používá 2,5× více tool callů a stojí 2× více — bez jakéhokoliv zlepšení quality score. <strong>high</strong> se ukázal jako nejkonzistentnější.',
+    rec_h: 'Doporučení pro vývojáře', rec_usecase: 'Use case', rec_effort: 'Doporučený effort', rec_why: 'Proč',
+    rec1_uc: 'Jednoduchý refaktoring, rename', rec1_why: 'Nejlevnější, nejrychlejší, 100% úspěšnost',
+    rec2_uc: 'Implementace dle specifikace', rec2_why: 'high je nejkonzistentnější, medium levnější',
+    rec3_uc: 'Debugging, architektura, design', rec3_why: 'Těžší úlohy (netestováno v Phase 1)',
+    rec4_uc: 'Batch produkční úlohy', rec4_why: 'Řádově nižší náklady při zachované kvalitě',
+    caveats_h: 'Limity studie',
+    cav1: 'n=3 nedává statistickou signifikanci — výsledky jsou observational',
+    cav2: 'Pouze 2 úlohy — chybí debugging, design, open-ended',
+    cav3: 'CLAUDE.md byl aktivní a mohl ovlivnit chování modelu',
+    cav4: 'Anthropic-side variabilita: prompt caching, latence API',
+    cav5: 'Verify skóre je binární — nezachytí over-engineering nebo styl',
+    cav6: 'Pouze claude-opus-4-7; Sonnet 4.6 plánován v Phase 2',
+    cav7: 'Effort xhigh nebyl testován',
+    findings: [
+      { tag: '🔑 Klíčové zjištění', text: '<strong>Vyšší effort = vyšší cena a čas, ale NE lepší výsledek.</strong> Všechny effort levely dosáhly 100% verify pass rate na obou úlohách. Pro dobře specifikované úlohy neexistuje quality benefit vyšších effort levelů.' },
+      { tag: '⚡ Výkon low effort', text: '<strong>Low effort dokáže být překvapivě efektivní.</strong> U 01_rename zvládl run2 rename za pouhých 29s a $0.18 pomocí 5 tool callů — model zvolil bulk bash strategii (sed). Stejný výsledek jako high za $0.71.' },
+      { tag: '🔴 Max effort anomálie', text: '<strong>Max effort vykazuje výrazný over-engineering a extrémní varianci.</strong> U 01_rename: průměr 563s a $1.09 (vs. 60s a $0.40 u low). Run1 použil <code>TodoWrite</code> a <code>ToolSearch</code> — nástroje mimo povolený seznam. Run2 trval 901 sekund.' },
+      { tag: '📊 Konzistence', text: '<strong>High effort je nejkonzistentnější.</strong> U 02_implement_ico: čas 55–62s, cena $0.30–0.32 — minimální rozptyl napříč 3 runy. Low a medium vykazují bimodální distribuci (rychlá bash cesta vs. file-by-file).' },
+      { tag: '💡 Bimodální strategie', text: '<strong>Model na low/medium vybírá mezi dvěma strategiemi.</strong> Buď zvolí bulk bash rename (rychlé, levné, méně tool callů), nebo file-by-file přístup. Výběr strategie se zdá náhodný a způsobuje vysoký rozptyl.' },
+      { tag: '💰 Cost efektivita', text: '<strong>Max effort stál 4× více než low na 01_rename</strong> ($1.09 vs $0.40 průměr) při identickém výsledku. Pro produkční batch zpracování je max effort ekonomicky nevhodný.', anomaly: true },
+    ]
+  },
+  en: {
+    title: 'Claude Code Effort Benchmark',
+    subtitle: 'Empirical measurement of the --effort parameter impact on Claude Code (Opus 4.7)',
+    intro_h: 'About the Project',
+    intro_p1: 'This benchmark measures how the <code>--effort</code> parameter in Claude Code affects token consumption, time, cost, and result quality. We tested <strong>Claude Opus 4.7</strong> on two tasks across effort levels <code>low</code>, <code>medium</code>, <code>high</code>, and <code>max</code>, each repeated 3 times.',
+    intro_p2: 'The goal is to replace community anecdotes with real numbers and help developers choose the optimal effort level for their use case.',
+    kpi_runs: 'successful runs', kpi_tasks: 'tasks tested', kpi_pass: 'verify pass rate', kpi_cost: 'total cost',
+    tasks_h: 'Test Tasks',
+    task01_desc: 'Rename the identifier <code>userId</code> → <code>accountId</code> in a synthetic TypeScript project. 57 occurrences across 8 files. Intentional "traps": <code>userIdentifier</code>, <code>useridx</code>, <code>UserID</code> must remain unchanged. TypeScript must compile, tests must pass.',
+    task02_desc: 'Implement a TypeScript function <code>validateICO()</code> for Czech company ID validation. Model gets an empty file and example validators. A hidden set of 9 test cases verifies algorithm correctness.',
+    results_h: 'Results',
+    chart_time: 'Average Time (s)', chart_time_note: 'n=3 per effort level.', chart_time_note2: 'Median for medium is 55s — 2 slow instances inflate the average.',
+    chart_cost: 'Average Cost (USD)', chart_tools: 'Tool calls per run (detail)',
+    table_h: 'Detailed Table', th_effort: 'Effort', th_run: 'Run', th_time: 'Time (s)', th_cost: 'Cost ($)', th_tools: 'Tool calls', th_strategy: 'Strategy',
+    findings_h: 'Key Findings',
+    interp_h: 'Interpretation & Recommendations',
+    interp_mech_h: 'Mechanical Tasks (rename)',
+    interp_mech: 'For tasks with a clear scope, <strong>low</strong> or <strong>medium</strong> is the optimal choice. Higher effort does not produce better results — all levels achieved 100% verify score. <code>max</code> is counterproductive: significantly higher time and cost, and in one run the model used tools outside the allowed list (TodoWrite, ToolSearch).',
+    interp_impl_h: 'Implementation Tasks (ICO validator)',
+    interp_impl: 'Even for implementation tasks with precise specifications, <strong>low</strong> and <strong>high</strong> produce comparable results. <code>max</code> uses 2.5× more tool calls and costs 2× more — with no quality score improvement. <strong>high</strong> proved to be the most consistent.',
+    rec_h: 'Recommendations for Developers', rec_usecase: 'Use Case', rec_effort: 'Recommended Effort', rec_why: 'Why',
+    rec1_uc: 'Simple refactoring, rename', rec1_why: 'Cheapest, fastest, 100% success rate',
+    rec2_uc: 'Implementation from spec', rec2_why: 'high is most consistent, medium is cheaper',
+    rec3_uc: 'Debugging, architecture, design', rec3_why: 'Harder tasks (not tested in Phase 1)',
+    rec4_uc: 'Production batch tasks', rec4_why: 'Orders of magnitude lower cost with same quality',
+    caveats_h: 'Study Limitations',
+    cav1: 'n=3 does not provide statistical significance — results are observational',
+    cav2: 'Only 2 tasks — debugging, design, open-ended are missing',
+    cav3: 'CLAUDE.md was active and may have influenced model behavior',
+    cav4: 'Anthropic-side variability: prompt caching, API latency',
+    cav5: 'Verify score is binary — does not capture over-engineering or code style',
+    cav6: 'Only claude-opus-4-7; Sonnet 4.6 planned for Phase 2',
+    cav7: 'Effort xhigh was not tested',
+    findings: [
+      { tag: '🔑 Key Finding', text: '<strong>Higher effort = higher cost and time, but NOT better results.</strong> All effort levels achieved 100% verify pass rate on both tasks. For well-specified tasks, there is no quality benefit from higher effort levels.' },
+      { tag: '⚡ Low Effort Performance', text: '<strong>Low effort can be surprisingly effective.</strong> On 01_rename, run2 completed the rename in just 29s and $0.18 using 5 tool calls — the model chose a bulk bash strategy (sed). Same result as high at $0.71.' },
+      { tag: '🔴 Max Effort Anomaly', text: '<strong>Max effort shows significant over-engineering and extreme variance.</strong> On 01_rename: average 563s and $1.09 (vs. 60s and $0.40 for low). Run1 used <code>TodoWrite</code> and <code>ToolSearch</code> — tools outside the allowed list. Run2 took 901 seconds.' },
+      { tag: '📊 Consistency', text: '<strong>High effort is the most consistent.</strong> On 02_implement_ico: time 55–62s, cost $0.30–0.32 — minimal variance across 3 runs. Low and medium show bimodal distribution (fast bash path vs. file-by-file).' },
+      { tag: '💡 Bimodal Strategy', text: '<strong>The model at low/medium chooses between two strategies.</strong> Either bulk bash rename (fast, cheap, fewer tool calls) or file-by-file approach. Strategy selection appears random and causes high variance.' },
+      { tag: '💰 Cost Efficiency', text: '<strong>Max effort cost 4× more than low on 01_rename</strong> ($1.09 vs $0.40 average) with identical results. For production batch processing, max effort is economically unsuitable.', anomaly: true },
+    ]
+  }
+};
+
+// ── RENDER ────────────────────────────────────────────────────────────────────
+let currentLang = (navigator.language || 'cs').startsWith('en') ? 'en' : 'cs';
+let charts = {};
+
+function t(key) { return i18n[currentLang][key] || key; }
+
+function effortBadge(e) {
+  return `<span class="effort-label eff-${e}">${e}</span>`;
+}
+
+function renderTable(tbodyId, taskKey) {
+  const tbody = document.getElementById(tbodyId);
+  tbody.innerHTML = '';
+  EFFORTS.forEach(eff => {
+    data[taskKey][eff].runs.forEach((r, i) => {
+      const tr = document.createElement('tr');
+      const anomalyStyle = r.anomaly ? 'style="background:rgba(239,68,68,.07)"' : '';
+      tr.innerHTML = `
+        <td>${effortBadge(eff)}</td>
+        <td>${i+1}${r.anomaly ? ' ⚠️' : ''}</td>
+        <td>${r.t}</td>
+        <td>${r.c.toFixed(3)}</td>
+        <td>${r.tc}</td>
+        <td style="font-size:.78rem;color:var(--muted)">${r.br}</td>
+      `;
+      if (anomalyStyle) tr.setAttribute('style','background:rgba(239,68,68,.07)');
+      tbody.appendChild(tr);
+    });
+  });
+}
+
+function makeBarChart(canvasId, taskKey, metric, labelFn) {
+  if (charts[canvasId]) charts[canvasId].destroy();
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const vals = EFFORTS.map(e => avg(data[taskKey][e].runs.map(r => r[metric])));
+  const mins = EFFORTS.map(e => mn(data[taskKey][e].runs.map(r => r[metric])));
+  const maxs = EFFORTS.map(e => mx(data[taskKey][e].runs.map(r => r[metric])));
+  charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: EFFORTS,
+      datasets: [{
+        data: vals,
+        backgroundColor: EFFORTS.map(e => COLORS[e]+'bb'),
+        borderColor: EFFORTS.map(e => COLORS[e]),
+        borderWidth: 2,
+        borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: ctx => labelFn(ctx.raw) } }
+      },
+      scales: {
+        x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
+        y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+function makeToolChart(canvasId, taskKey) {
+  if (charts[canvasId]) charts[canvasId].destroy();
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const labels = [];
+  const vals = [];
+  const colors = [];
+  EFFORTS.forEach(eff => {
+    data[taskKey][eff].runs.forEach((r, i) => {
+      labels.push(`${eff} r${i+1}`);
+      vals.push(r.tc);
+      colors.push(r.anomaly ? '#ef444488' : COLORS[eff]+'99');
+    });
+  });
+  charts[canvasId] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: vals,
+        backgroundColor: colors,
+        borderColor: colors.map(c => c.replace('99','ff').replace('88','ff')),
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', font: { size: 11 } } },
+        y: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' }, beginAtZero: true, title: { display: true, text: 'tool calls', color: '#64748b' } }
+      }
+    }
+  });
+}
+
+function renderFindings() {
+  const el = document.getElementById('findings-list');
+  el.innerHTML = '';
+  (i18n[currentLang].findings || []).forEach(f => {
+    const div = document.createElement('div');
+    div.className = 'finding' + (f.anomaly ? ' anomaly' : '');
+    div.innerHTML = `<div class="tag">${f.tag}</div><p>${f.text}</p>`;
+    el.appendChild(div);
+  });
+}
+
+function renderAll() {
+  // i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[currentLang][key]) el.innerHTML = i18n[currentLang][key];
+  });
+  document.title = t('title');
+  renderTable('t1body', '01_rename');
+  renderTable('t2body', '02_implement_ico');
+  makeBarChart('c1time', '01_rename', 't', v => v.toFixed(0) + 's');
+  makeBarChart('c1cost', '01_rename', 'c', v => '$' + v.toFixed(3));
+  makeToolChart('c1tools', '01_rename');
+  makeBarChart('c2time', '02_implement_ico', 't', v => v.toFixed(0) + 's');
+  makeBarChart('c2cost', '02_implement_ico', 'c', v => '$' + v.toFixed(3));
+  makeToolChart('c2tools', '02_implement_ico');
+  renderFindings();
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('btn-cs').classList.toggle('active', lang === 'cs');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  renderAll();
+}
+
+renderAll();
+</script>
+</body>
+</html>
