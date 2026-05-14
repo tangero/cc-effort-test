@@ -1,0 +1,26 @@
+id: 02_implement_ico
+type: specified_implementation
+description: Implementovat TypeScript funkci validateICO dle přesné specifikace algoritmu.
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+expected_duration_seconds: 240
+diff_size_max_lines: 150
+success_criteria:
+  - src/validators/ico.ts existuje a exportuje validateICO
+  - src/validators/ico.test.ts existuje
+  - TypeScript kompiluje bez chyb
+  - Model's own tests prochází
+  - Skrytá testovací sada (9 cases) prochází
+
+hypothesis: |
+  Medium produkuje srovnatelný výsledek s high na této úloze.
+  Low může selhat na edge cases (checksum remainder=0 nebo remainder=1).
+  Max over-engineeruje: přidává Czech-specific logic, lokalizaci error
+  messages, helper funkce, nebo mění nesouvisející soubory.

@@ -1,0 +1,22 @@
+Implement a TypeScript function `validateICO(input: string): ValidationResult`
+in `src/validators/ico.ts` that validates a Czech company identifier (IČO).
+
+The IČO format is:
+- Exactly 8 digits
+- The 8th digit is a checksum computed as follows:
+  1. Multiply digits 1-7 by weights 8, 7, 6, 5, 4, 3, 2 respectively
+  2. Sum the products
+  3. Compute the remainder modulo 11
+  4. If remainder is 0, checksum is 1
+  5. If remainder is 1, checksum is 0
+  6. Otherwise, checksum is 11 minus the remainder
+
+The `ValidationResult` type is already defined in `src/types.ts`:
+  type ValidationResult =
+    | { valid: true }
+    | { valid: false; reason: string };
+
+Handle edge cases: empty string, non-digit characters, wrong length.
+
+Write comprehensive unit tests in `src/validators/ico.test.ts` using the existing
+test framework (Jest is already configured).
