@@ -23,6 +23,30 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
+# Cache for loaded judge JSON files: task_id → {run_id: run_data}
+_judge_cache: dict[str, dict[str, Any]] = {}
+
+
+def _judge_scores(task: str, run_id: str) -> dict[str, Any]:
+    """Return judge dimension scores for a run, or empty-string values if unavailable."""
+    if task not in _judge_cache:
+        judge_path = REPO_ROOT / "results" / "judge" / f"{task}_judge.json"
+        raw = _load_json(judge_path)
+        if raw and isinstance(raw.get("runs"), list):
+            _judge_cache[task] = {r["run_id"]: r for r in raw["runs"] if "run_id" in r}
+        else:
+            _judge_cache[task] = {}
+    run_data = _judge_cache[task].get(run_id, {})
+    dims = run_data.get("dimensions", {})
+    return {
+        "judge_scope_compliance": dims.get("scope_compliance", {}).get("score", ""),
+        "judge_code_quality": dims.get("code_quality", {}).get("score", ""),
+        "judge_approach_efficiency": dims.get("approach_efficiency", {}).get("score", ""),
+        "judge_over_engineering": dims.get("over_engineering", {}).get("score", ""),
+        "judge_overall": run_data.get("overall_score", ""),
+    }
+
+
 # Column order — keep stable so downstream pandas/Excel doesn't break.
 COLUMNS = [
     "run_id",
@@ -52,6 +76,11 @@ COLUMNS = [
     "claude_version",
     "result_text_length",
     "parse_errors",
+    "judge_scope_compliance",
+    "judge_code_quality",
+    "judge_approach_efficiency",
+    "judge_over_engineering",
+    "judge_overall",
 ]
 
 
@@ -123,6 +152,7 @@ def row_for(run_dir: Path) -> dict[str, Any]:
         "claude_version": meta.get("claude_version", ""),
         "result_text_length": metrics.get("result_text_length", ""),
         "parse_errors": ";".join(metrics.get("parse_errors") or []),
+        **_judge_scores(meta.get("task", ""), meta.get("run_id") or run_dir.name),
     }
 
 
