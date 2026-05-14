@@ -1,0 +1,4 @@
+Rename the identifier `userId` to `accountId` throughout the codebase.
+Update all related JSDoc comments to reflect the new naming.
+Ensure that all tests still pass after the rename.
+Do not modify any logic or behavior, only the identifier name.
