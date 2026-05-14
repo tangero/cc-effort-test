@@ -27,9 +27,9 @@ parser. Viz `PRD.md` pro detaily.
 
 - Node.js 20+ a npm (Claude Code dependency)
 - Python 3.11+ a [uv](https://docs.astral.sh/uv/)
-- Claude Code 2.1.117+ (testováno na 2.1.141)
+- Claude Code 2.1.117+ (testováno na 2.1.141), authentikované přes `claude /login`
+  (subscription / Max plán). Není potřeba `ANTHROPIC_API_KEY`.
 - `yq`, `jq`, `bash 5.x`
-- `ANTHROPIC_API_KEY` env var (Claude Code v `--bare` módu nečte OAuth/keychain)
 
 ### Setup
 
@@ -37,13 +37,33 @@ parser. Viz `PRD.md` pro detaily.
 # Python env
 uv venv && uv pip install -e .
 
-# Env vars
-cp config/env.example .env
-# vyplň ANTHROPIC_API_KEY
-
 # Pre-install Node deps pro initial_repo Task 01 (zrychli běhy)
 ( cd tasks/01_rename/initial_repo && npm install --silent )
+
+# Volitelně: dočasně odsuň user-level CLAUDE.md, aby nepolutoval test.
+# (subscription mód nemůže CLAUDE.md auto-discovery suprimovat)
+# mv ~/.claude/CLAUDE.md ~/.claude/CLAUDE.md.bench-bak
 ```
+
+### Izolace běhu
+
+Spec původně mandátovala `--bare` mód pro úplnou izolaci. Tento framework
+běží v **subscription módu** (přes OAuth/keychain — žádné API credits navíc),
+což `--bare` vylučuje. Místo toho runner ručně izoluje co lze:
+
+| State | Suprimace |
+|-------|-----------|
+| User-level `~/.claude/settings.json` | `--setting-sources project` |
+| MCP servery | `--strict-mcp-config --mcp-config '{...prázdné...}'` |
+| Skills / slash commands | `--disable-slash-commands` |
+| Custom agents | `--agents '{}'` |
+| Session persistence | `--no-session-persistence` |
+| **`~/.claude/CLAUDE.md`** | **NELZE bez `--bare`** — dočasně přesuň |
+| Plugin sync, hooks | **NELZE bez `--bare`** |
+
+Pokud potřebuješ tvrdší izolaci (pro publikaci dat), nastav `ANTHROPIC_API_KEY`
+a v runneru zapni `--bare` ručně — `run_meta.json` zaznamenává `auth_mode`
+do každého běhu, takže obě varianty jsou v datech rozeznatelné.
 
 ### Sanity check (validate verifier)
 
