@@ -1,0 +1,27 @@
+id: 03_debug_order
+type: bounded_debugging
+description: Opravit dva záměrné bugy v TypeScript e-commerce systému. Bug A způsobuje padající test. Bug B je skrytý business logic bug odhalitelný pouze čtením kódu.
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+expected_duration_seconds: 300
+diff_size_max_lines: 20
+success_criteria:
+  - tsc kompiluje bez chyb
+  - Všechny visible testy prochází
+  - PriceCalculator.ts byl změněn (Bug A opraven)
+  - OrderService.ts byl změněn (Bug B opraven)
+  - Skrytá testovací sada (3 cases) prochází
+
+hypothesis: |
+  Low effort opraví Bug A (padající test), ale přehlédne Bug B (žádný
+  failing test ho neindikuje). Score low effortu: ~0.6 (3/5 checks).
+  High a max effort přečtou celý kód, pochopí business logiku a opraví
+  oba bugy. Tato úloha přímo měří schopnost prohledat systém i bez
+  explicitního signálu selhání.

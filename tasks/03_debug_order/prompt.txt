@@ -1,0 +1,6 @@
+The test suite in `src/__tests__/order.test.ts` has a failing test.
+Find the root cause and fix it.
+
+Do not modify any test files.
+
+After your fix, ensure that all tests in the test suite still pass.
