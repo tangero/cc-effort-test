@@ -8,14 +8,18 @@
 # Example:
 #   bash runner/run_single.sh tasks/01_rename low 1 claude-opus-4-7
 #
+# Auth: defaults to subscription mode (OAuth/keychain via `claude /login`).
+# If ANTHROPIC_API_KEY is set in env, Claude Code uses it instead (pay-per-token).
+# Either way, auth_mode is recorded in run_meta.json.
+#
 # Outputs into results/runs/<run_id>/:
-#   stdout.json          - raw Claude Code -p output
+#   stdout.json          - raw Claude Code stream-json output (NDJSON)
 #   stderr.log           - stderr stream
 #   final_diff.patch     - git diff between initial and final state
 #   diff_stat.txt        - git diff --stat
 #   verify_result.json   - output of tasks/<id>/verify.sh
 #   verify.log           - stderr of verify.sh
-#   run_meta.json        - timing, exit code, claude version, identifiers
+#   run_meta.json        - timing, exit code, claude version, auth_mode
 #   metrics.json         - parsed metrics from parse_session.py
 #
 set -euo pipefail
@@ -47,9 +51,14 @@ if [[ ! -f "$TASK_DIR/meta.yaml" ]]; then
     echo "Error: missing meta.yaml in $TASK_DIR" >&2
     exit 2
 fi
-if [[ -z "${ANTHROPIC_API_KEY:-}" ]]; then
-    echo "Error: ANTHROPIC_API_KEY env var is required (--bare ignores OAuth/keychain)" >&2
-    exit 2
+
+# Subscription mode: Claude Code uses OAuth/keychain. ANTHROPIC_API_KEY is
+# only needed if you want pay-per-token API auth. Warn about residual
+# state that subscription mode cannot fully suppress.
+if [[ -f "$HOME/.claude/CLAUDE.md" ]] && [[ -s "$HOME/.claude/CLAUDE.md" ]]; then
+    echo "Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into" >&2
+    echo "         every run and may pollute results. Consider temporarily moving it" >&2
+    echo "         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak})." >&2
 fi
 
 case "$EFFORT" in
@@ -119,11 +128,20 @@ echo "[$(date -Iseconds)] Starting run: $RUN_ID" >&2
 echo "  task=$TASK_ID  model=$MODEL  effort=$EFFORT  run=$RUN_N" >&2
 echo "  workdir=$WORKDIR" >&2
 
+# Subscription mode invocation. Isolation flags substitute for what --bare
+# would have done in API-key mode:
+#   --setting-sources project   skip user-level ~/.claude/settings.json
+#   --strict-mcp-config + empty --mcp-config   disable all MCP servers
+#   --disable-slash-commands    skip skills (otherwise loaded from user dir)
+#   --agents '{}'               no custom agents
+#   --no-session-persistence    don't write session to ~/.claude
+# Residual state we cannot suppress without --bare: ~/.claude/CLAUDE.md
+# auto-discovery, plugin sync, hooks. See README § Isolation caveats.
 START_NS="$(date +%s%N)"
 set +e
 (
     cd "$WORKDIR"
-    claude --bare -p "$PROMPT" \
+    claude -p "$PROMPT" \
         --effort "$EFFORT" \
         --model "$MODEL" \
         --output-format stream-json \
@@ -132,6 +150,11 @@ set +e
         --max-budget-usd "$MAX_BUDGET_USD" \
         --permission-mode bypassPermissions \
         --no-session-persistence \
+        --setting-sources project \
+        --strict-mcp-config \
+        --mcp-config '{"mcpServers": {}}' \
+        --disable-slash-commands \
+        --agents '{}' \
         > "$RESULT_DIR/stdout.json" \
         2> "$RESULT_DIR/stderr.log"
 )
@@ -167,6 +190,13 @@ PARSE_EXIT=$?
 set -e
 
 # --- Write run_meta.json ----------------------------------------------------
+# Auth mode: subscription (OAuth/keychain) if no API key in env; api-key otherwise.
+if [[ -n "${ANTHROPIC_API_KEY:-}" ]]; then
+    AUTH_MODE="api-key"
+else
+    AUTH_MODE="subscription"
+fi
+
 cat > "$RESULT_DIR/run_meta.json" <<EOF
 {
   "run_id": "$RUN_ID",
@@ -183,7 +213,8 @@ cat > "$RESULT_DIR/run_meta.json" <<EOF
   "timestamp": "$(date -Iseconds)",
   "claude_version": "$CLAUDE_VERSION",
   "max_budget_usd": $MAX_BUDGET_USD,
-  "allowed_tools": "$ALLOWED_TOOLS"
+  "allowed_tools": "$ALLOWED_TOOLS",
+  "auth_mode": "$AUTH_MODE"
 }
 EOF
 

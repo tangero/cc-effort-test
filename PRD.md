@@ -185,18 +185,41 @@ metodu. To znamená:
 - V `parse_session.py` se zaznamenává `stop_reason` z JSON, takže poznáme,
   jestli běh skončil přirozeně, nebo budget-capped.
 
-### 5.2 `--bare` mode je závazný
+### 5.2 Subscription mód s manuální izolací (revize spec § --bare)
 
-Důvod: izolace od user-specific state (CLAUDE.md, hooks, plugins, MCP,
-keychain). Spec to vyžaduje pro čistotu testu. `--bare` použijeme společně s:
-- `-p` (print/headless mode)
-- `--output-format json` (parsovatelný output)
+Spec původně mandátovala `--bare` mód, který vypíná OAuth/keychain auth
+a vyžaduje `ANTHROPIC_API_KEY`. Po dohodě s autorem (Phase 1 nesmí utrácet
+pay-per-token credits když existuje Max plán) framework běží v
+**subscription módu** bez `--bare`. Manuální izolace přes flag-based
+suprimaci nahrazuje to, co `--bare` dělalo automaticky:
+
+| Pollution vector | Suprimace |
+|------------------|-----------|
+| User-level `~/.claude/settings.json` | `--setting-sources project` |
+| MCP servery | `--strict-mcp-config --mcp-config '{"mcpServers":{}}'` |
+| Skills / slash commands | `--disable-slash-commands` |
+| Custom agents | `--agents '{}'` |
+| Session persistence (writes do `~/.claude`) | `--no-session-persistence` |
+| `~/.claude/CLAUDE.md` auto-discovery | **NELZE bez `--bare`** — dokument, doporuč temporary move |
+| Plugin sync, hooks, LSP, auto-memory | **NELZE bez `--bare`** |
+
+Volání `claude -p`:
 - `--effort <level>`
-- `--model <id>`
-- `--allowedTools <csv>` (per-task whitelist v `meta.yaml`)
-- `--max-budget-usd 10`
-- `--permission-mode bypassPermissions` (jinak by interaktivní prompty zablokovaly)
-- `ANTHROPIC_API_KEY` env var (vyžadováno `--bare`)
+- `--model <id>` (full ID)
+- `--output-format stream-json --verbose` (per-message events incl. tool_use)
+- `--allowedTools <csv>` (per-task whitelist z `meta.yaml`)
+- `--max-budget-usd 10` (hard cap)
+- `--permission-mode bypassPermissions`
+- výše uvedené izolační flagy
+
+**Trade-off zaznamenán v každém běhu:** `run_meta.json.auth_mode` =
+`"subscription"` nebo `"api-key"`. Při budoucím re-runu s `--bare` (po
+nastavení `ANTHROPIC_API_KEY`) jsou obě varianty v datech rozeznatelné.
+
+**Risk:** pokud má autor netriviální `~/.claude/CLAUDE.md`, ovlivní to
+všechny běhy. Runner při startu warninguje, pokud `~/.claude/CLAUDE.md`
+existuje a je non-empty. Doporučená mitigace: `mv ~/.claude/CLAUDE.md{,.bench-bak}`
+před spuštěním matrice.
 
 ### 5.3 Python tooling: uv
 
@@ -410,6 +433,7 @@ odpovědi (s odůvodněním z pohledu kvality / náklad / složitost):
 | Verify.sh false positives/negatives | Střední | Vysoký (špatná data) | `validate_verifier.sh` testuje proti `expected_solution/` (must pass) i proti `wrong_solution/` (must fail) — phase 1 zatím jen expected. |
 | n=3 nedává statistickou signifikanci | Jistá | Article credibility | Explicitně v článku + `KNOWN_LIMITATIONS.md`. Reportuj jako observational, ne inferenční. |
 | Synthetic repo není representativní | Vysoká | Střední | V Phase 2 swap za real OSS fork. V Phase 1 článek to musí přiznat. |
+| Subscription mód (bez `--bare`) — `~/.claude/CLAUDE.md` polluce | Střední | Střední | Runner warninguje při startu; doc to v README; doporučená mitigace `mv ~/.claude/CLAUDE.md{,.bench-bak}`. `run_meta.auth_mode` zaznamenán pro audit. |
 
 ---
 
