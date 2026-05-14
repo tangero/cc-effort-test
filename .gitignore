@@ -1,0 +1,29 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.uv/
+uv.lock
+
+# Node (per-task)
+**/node_modules/
+**/dist/
+**/.tsbuildinfo
+
+# Env
+.env
+.env.local
+
+# Results (gitignored to keep repo small; published separately under CC-BY-4.0)
+results/runs/
+results/analysis/
+!results/.gitkeep
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Packed initial repos (regenerable)
+tasks/*/initial_repo.tar.gz

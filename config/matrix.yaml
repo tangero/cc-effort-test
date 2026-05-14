@@ -1,0 +1,62 @@
+# Effort Benchmark Framework — Phase 1 matrix definition.
+# Run via runner/run_matrix.sh (Sprint 4).
+
+phase: 1
+
+# Reproducibility: seed for shuffle ordering of (task, effort, run_n) triples.
+randomize_seed: 42
+
+# Pause between consecutive runs to let prompt cache cool down.
+pause_between_runs_seconds: 30
+
+# Hard budget per single run. Claude Code will stop at this cost.
+# At ~$0.5-2 expected per run, $10 is ~10-20x safety margin.
+max_budget_usd_per_run: 10
+
+# Phase 1: primary model only. Sonnet is config-ready for Phase 2.
+models:
+  - id: "claude-opus-4-7"
+    enabled: true
+    available_efforts: [low, medium, high, xhigh, max]
+  - id: "claude-sonnet-4-6"
+    enabled: false                       # Phase 2
+    available_efforts: [low, medium, high, max]
+
+repetitions: 3
+
+tasks:
+  - id: "01_rename"
+    type: "mechanical"
+    efforts_to_test: [low, medium, xhigh, max]
+    objective_verify: true
+    judge_required: false                # Phase 2 (N/A for this task type)
+
+  - id: "02_implement_ico"
+    type: "specified_implementation"
+    efforts_to_test: [low, medium, high, max]
+    objective_verify: true
+    judge_required: false
+
+  - id: "03_debug_pagination"
+    type: "bounded_debugging"
+    efforts_to_test: [medium, high, xhigh]
+    objective_verify: true
+    judge_required: false
+
+  - id: "04_design_catalog"
+    type: "open_design"
+    efforts_to_test: [high, xhigh, max]
+    objective_verify: true               # Phase 1: structure-only (headers, word count)
+    judge_required: false                # Phase 2: GPT-5.5 + Gemini 3.1 Pro
+
+  - id: "05_find_validation_gaps"
+    type: "information_retrieval"
+    efforts_to_test: [low, medium, high]
+    objective_verify: true
+    judge_required: false
+
+  - id: "06_strict_scope"
+    type: "scope_compliance"
+    efforts_to_test: [low, medium, xhigh]
+    objective_verify: true
+    judge_required: false

@@ -1,0 +1,26 @@
+id: 01_rename
+type: mechanical
+description: Rename the identifier userId to accountId across a synthetic TypeScript codebase.
+
+# Tools the model may invoke. Whitelist is intentionally narrow for this task.
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+# Soft hints, used in PRD/analysis. Not enforced by runner.
+expected_duration_seconds: 180
+diff_size_max_lines: 200
+success_criteria:
+  - All occurrences of userId (camelCase, word-bounded) replaced with accountId.
+  - Distractor identifiers preserved: userIdentifier, useridx, UserID (in comments).
+  - TypeScript still compiles.
+  - All Jest tests pass.
+
+hypothesis: |
+  Low effort dosahuje 100% success rate na binární metriky. Vyšší efforty
+  produkují srovnatelný výsledek za výrazně víc tokenů. Max může
+  over-engineerovat (refactor, přidané změny mimo scope).
