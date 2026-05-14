@@ -141,3 +141,33 @@ a `PRD.md`.
 - [Claude Code model config](https://code.claude.com/docs/en/model-config)
 - Vstupní spec: `effort-benchmark-spec.md`
 - Produktové požadavky: `PRD.md`
+
+## Judge Pipeline (LLM-as-judge)
+
+Subjektivní hodnocení runů pomocí Codex Desktop (nebo jiného LLM agenta).
+
+### 1. Připrav vstupní soubor
+
+```bash
+python3 scripts/prepare_judge_input.py --task 01_rename
+python3 scripts/prepare_judge_input.py --task 02_implement_ico
+```
+
+Výstup: `results/judge_inputs/<task>_input.md` — Markdown s rubrikou, JSON schématem a artefakty všech runů dané úlohy.
+
+### 2. Hodnocení v Codex Desktop
+
+1. Otevři repozitář v Codex Desktop
+2. Zadej prompt:
+
+> Read the file `results/judge_inputs/<task_id>_input.md`. It contains benchmark run artifacts and a rubric. Evaluate each run according to the rubric. Save the structured JSON result to `results/judge/<task_id>_judge.json` using exactly the schema defined in the input file.
+
+3. Opakuj pro každou úlohu
+
+### 3. Agreguj výsledky
+
+```bash
+python3 scripts/aggregate.py --out results/summary.csv
+```
+
+CSV nyní obsahuje sloupce `judge_scope_compliance`, `judge_code_quality`, `judge_approach_efficiency`, `judge_over_engineering`, `judge_overall`.
