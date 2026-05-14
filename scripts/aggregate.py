@@ -68,7 +68,7 @@ def _load_json(path: Path) -> dict[str, Any] | None:
 def _verify_passed(verify: dict[str, Any] | None) -> str:
     if verify is None:
         return ""
-    p = verify.get("passed")
+    p = verify.get("success") if verify.get("success") is not None else verify.get("passed")
     if isinstance(p, bool):
         return "true" if p else "false"
     return ""
