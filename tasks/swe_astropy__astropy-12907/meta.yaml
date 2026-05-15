@@ -1,0 +1,20 @@
+id: swe_astropy__astropy_12907
+type: swe_bench
+language: python
+python_version: "3.11"
+description: "SWE-bench instance: astropy__astropy-12907 (astropy/astropy)"
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+install_cmd: "pip install -e .[test] -q 2>/dev/null || pip install -e . -q 2>/dev/null || true"
+test_cmd: "python -m pytest"
+
+success_criteria:
+  - fail_to_pass tests now pass
+  - pass_to_pass tests still pass
