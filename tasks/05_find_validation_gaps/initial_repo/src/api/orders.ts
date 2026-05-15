@@ -18,13 +18,13 @@ export function createOrder(req: ApiRequest<{ userId: string; items: OrderItem[]
   const order: Order = { id: 'new-id', userId: req.body.userId, items: req.body.items, status: 'pending' };
   return { status: 201, body: order };
 }
-// POST /api/orders  ← NO VALIDATION (items could be empty, quantities not checked)
+// POST /api/orders
 
 export function updateOrderStatus(req: ApiRequest<{ status: string }>): ApiResponse {
   const order = { id: req.params.id, status: req.body.status };
   return { status: 200, body: order };
 }
-// PUT /api/orders/:id  ← NO VALIDATION (status not validated against enum)
+// PUT /api/orders/:id
 
 export function deleteOrder(req: ApiRequest): ApiResponse {
   if (!isUUID(req.params.id)) return { status: 400, body: { error: 'Invalid order ID' } };

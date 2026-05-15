@@ -19,7 +19,7 @@ export function createProduct(req: ApiRequest<{ name: string; price: number; cat
   const product: Product = { id: 'new-id', name: req.body.name, price: req.body.price, categoryId: req.body.categoryId };
   return { status: 201, body: product };
 }
-// POST /api/products  ← NO VALIDATION
+// POST /api/products
 
 export function updateProduct(req: ApiRequest<{ name?: string; price?: number }>): ApiResponse {
   if (!isUUID(req.params.id)) return { status: 400, body: { error: 'Invalid ID' } };

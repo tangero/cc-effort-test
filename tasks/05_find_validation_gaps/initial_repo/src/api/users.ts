@@ -18,9 +18,9 @@ export function createUser(req: ApiRequest<{ email: string; username: string }>)
   const user: User = { id: 'new-id', email: req.body.email, username: req.body.username };
   return { status: 201, body: user };
 }
-// POST /api/users  ← NO VALIDATION
+// POST /api/users
 
 export function updateUser(req: ApiRequest<{ email?: string; username?: string }>): ApiResponse {
   return { status: 200, body: { id: req.params.id, ...req.body } };
 }
-// PUT /api/users/:id  ← NO VALIDATION
+// PUT /api/users/:id
