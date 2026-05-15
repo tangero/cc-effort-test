@@ -61,10 +61,18 @@ if [[ -f "$HOME/.claude/CLAUDE.md" ]] && [[ -s "$HOME/.claude/CLAUDE.md" ]]; the
     echo "         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak})." >&2
 fi
 
+case "$MODEL" in
+    *opus-4-7*) _valid_efforts="low|medium|high|xhigh|max" ;;
+    *)          _valid_efforts="low|medium|high|max" ;;
+esac
 case "$EFFORT" in
     low|medium|high|xhigh|max) ;;
-    *) echo "Error: invalid effort '$EFFORT' (low|medium|high|xhigh|max)" >&2; exit 2 ;;
+    *) echo "Error: invalid effort '$EFFORT'" >&2; exit 2 ;;
 esac
+if [[ ! "$EFFORT" =~ ^($_valid_efforts)$ ]]; then
+    echo "Error: effort '$EFFORT' not supported for model '$MODEL' (valid: ${_valid_efforts//|/, })" >&2
+    exit 2
+fi
 
 # --- Setup paths ------------------------------------------------------------
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -156,7 +164,7 @@ set +e
         --disable-slash-commands \
         --agents '{}' \
         > "$RESULT_DIR/stdout.json" \
-        2> "$RESULT_DIR/stderr.log"
+        2> >(tee "$RESULT_DIR/stderr.log" >&2)
 )
 EXIT_CODE=$?
 set -e
