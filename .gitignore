@@ -27,3 +27,7 @@ results/analysis/
 
 # Packed initial repos (regenerable)
 tasks/*/initial_repo.tar.gz
+
+# SWE-bench generated artifacts (large, gitignored — regenerate with swe_bench_import.py)
+tasks/swe_*/initial_repo.tar.gz
+tasks/swe_*/initial_repo/
