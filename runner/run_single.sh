@@ -115,9 +115,11 @@ if [[ "$LANGUAGE" == "python" ]]; then
     PYTHON_VERSION="$(yq -r '.python_version // "3.11"' "$TASK_DIR_ABS/meta.yaml" 2>/dev/null || echo '3.11')"
     INSTALL_CMD="$(yq -r '.install_cmd // "pip install -e . -q"' "$TASK_DIR_ABS/meta.yaml" 2>/dev/null || echo 'pip install -e . -q')"
     if command -v pyenv >/dev/null 2>&1; then
-        ( cd "$WORKDIR" && pyenv local "$PYTHON_VERSION" 2>/dev/null ) || true
+        export PYENV_VERSION="$PYTHON_VERSION"
     fi
     echo "[setup] python $PYTHON_VERSION — running: $INSTALL_CMD" >&2
+    # Python install failures are non-fatal: complex envs (C-extensions, missing
+    # system libs) often fail partially; we still want benchmark data.
     ( cd "$WORKDIR" && eval "$INSTALL_CMD" ) \
         || { echo "Warning: install_cmd had errors — continuing anyway" >&2; }
 elif [[ -f "$WORKDIR/package.json" && ! -d "$WORKDIR/node_modules" ]]; then
