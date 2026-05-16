@@ -12,8 +12,8 @@ allowed_tools:
   - Grep
   - Bash
 
-install_cmd: "pip install -e .[test] -q 2>/dev/null || pip install -e . -q 2>/dev/null || true"
-test_cmd: "python -m pytest"
+install_cmd: "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true"
+test_cmd: "python3 -m pytest"
 
 success_criteria:
   - fail_to_pass tests now pass

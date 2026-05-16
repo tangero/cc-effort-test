@@ -166,7 +166,7 @@ def _detect_install_cmd(instance: dict[str, Any], language: str) -> str:
     if cmd:
         return cmd
     if language == "python":
-        return "pip install -e .[test] -q 2>/dev/null || pip install -e . -q 2>/dev/null || true"
+        return "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true"
     return "npm install --silent --no-audit --no-fund --prefer-offline"
 
 
