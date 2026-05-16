@@ -28,7 +28,7 @@ import json, sys
 data = json.load(sys.stdin)
 pattern = '$pattern'
 for suite in data.get('testResults', []):
-  for t in suite.get('testResults', []):
+  for t in suite.get('assertionResults', []):
     if pattern.lower() in t.get('fullName','').lower():
       print('pass' if t.get('status') == 'passed' else 'fail')
       sys.exit(0)
