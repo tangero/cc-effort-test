@@ -1,0 +1,27 @@
+{
+  "instance_id": "django__django-14016",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "django/django",
+  "base_commit": "1710cdbe79c90665046034fe1700933d038d90ad",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_combine_and_empty (queries.test_q.QTests)",
+    "test_combine_or_empty (queries.test_q.QTests)"
+  ],
+  "pass_to_pass": [
+    "test_combine_and_both_empty (queries.test_q.QTests)",
+    "test_combine_not_q_object (queries.test_q.QTests)",
+    "test_combine_or_both_empty (queries.test_q.QTests)",
+    "test_deconstruct (queries.test_q.QTests)",
+    "test_deconstruct_and (queries.test_q.QTests)",
+    "test_deconstruct_multiple_kwargs (queries.test_q.QTests)",
+    "test_deconstruct_negated (queries.test_q.QTests)",
+    "test_deconstruct_nested (queries.test_q.QTests)",
+    "test_deconstruct_or (queries.test_q.QTests)",
+    "test_reconstruct (queries.test_q.QTests)"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}
