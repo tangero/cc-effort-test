@@ -306,7 +306,7 @@ def _write_verify_python(
 
     p2p_block = f"""
 # --- Check 2: PASS_TO_PASS tests still pass --------------------------------
-PYTEST_P2P="$({test_cmd} {pass_args} --tb=short 2>&1)"
+PYTEST_P2P="$({test_cmd} {pass_args} --tb=short --ignore=bin 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_P2P='{{"passed": true, "details": "pass_to_pass tests still pass"}}'
   PASS=$((PASS+1))
@@ -327,7 +327,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION="0.0.1"
 PASS=0; TOTAL={total}
 
 # --- Check 1: FAIL_TO_PASS tests now pass ----------------------------------
-PYTEST_OUT="$({test_cmd} {fail_args} -x --tb=short 2>&1)"
+PYTEST_OUT="$({test_cmd} {fail_args} -x --tb=short --ignore=bin 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_F2P='{{"passed": true, "details": "fail_to_pass tests now pass"}}'
   PASS=$((PASS+1))
