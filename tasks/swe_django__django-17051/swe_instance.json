@@ -1,0 +1,30 @@
+{
+  "instance_id": "django__django-17051",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "django/django",
+  "base_commit": "b7a17b0ea0a2061bae752a3a2292007d41825814",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_update_conflicts_two_fields_unique_fields_first (bulk_create.tests.BulkCreateTests.test_update_conflicts_two_fields_unique_fields_first)",
+    "test_update_conflicts_two_fields_unique_fields_second (bulk_create.tests.BulkCreateTests.test_update_conflicts_two_fields_unique_fields_second)",
+    "test_update_conflicts_unique_fields (bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields)",
+    "test_update_conflicts_unique_fields_update_fields_db_column (bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_fields_update_fields_db_column)",
+    "test_update_conflicts_unique_two_fields_unique_fields_both (bulk_create.tests.BulkCreateTests.test_update_conflicts_unique_two_fields_unique_fields_both)"
+  ],
+  "pass_to_pass": [
+    "test_batch_same_vals (bulk_create.tests.BulkCreateTests.test_batch_same_vals)",
+    "test_bulk_insert_expressions (bulk_create.tests.BulkCreateTests.test_bulk_insert_expressions)",
+    "test_bulk_insert_now (bulk_create.tests.BulkCreateTests.test_bulk_insert_now)",
+    "test_bulk_insert_nullable_fields (bulk_create.tests.BulkCreateTests.test_bulk_insert_nullable_fields)",
+    "test_efficiency (bulk_create.tests.BulkCreateTests.test_efficiency)",
+    "test_empty_model (bulk_create.tests.BulkCreateTests.test_empty_model)",
+    "test_explicit_batch_size (bulk_create.tests.BulkCreateTests.test_explicit_batch_size)",
+    "test_explicit_batch_size_efficiency (bulk_create.tests.BulkCreateTests.test_explicit_batch_size_efficiency)",
+    "test_explicit_batch_size_respects_max_batch_size (bulk_create.tests.BulkCreateTests.test_explicit_batch_size_respects_max_batch_size)",
+    "test_ignore_conflicts_ignore (bulk_create.tests.BulkCreateTests.test_ignore_conflicts_ignore)"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}
