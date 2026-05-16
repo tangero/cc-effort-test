@@ -238,6 +238,20 @@ def prepare_instance(
         subprocess.run(["git", "checkout", base_commit], cwd=clone_dir,
                        capture_output=True, check=True)
 
+        # Apply test_patch (adds the FAIL_TO_PASS tests that validate the fix).
+        # Per SWE-bench protocol: tests come from test_patch, fix is what model produces.
+        test_patch = instance.get("test_patch", "")
+        if test_patch:
+            print(f"  Applying test_patch ({test_patch.count(chr(10))} lines)...", file=sys.stderr)
+            patch_file = clone_dir.parent / "test.patch"
+            patch_file.write_text(test_patch, encoding="utf-8")
+            result = subprocess.run(
+                ["git", "apply", "--allow-empty", str(patch_file)],
+                cwd=clone_dir, capture_output=True, text=True
+            )
+            if result.returncode != 0:
+                print(f"  Warning: test_patch failed to apply: {result.stderr[:200]}", file=sys.stderr)
+
         print(f"  Creating tar.gz...", file=sys.stderr)
         with tarfile.open(tar_path, "w:gz") as tf:
             for item in clone_dir.rglob("*"):
