@@ -280,14 +280,28 @@ def write_verify(out_dir: Path, data: dict[str, Any]) -> None:
         _write_verify_typescript(out_dir, data["fail_to_pass"], data["pass_to_pass"], data["test_cmd"])
 
 
+def _pytest_args(tests: list[str]) -> str:
+    """Return pytest args for test IDs.
+    SWE-bench Lite uses short names (test_foo) or full paths (dir/file.py::test_foo).
+    Short names must use -k to match by function name; full paths use direct addressing.
+    """
+    short = [t for t in tests if "::" not in t and "/" not in t]
+    full  = [t for t in tests if "::" in t or "/" in t]
+    parts = [f'"{t}"' for t in full]
+    if short:
+        k_expr = " or ".join(short)
+        parts.append(f'-k "{k_expr}"')
+    return " ".join(parts)
+
+
 def _write_verify_python(
     out_dir: Path,
     fail_tests: list[str],
     pass_tests: list[str],
     test_cmd: str,
 ) -> None:
-    fail_args = " ".join(f'"{t}"' for t in fail_tests)
-    pass_args = " ".join(f'"{t}"' for t in pass_tests[:5]) if pass_tests else ""
+    fail_args = _pytest_args(fail_tests)
+    pass_args = _pytest_args(pass_tests[:5]) if pass_tests else ""
     total = 1 + (1 if pass_tests else 0)
 
     p2p_block = f"""

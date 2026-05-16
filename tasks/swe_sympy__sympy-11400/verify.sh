@@ -8,7 +8,7 @@ export SETUPTOOLS_SCM_PRETEND_VERSION="0.0.1"
 PASS=0; TOTAL=2
 
 # --- Check 1: FAIL_TO_PASS tests now pass ----------------------------------
-PYTEST_OUT="$(python3 -m pytest "test_ccode_Relational" "test_ccode_sinc" -x --tb=short 2>&1)"
+PYTEST_OUT="$(python3 -m pytest -k "test_ccode_Relational or test_ccode_sinc" -x --tb=short 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_F2P='{"passed": true, "details": "fail_to_pass tests now pass"}'
   PASS=$((PASS+1))
@@ -18,7 +18,7 @@ else
 fi
 
 # --- Check 2: PASS_TO_PASS tests still pass --------------------------------
-PYTEST_P2P="$(python3 -m pytest "test_printmethod" "test_ccode_sqrt" "test_ccode_Pow" "test_ccode_constants_mathh" "test_ccode_constants_other" --tb=short 2>&1)"
+PYTEST_P2P="$(python3 -m pytest -k "test_printmethod or test_ccode_sqrt or test_ccode_Pow or test_ccode_constants_mathh or test_ccode_constants_other" --tb=short 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_P2P='{"passed": true, "details": "pass_to_pass tests still pass"}'
   PASS=$((PASS+1))
