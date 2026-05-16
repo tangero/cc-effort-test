@@ -1,0 +1,19 @@
+id: 08_async_bugs
+type: debugging
+language: typescript
+description: "Najít a opravit 4-5 async/Promise bugů v TypeScript data pipeline"
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+success_criteria:
+  - processSingle vrací správný výsledek (opraven missing await)
+  - processBatch běží paralelně (Promise.all)
+  - safeProcess propaguje chyby
+  - incrementAndGet je bez race condition
+  - processBatch vrací správné hodnoty

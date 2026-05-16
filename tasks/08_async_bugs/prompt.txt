@@ -1,0 +1,10 @@
+This TypeScript data processing pipeline has multiple async/Promise bugs that cause incorrect behavior:
+
+- Missing `await` keywords causing Promises to be used as values
+- Sequential processing where parallel processing should be used
+- Errors being silently swallowed instead of propagated
+- Race conditions in shared mutable state
+
+Fix the bugs in `src/pipeline.ts`. The existing tests in `src/pipeline.test.ts` should still pass after your fixes.
+
+Hint: look carefully at how Promises are being awaited (or not), how errors are handled, and whether operations that could run in parallel are doing so.
