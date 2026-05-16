@@ -1,0 +1,28 @@
+id: 07_security_audit
+type: security
+language: typescript
+description: "Najít a opravit bezpečnostní chyby v TypeScript Express API (SQL injection, XSS, exposure)"
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+expected_duration_seconds: 300
+diff_size_max_lines: 30
+success_criteria:
+  - SQL injection v search je opravena (prepared statements)
+  - SQL injection v login je opravena
+  - Password není vraceno v GET /users/:id
+  - XSS v register error response je opravena
+  - Mass assignment role je blokováno
+
+hypothesis: |
+  Low effort opraví zřejmé SQL injection bugy (BUG 1, BUG 2), ale přehlédne
+  subtilnější problémy. Score low effortu: ~0.4 (2/5 checks).
+  Medium effort najde i password exposure a XSS. Score: ~0.8 (4/5 checks).
+  High effort najde všechny včetně skrytého mass assignment bugu.
+  Score: 1.0 (5/5 checks).

@@ -1,0 +1,12 @@
+This TypeScript Express API has multiple security vulnerabilities that need to be fixed.
+
+Review the file `src/routes/users.ts` and fix all security issues you can find. The API uses better-sqlite3 for database access.
+
+Common vulnerability types to look for:
+- SQL injection
+- Sensitive data exposure
+- Missing input validation
+- XSS (Cross-Site Scripting)
+- Improper access control
+
+Make sure the existing tests in `src/routes/users.test.ts` still pass after your fixes.
