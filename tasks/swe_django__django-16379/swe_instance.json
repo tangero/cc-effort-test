@@ -1,0 +1,27 @@
+{
+  "instance_id": "django__django-16379",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "django/django",
+  "base_commit": "1d0fa848e084cad62d0bb6bde3b51e4862558e57",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_has_key_race_handling (cache.tests.FileBasedCachePathLibTests)",
+    "test_has_key_race_handling (cache.tests.FileBasedCacheTests)"
+  ],
+  "pass_to_pass": [
+    "If None is cached, get() returns it instead of the default.",
+    "Passing in None into timeout results in a value that is cached forever",
+    "Follow memcached's convention where a timeout greater than 30 days is",
+    "Nonexistent cache keys return as None/default.",
+    "set_many() returns an empty list when all keys are inserted.",
+    "Passing in zero into timeout results in a value that is not cached",
+    "test_createcachetable_observes_database_router (cache.tests.CreateCacheTableForDBCacheTests)",
+    "Memory caches that have the TIMEOUT parameter set to `None` in the",
+    "Memory caches that have the TIMEOUT parameter set to `None` will set",
+    "Caches that have the TIMEOUT parameter undefined in the default"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}

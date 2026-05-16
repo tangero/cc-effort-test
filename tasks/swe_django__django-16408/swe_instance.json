@@ -1,0 +1,27 @@
+{
+  "instance_id": "django__django-16408",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "django/django",
+  "base_commit": "ef85b6bf0bc5a8b194f0724cf5bbedbcee402b96",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_multilevel_reverse_fk_cyclic_select_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_multilevel_reverse_fk_cyclic_select_related)",
+    "test_multilevel_reverse_fk_select_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_multilevel_reverse_fk_select_related)"
+  ],
+  "pass_to_pass": [
+    "test_foreign_key (known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key)",
+    "test_foreign_key_multiple_prefetch (known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key_multiple_prefetch)",
+    "test_foreign_key_prefetch_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_foreign_key_prefetch_related)",
+    "test_one_to_one (known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one)",
+    "test_one_to_one_multi_prefetch_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_multi_prefetch_related)",
+    "test_one_to_one_multi_select_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_multi_select_related)",
+    "test_one_to_one_prefetch_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_prefetch_related)",
+    "test_one_to_one_select_related (known_related_objects.tests.ExistingRelatedInstancesTests.test_one_to_one_select_related)",
+    "test_queryset_and (known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_and)",
+    "test_queryset_or (known_related_objects.tests.ExistingRelatedInstancesTests.test_queryset_or)"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}

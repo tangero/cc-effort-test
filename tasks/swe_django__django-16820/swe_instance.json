@@ -1,0 +1,32 @@
+{
+  "instance_id": "django__django-16820",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "django/django",
+  "base_commit": "c61219a7ae051d2baab53f041e00592011fc550c",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_create_model_add_index (migrations.test_optimizer.OptimizerTests.test_create_model_add_index)",
+    "test_create_model_index_together_rename_index (migrations.test_optimizer.OptimizerTests.test_create_model_index_together_rename_index)",
+    "test_create_model_remove_index (migrations.test_optimizer.OptimizerTests.test_create_model_remove_index)",
+    "test_create_model_remove_index_together_rename_index (migrations.test_optimizer.OptimizerTests.test_create_model_remove_index_together_rename_index)",
+    "test_add_model_order_with_respect_to_index (migrations.test_autodetector.AutodetectorTests.test_add_model_order_with_respect_to_index)",
+    "Test creation of new model with indexes already defined.",
+    "#22275 - A migration with circular FK dependency does not try"
+  ],
+  "pass_to_pass": [
+    "test_auto (migrations.test_autodetector.MigrationSuggestNameTests.test_auto)",
+    "test_many_operations_suffix (migrations.test_autodetector.MigrationSuggestNameTests.test_many_operations_suffix)",
+    "test_no_operations (migrations.test_autodetector.MigrationSuggestNameTests.test_no_operations)",
+    "test_no_operations_initial (migrations.test_autodetector.MigrationSuggestNameTests.test_no_operations_initial)",
+    "test_none_name (migrations.test_autodetector.MigrationSuggestNameTests.test_none_name)",
+    "test_none_name_with_initial_true (migrations.test_autodetector.MigrationSuggestNameTests.test_none_name_with_initial_true)",
+    "test_operation_with_invalid_chars_in_suggested_name (migrations.test_autodetector.MigrationSuggestNameTests.test_operation_with_invalid_chars_in_suggested_name)",
+    "test_operation_with_no_suggested_name (migrations.test_autodetector.MigrationSuggestNameTests.test_operation_with_no_suggested_name)",
+    "test_single_operation (migrations.test_autodetector.MigrationSuggestNameTests.test_single_operation)",
+    "test_single_operation_long_name (migrations.test_autodetector.MigrationSuggestNameTests.test_single_operation_long_name)"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}
