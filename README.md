@@ -103,17 +103,21 @@ results/
 
 ## Aktuální benchmark tasky
 
-| Task | Typ | Popis | Obtížnost |
+| Task | Typ | Popis | Low effort |
 |------|-----|-------|-----------|
-| `01_rename` | Mechanický | Přejmenovat `userId` → `accountId` (57 výskytů, TS) | Snadná |
-| `02_implement_ico` | Implementace | Český IČO validační algoritmus v TypeScript | Snadná |
-| `03_debug_order` | Debugging | 2 bugy v OrderService — Bug B záměrně skrytý | Střední |
-| `06_strict_scope` | Scope compliance | Přidat validaci jen do jednoho souboru, nerozšiřovat scope | Střední |
-| `07_security_audit` | Security | 5 bezpečnostních chyb v Express API (SQL injection, XSS, ...) | Střední-těžká |
-| `08_async_bugs` | Debugging | 4-5 async/Promise bugů v TypeScript pipeline | Střední |
-| `swe_sympy__sympy-24909` | SWE-bench | Reálný bug: `milli*W == 1` vrací True | Snadná |
-| `swe_django__django-16910` | SWE-bench | Reálný bug: `only()` + `select_related()` na reverse OneToOne | **Těžká** |
-| `swe_django__django-17051` | SWE-bench | Reálný bug: `bulk_create(update_conflicts=True)` nevrací IDs | Snadná |
+| `01_rename` | Mechanický | Přejmenovat `userId` → `accountId` (57 výskytů, TS) | ✅ 100% |
+| `02_implement_ico` | Implementace | Český IČO validační algoritmus v TypeScript | ✅ 100% |
+| `03_debug_order` | Debugging | 2 bugy v OrderService — Bug B záměrně skrytý | ⚠️ 60% (max také) |
+| `06_strict_scope` | Scope compliance | Přidat validaci jen do jednoho souboru, nerozšiřovat scope | ⚠️ 33% |
+| `07_security_audit` | Security | 5 bezpečnostních chyb v Express API (SQL injection, XSS) | ✅ 100% |
+| `08_async_bugs` | Debugging | 4-5 async/Promise bugů v TypeScript pipeline | ✅ 100% |
+| `swe_sympy__sympy-24909` | SWE-bench | `milli*W == 1` vrací True | ⚠️ ~50% |
+| `swe_sympy__sympy-22840` | SWE-bench | `cse()` extrahuje `MatrixSymbol` jako common subexpression | ⚠️ 50% (low neprovedl změnu) |
+| `swe_django__django-16379` | SWE-bench | `FileBasedCache.has_key` race condition | ✅ 100% |
+| `swe_django__django-16408` | SWE-bench | Multi-level FilteredRelation + select_related | ❌ 0% |
+| `swe_django__django-16820` | SWE-bench | Migration squashing `index_together → indexes` | ❌ 0% |
+| `swe_django__django-16910` | SWE-bench | `only()` + `select_related()` na reverse OneToOneField | ⚠️ 33-67% |
+| `swe_django__django-17051` | SWE-bench | `bulk_create(update_conflicts=True)` nevrací IDs | ✅ 100% |
 
 ---
 
@@ -254,6 +258,12 @@ python3 scripts/swe_bench_import.py --instance sympy__sympy-24909
 # initial_repo.tar.gz je gitignored — každý si ho generuje lokálně
 ```
 
+### Důležité: test_patch je aplikován automaticky
+
+Per SWE-bench protokol importér automaticky aplikuje `test_patch` z datasetu — to jsou testy, které **selhávají v base commitu** a mají projít po opravě modelu. Bez aplikace by se testy chovaly jinak než v původním SWE-bench evaluaci (mohly by procházet v base commitu, což by zkreslilo výsledky).
+
+Když přidáváš novou instanci a její low-effort run dosahuje neočekávaného score 1.0 (nebo Claude vůbec nezačne pracovat), zkontroluj že `test_patch` se správně aplikuje — `swe_bench_import.py` to loguje při importu.
+
 ### Omezení SWE-bench na macOS s Python 3.13+
 
 - **Pre-2022 Django** (`<= django-15xxx`): nekompatibilní — chybí modul `cgi`
@@ -263,22 +273,37 @@ python3 scripts/swe_bench_import.py --instance sympy__sympy-24909
 
 ---
 
-## Výsledky (Phase 1+SWE)
+## Výsledky
 
-Klíčová zjištění po 100 runech:
+### Klíčová zjištění
 
 | Finding | Detail |
 |---------|--------|
-| SWE-bench diferencuje effort | django-16910: low 33% → high 75% → max 100% pass rate |
-| Max ≠ lepší výsledek | Max stojí 2–4× více než high, ale výsledek je stejný |
-| Syntetické tasky nediferenciují | 01_rename, 02_implement_ico: 100% při všech effort úrovních |
-| Debug bez testu = nulový efekt | 03_debug_order Bug B: nenalezen ani max effortem |
+| **SWE-bench diferencuje effort** | `django-16910`: low/medium ~50% → high 75% → max 100% pass rate |
+| **Max ≠ lepší výsledek** | Max stojí 2–4× více než high, ale výsledek je stejný |
+| **Syntetické tasky často nediferenciují** | `01_rename`, `02_implement_ico`, `07_security_audit`, `08_async_bugs`: 100% i při low |
+| **Debug bez testu = nulový efekt** | `03_debug_order` Bug B: nenalezen ani max effortem (název maskoval intent) |
+| **3 různé módy selhání low effort** | overconfidence (16820), underexploration (16408), indecision (22840) |
 
-**Doporučení:**
-- `low` — refaktoring, rename, jednoduché implementace
-- `medium` / `high` — implementace dle spec, běžné bugy  
-- `high` — reálné bugy (SWE-bench úroveň)
-- `max` — scope compliance; u ostatních úloh nepřidává hodnotu
+### Failure módy low effort na obtížných SWE-bench
+
+Po importu 4 hard kandidátů jsme pozorovali 4 různá chování při low effort:
+
+| Instance | Score | Tools | Failure mode |
+|----------|-------|-------|--------------|
+| `django-16379` | 1.0 | 3 | (snadná — low stačí) |
+| `django-16408` | 0.0 | 19 | **Underexploration** — malý fix bez pochopení (2 řádky) |
+| `django-16820` | 0.0 | 28 | **Overconfidence** — velký fix (73 řádků) rozbil regression testy |
+| `sympy-22840` | 0.5 | 0 | **Indecision** — popsal problém, neprovedl změnu, zeptal se "want me to dig in?" |
+
+To napovídá, že `--effort` ovlivňuje nejen *kolik* model přemýšlí, ale i *jakým způsobem* přistupuje k nejistotě. Higher effort vede k *cílenějšímu* průzkumu místo unáhlených nebo nerozhodných kroků.
+
+### Doporučení pro volbu effort úrovně
+
+- **`low`** — refaktoring, rename, jednoduché implementace, snadné bugy (~1 řádek fix)
+- **`medium`** — implementace dle spec, běžné aplikační bugy
+- **`high`** — reálné bugy v large codebase (SWE-bench úroveň), debugování složitější logiky
+- **`max`** — scope compliance, kdy je důležitější *nezvětšovat* než opravit (06_strict_scope); u ostatních úloh často přeplatek bez zlepšení
 
 ---
 
