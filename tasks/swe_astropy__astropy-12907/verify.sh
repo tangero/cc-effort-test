@@ -5,7 +5,7 @@ set -uo pipefail
 PASS=0; TOTAL=2
 
 # --- Check 1: FAIL_TO_PASS tests now pass ----------------------------------
-PYTEST_OUT="$(python -m pytest "astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]" "astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]" -x --tb=short 2>&1)"
+PYTEST_OUT="$(python3 -m pytest "astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]" "astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]" -x --tb=short 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_F2P='{"passed": true, "details": "fail_to_pass tests now pass"}'
   PASS=$((PASS+1))
@@ -15,7 +15,7 @@ else
 fi
 
 # --- Check 2: PASS_TO_PASS tests still pass --------------------------------
-PYTEST_P2P="$(python -m pytest "astropy/modeling/tests/test_separable.py::test_coord_matrix" "astropy/modeling/tests/test_separable.py::test_cdot" "astropy/modeling/tests/test_separable.py::test_cstack" "astropy/modeling/tests/test_separable.py::test_arith_oper" "astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]" --tb=short 2>&1)"
+PYTEST_P2P="$(python3 -m pytest "astropy/modeling/tests/test_separable.py::test_coord_matrix" "astropy/modeling/tests/test_separable.py::test_cdot" "astropy/modeling/tests/test_separable.py::test_cstack" "astropy/modeling/tests/test_separable.py::test_arith_oper" "astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]" --tb=short 2>&1)"
 if [[ $? -eq 0 ]]; then
   CHECK_P2P='{"passed": true, "details": "pass_to_pass tests still pass"}'
   PASS=$((PASS+1))

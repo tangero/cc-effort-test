@@ -175,7 +175,7 @@ def _detect_test_cmd(instance: dict[str, Any], language: str) -> str:
     if cmd:
         return cmd
     if language == "python":
-        return "python -m pytest"
+        return "python3 -m pytest"
     return "npx vitest run"
 
 
