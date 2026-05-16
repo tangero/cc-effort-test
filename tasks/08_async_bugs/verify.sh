@@ -14,41 +14,51 @@ EOF
   exit 1
 fi
 
-# Copy hidden tests, run, delete
+# Copy hidden tests, run with JSON reporter, delete
 cp "$TASK_DIR/hidden_tests/async.test.ts" src/
-JEST_OUT="$(npx jest --testPathPattern='async\.test\.ts' --verbose --forceExit 2>&1)"
-JEST_EXIT=$?
+JEST_OUT="$(npx jest --testPathPattern='async\.test\.ts' --json --forceExit 2>/dev/null || true)"
 rm -f src/async.test.ts
 
-# Count passed tests
-PASSED=$(echo "$JEST_OUT" | grep -c '✓\|✔\|√\| ✓ \| ✔ ' 2>/dev/null || echo 0)
-FAILED=$(echo "$JEST_OUT" | grep -c '✕\|✗\|×\| ✕ \| ✗ ' 2>/dev/null || echo 0)
-
-if [[ $JEST_EXIT -eq 0 ]]; then
-  PASS=5
-fi
-
-# Try to get individual results
-get_check() {
+# Parse Jest JSON output for individual test results
+test_passed() {
   local pattern="$1"
-  local name="$2"
-  if echo "$JEST_OUT" | grep -qE "[✓✔√] .*$pattern"; then
-    echo "{\"passed\": true, \"details\": \"$name passed\"}"
+  # Jest JSON: testResults[].testResults[].{fullName, status}
+  echo "$JEST_OUT" | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+pattern = '$pattern'
+for suite in data.get('testResults', []):
+  for t in suite.get('testResults', []):
+    if pattern.lower() in t.get('fullName','').lower():
+      print('pass' if t.get('status') == 'passed' else 'fail')
+      sys.exit(0)
+print('fail')
+" 2>/dev/null || echo "fail"
+}
+
+r1=$(test_passed "processSingle")
+r2=$(test_passed "parallel")
+r3=$(test_passed "propagates")
+r4=$(test_passed "race")
+r5=$(test_passed "combined")
+
+make_check() {
+  local result="$1"; local name="$2"
+  if [[ "$result" == "pass" ]]; then
+    echo "{\"passed\": true, \"details\": \"$name\"}"
   else
-    echo "{\"passed\": false, \"details\": \"$name failed\"}"
+    echo "{\"passed\": false, \"details\": \"$name\"}"
   fi
 }
 
-C1=$(get_check "processSingle" "processSingle correct result")
-C2=$(get_check "parallel" "processBatch parallel")
-C3=$(get_check "propagates" "safeProcess propagates errors")
-C4=$(get_check "race" "incrementAndGet race-free")
-C5=$(get_check "combined" "processBatch correct values")
+C1=$(make_check "$r1" "processSingle correct result")
+C2=$(make_check "$r2" "processBatch parallel")
+C3=$(make_check "$r3" "safeProcess propagates errors")
+C4=$(make_check "$r4" "incrementAndGet race-free")
+C5=$(make_check "$r5" "processBatch correct values")
 
-# Recount based on individual checks
-PASS=0
-for c in "$C1" "$C2" "$C3" "$C4" "$C5"; do
-  if echo "$c" | grep -q '"passed": true'; then PASS=$((PASS+1)); fi
+for r in "$r1" "$r2" "$r3" "$r4" "$r5"; do
+  [[ "$r" == "pass" ]] && PASS=$((PASS+1))
 done
 
 SCORE=$(awk -v p="$PASS" -v t="$TOTAL" 'BEGIN{printf "%.4f", p/t}')

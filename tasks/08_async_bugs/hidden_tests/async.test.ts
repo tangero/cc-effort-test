@@ -1,4 +1,4 @@
-import { processSingle, processBatch, safeProcess, incrementAndGet } from '../../initial_repo/src/pipeline';
+import { processSingle, processBatch, safeProcess, incrementAndGet } from './pipeline';
 
 describe('Async correctness', () => {
   test('processSingle returns correct result (Bug 1: missing await)', async () => {
@@ -40,7 +40,7 @@ describe('Async correctness', () => {
   test('processBatch results have correct values (Bug 1+2 combined)', async () => {
     const results = await processBatch([1, 2, 3]);
     // id=1: value=10, result=20; id=2: value=20, result=40; id=3: value=30, result=60
-    const sorted = results.sort((a, b) => a.id - b.id);
+    const sorted = results.sort((a: {id: number}, b: {id: number}) => a.id - b.id);
     expect(sorted[0].result).toBe(20);
     expect(sorted[1].result).toBe(40);
     expect(sorted[2].result).toBe(60);
