@@ -1,0 +1,20 @@
+id: swe_sympy__sympy_11400
+type: swe_bench
+language: python
+python_version: "3.11"
+description: "SWE-bench instance: sympy__sympy-11400 (sympy/sympy)"
+
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
+
+install_cmd: "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true"
+test_cmd: "python3 -m pytest"
+
+success_criteria:
+  - fail_to_pass tests now pass
+  - pass_to_pass tests still pass

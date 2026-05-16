@@ -1,0 +1,27 @@
+{
+  "instance_id": "sympy__sympy-11400",
+  "dataset": "princeton-nlp/SWE-bench_Lite",
+  "repo": "sympy/sympy",
+  "base_commit": "8dcb12a6cf500e8738d6729ab954a261758f49ca",
+  "language": "python",
+  "python_version": "3.11",
+  "node_version": null,
+  "fail_to_pass": [
+    "test_ccode_Relational",
+    "test_ccode_sinc"
+  ],
+  "pass_to_pass": [
+    "test_printmethod",
+    "test_ccode_sqrt",
+    "test_ccode_Pow",
+    "test_ccode_constants_mathh",
+    "test_ccode_constants_other",
+    "test_ccode_Rational",
+    "test_ccode_Integer",
+    "test_ccode_functions",
+    "test_ccode_inline_function",
+    "test_ccode_exceptions"
+  ],
+  "install_cmd": "pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true",
+  "test_cmd": "python3 -m pytest"
+}
