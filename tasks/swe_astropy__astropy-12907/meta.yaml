@@ -3,6 +3,14 @@ type: swe_bench
 language: python
 python_version: "3.11"
 description: "SWE-bench instance: astropy__astropy-12907 (astropy/astropy)"
+bug_type:
+  - framework_regression
+  - swe_bench
+difficulty_axes:
+  codebase_size: large
+  signal_visibility: hidden
+  required_exploration: high
+  regression_risk: high
 
 allowed_tools:
   - Read

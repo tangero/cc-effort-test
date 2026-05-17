@@ -1,6 +1,13 @@
 id: 01_rename
 type: mechanical
 description: Rename the identifier userId to accountId across a synthetic TypeScript codebase.
+bug_type:
+  - mechanical_refactor
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: visible
+  required_exploration: low
+  regression_risk: low
 
 # Tools the model may invoke. Whitelist is intentionally narrow for this task.
 allowed_tools:

@@ -55,10 +55,18 @@ COLUMNS = [
     "effort",
     "run_number",
     "timestamp",
+    "provider",
     "auth_mode",
+    "reasoning_effort",
     "exit_code",
     "verify_passed",
     "verify_exit_code",
+    "run_valid",
+    "incomplete_reason",
+    "score",
+    "functional_score",
+    "scope_score",
+    "checks_json",
     "wall_clock_ms",
     "input_tokens",
     "output_tokens",
@@ -94,6 +102,11 @@ def _load_json(path: Path) -> dict[str, Any] | None:
         return None
 
 
+def _missing_inputs(run_dir: Path) -> list[str]:
+    required = ["run_meta.json", "metrics.json", "verify_result.json"]
+    return [f"missing {name}" for name in required if not (run_dir / name).is_file()]
+
+
 def _verify_passed(verify: dict[str, Any] | None) -> str:
     if verify is None:
         return ""
@@ -116,6 +129,8 @@ def row_for(run_dir: Path) -> dict[str, Any]:
     meta = _load_json(run_dir / "run_meta.json") or {}
     metrics = _load_json(run_dir / "metrics.json") or {}
     verify = _load_json(run_dir / "verify_result.json")
+    missing = _missing_inputs(run_dir)
+    valid = not missing and bool(meta) and bool(metrics) and verify is not None
 
     total_tokens = (
         (metrics.get("input_tokens") or 0)
@@ -131,10 +146,20 @@ def row_for(run_dir: Path) -> dict[str, Any]:
         "effort": meta.get("effort", ""),
         "run_number": meta.get("run_number", ""),
         "timestamp": meta.get("timestamp", ""),
+        "provider": meta.get("provider", "claude" if meta else ""),
         "auth_mode": meta.get("auth_mode", ""),
+        "reasoning_effort": meta.get("reasoning_effort", meta.get("effort", "")),
         "exit_code": meta.get("exit_code", ""),
         "verify_passed": _verify_passed(verify),
         "verify_exit_code": meta.get("verify_exit_code", ""),
+        "run_valid": "true" if valid else "false",
+        "incomplete_reason": ";".join(missing),
+        "score": verify.get("score", "") if verify else "",
+        "functional_score": verify.get("functional_score", verify.get("score", ""))
+        if verify
+        else "",
+        "scope_score": verify.get("scope_score", "") if verify else "",
+        "checks_json": json.dumps(verify.get("checks", {}), sort_keys=True) if verify else "",
         "wall_clock_ms": meta.get("wall_clock_ms", ""),
         "input_tokens": metrics.get("input_tokens", ""),
         "output_tokens": metrics.get("output_tokens", ""),
@@ -156,7 +181,7 @@ def row_for(run_dir: Path) -> dict[str, Any]:
     }
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--runs-dir",
@@ -170,7 +195,7 @@ def main() -> int:
         default=None,
         help="output CSV path (default: stdout)",
     )
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
     if not args.runs_dir.is_dir():
         print(f"Error: runs dir not found: {args.runs_dir}", file=sys.stderr)

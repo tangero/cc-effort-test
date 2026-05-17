@@ -107,6 +107,12 @@ done
 
 # Diff is reported but not counted in score (it's a sanity signal, not a pass/fail).
 SCORE=$(awk -v p="$PASSED" -v t="$TOTAL" 'BEGIN { printf "%.4f", p / t }')
+FUNCTIONAL_SCORE="$SCORE"
+if echo "$CHECK_DIFF" | jq -e '.passed == true' >/dev/null 2>&1; then
+    SCOPE_SCORE="1.0000"
+else
+    SCOPE_SCORE="0.0000"
+fi
 if [[ "$PASSED" -eq "$TOTAL" ]]; then
     SUCCESS="true"
 else
@@ -117,6 +123,8 @@ cat <<EOF
 {
   "success": $SUCCESS,
   "score": $SCORE,
+  "functional_score": $FUNCTIONAL_SCORE,
+  "scope_score": $SCOPE_SCORE,
   "checks": {
     "userId_eliminated": $CHECK_USERID_GONE,
     "accountId_present": $CHECK_ACCOUNTID_PRESENT,
@@ -124,7 +132,9 @@ cat <<EOF
     "distractor_useridx": $CHECK_DISTRACTOR_IDX,
     "distractor_UserID_comment": $CHECK_DISTRACTOR_UPPER,
     "tsc_compiles": $CHECK_TSC,
-    "tests_pass": $CHECK_JEST,
+    "tests_pass": $CHECK_JEST
+  },
+  "diagnostics": {
     "diff_size": $CHECK_DIFF
   },
   "counts": {

@@ -2,6 +2,14 @@ id: 07_security_audit
 type: security
 language: typescript
 description: "Najít a opravit bezpečnostní chyby v TypeScript Express API (SQL injection, XSS, exposure)"
+bug_type:
+  - security_audit
+  - hidden_vulnerabilities
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: latent
+  required_exploration: high
+  regression_risk: high
 
 allowed_tools:
   - Read

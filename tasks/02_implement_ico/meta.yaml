@@ -1,6 +1,13 @@
 id: 02_implement_ico
 type: specified_implementation
 description: Implementovat TypeScript funkci validateICO dle přesné specifikace algoritmu.
+bug_type:
+  - specified_algorithm
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: visible
+  required_exploration: low
+  regression_risk: low
 
 allowed_tools:
   - Read

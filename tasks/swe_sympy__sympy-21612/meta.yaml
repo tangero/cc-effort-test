@@ -3,6 +3,15 @@ type: swe_bench
 language: python
 python_version: "3.11"
 description: "SWE-bench instance: sympy__sympy-21612 (sympy/sympy)"
+bug_type:
+  - framework_regression
+  - expression_printing
+  - swe_bench
+difficulty_axes:
+  codebase_size: large
+  signal_visibility: hidden
+  required_exploration: medium
+  regression_risk: high
 
 allowed_tools:
   - Read

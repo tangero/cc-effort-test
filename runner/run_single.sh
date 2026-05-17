@@ -144,6 +144,14 @@ fi
 # --- Load prompt ------------------------------------------------------------
 PROMPT="$(cat "$TASK_DIR_ABS/prompt.txt")"
 CLAUDE_VERSION="$(claude --version 2>/dev/null | head -1 || echo 'unknown')"
+NODE_VERSION="$(node --version 2>/dev/null | head -1 || echo 'unknown')"
+PYTHON_VERSION_ACTUAL="$(python3 --version 2>/dev/null | head -1 || echo 'unknown')"
+NPM_VERSION="$(npm --version 2>/dev/null | head -1 || echo 'unknown')"
+UNAME="$(uname -a 2>/dev/null || echo 'unknown')"
+USER_CLAUDE_MD_PRESENT="false"
+if [[ -f "$HOME/.claude/CLAUDE.md" && -s "$HOME/.claude/CLAUDE.md" ]]; then
+    USER_CLAUDE_MD_PRESENT="true"
+fi
 
 # --- Execute Claude Code ----------------------------------------------------
 echo "[$(date -Iseconds)] Starting run: $RUN_ID" >&2
@@ -223,8 +231,10 @@ cat > "$RESULT_DIR/run_meta.json" <<EOF
 {
   "run_id": "$RUN_ID",
   "task": "$TASK_ID",
+  "provider": "claude",
   "model": "$MODEL",
   "effort": "$EFFORT",
+  "reasoning_effort": "$EFFORT",
   "run_number": $RUN_N,
   "exit_code": $EXIT_CODE,
   "verify_exit_code": $VERIFY_EXIT,
@@ -234,6 +244,14 @@ cat > "$RESULT_DIR/run_meta.json" <<EOF
   "ended_at_ns": $END_NS,
   "timestamp": "$(date -Iseconds)",
   "claude_version": "$CLAUDE_VERSION",
+  "node_version": "$NODE_VERSION",
+  "python_version": "$PYTHON_VERSION_ACTUAL",
+  "npm_version": "$NPM_VERSION",
+  "uname": "$UNAME",
+  "user_config_present": $USER_CLAUDE_MD_PRESENT,
+  "matrix_seed": "${MATRIX_SEED:-}",
+  "matrix_manifest": "${MATRIX_MANIFEST:-}",
+  "matrix_index": "${MATRIX_INDEX:-}",
   "max_budget_usd": $MAX_BUDGET_USD,
   "allowed_tools": "$ALLOWED_TOOLS",
   "auth_mode": "$AUTH_MODE"
