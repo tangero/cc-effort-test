@@ -285,18 +285,38 @@ Když přidáváš novou instanci a její low-effort run dosahuje neočekávané
 | **Debug bez testu = nulový efekt** | `03_debug_order` Bug B: nenalezen ani max effortem (název maskoval intent) |
 | **3 různé módy selhání low effort** | overconfidence (16820), underexploration (16408), indecision (22840) |
 
-### Failure módy low effort na obtížných SWE-bench
+### Plný effort gradient na 3 obtížných SWE-bench instancích (3 runy/cell)
 
-Po importu 4 hard kandidátů jsme pozorovali 4 různá chování při low effort:
+Po komplet matici 36 cells (3 instance × 4 efforts × 3 runy):
 
-| Instance | Score | Tools | Failure mode |
-|----------|-------|-------|--------------|
-| `django-16379` | 1.0 | 3 | (snadná — low stačí) |
-| `django-16408` | 0.0 | 19 | **Underexploration** — malý fix bez pochopení (2 řádky) |
-| `django-16820` | 0.0 | 28 | **Overconfidence** — velký fix (73 řádků) rozbil regression testy |
-| `sympy-22840` | 0.5 | 0 | **Indecision** — popsal problém, neprovedl změnu, zeptal se "want me to dig in?" |
+| Instance | low | medium | high | max | Charakteristika |
+|----------|-----|--------|------|-----|-----------------|
+| `django-16408` | **25%** ❌ | 100% ✅ | 100% ✅ | 100% ✅ | Ostrý práh medium |
+| `django-16820` | **25%** ❌ | 100% ✅ | 67% ⚠️ | 100% ✅ | Ostrý práh medium, high inkonzistence |
+| `sympy-22840` | 25% ❌ | 0%+ ⚠️ | 0%+ ⚠️ | **60%** ⚠️ | Pozvolný gradient — max má hodnotu |
 
-To napovídá, že `--effort` ovlivňuje nejen *kolik* model přemýšlí, ale i *jakým způsobem* přistupuje k nejistotě. Higher effort vede k *cílenějšímu* průzkumu místo unáhlených nebo nerozhodných kroků.
+`sympy-22840` je nejcennější: bug má **dva nezávislé aspekty** (CSE detection + C codegen). Použili jsme per-test scoring (každý FAIL_TO_PASS test = samostatný check) a vidíme:
+
+| effort | typicky dosažené score | co model dělá |
+|--------|------------------------|---------------|
+| low    | 0.33 (1/3) | chápe bug, ale neopraví |
+| medium | 0.67 (2/3) | opraví CSE část, přehlédne codegen |
+| high   | 0.67 (2/3) | stejné jako medium |
+| max    | 1.00 (3/3) v 60 % runů | opraví **oba** aspekty |
+
+To je jediná instance, kde **max přináší měřitelný benefit nad high** — pro multi-aspect bugy stojí za to zaplatit.
+
+### Failure módy low effort
+
+Při průzkumu hard instancí jsme pozorovali 3 různá chování při low:
+
+| Mode | Příklad | Co se děje |
+|------|---------|-----------|
+| **Underexploration** | django-16408 | Malý fix (2 řádky) bez hlubšího pochopení |
+| **Overconfidence** | django-16820 | Velký fix (73 řádků) rozbije regression testy |
+| **Indecision** | sympy-22840 low | Popíše problém, neprovede změnu, zeptá se "want me to dig in?" |
+
+To napovídá, že `--effort` ovlivňuje nejen *kolik* model přemýšlí, ale i *jakým způsobem* přistupuje k nejistotě.
 
 ### Doporučení pro volbu effort úrovně
 
