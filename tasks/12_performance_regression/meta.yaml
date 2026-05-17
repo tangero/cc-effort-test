@@ -1,0 +1,18 @@
+id: 12_performance_regression
+type: performance_regression
+language: typescript
+description: N+1 query regression with a tenant-isolation trap for naive caching fixes.
+bug_type:
+  - performance_regression
+  - n_plus_one_query
+  - tenant_isolation
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: hidden
+  required_exploration: medium
+  regression_risk: high
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - Query count is bounded for many invoices
+  - Customer lookup remains tenant-scoped
+  - Existing invoice output shape is preserved

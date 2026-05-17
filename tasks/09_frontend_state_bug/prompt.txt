@@ -1,0 +1,5 @@
+Users report that route analytics keeps logging the old navigation type after client-side navigation.
+
+Find and fix the root cause in `src/navigation.ts`.
+
+Do not modify test files. Preserve the existing public API.

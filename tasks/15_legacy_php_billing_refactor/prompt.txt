@@ -1,0 +1,3 @@
+The TypeScript billing calculator in src/billing.ts was ported from legacy/BillingCalculator.php, but the port changed behavior in several edge cases.
+
+Refactor the TypeScript implementation so it preserves the legacy behavior while keeping the public TypeScript API unchanged. Use the PHP file as the behavioral reference. Do not modify tests.

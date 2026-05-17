@@ -1,0 +1,18 @@
+id: 10_api_contract_regression
+type: api_contract_regression
+language: typescript
+description: JSON Schema to OpenAPI conversion loses edge-case contract fields.
+bug_type:
+  - api_contract_regression
+  - schema_drift
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: hidden
+  required_exploration: medium
+  regression_risk: high
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - Unsupported JSON Schema keywords are removed recursively
+  - Real JSON references are rewritten
+  - User properties literally named $ref are preserved
+  - Examples and nullable fields are preserved

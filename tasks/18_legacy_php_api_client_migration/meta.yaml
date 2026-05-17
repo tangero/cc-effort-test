@@ -1,0 +1,17 @@
+id: 18_legacy_php_api_client_migration
+type: refactoring
+language: typescript
+bug_type: legacy_refactor
+description: "Migrate a legacy PHP payment gateway flow to an injected TypeScript API client while preserving behavior."
+difficulty_axes:
+  - behavior_preservation
+  - api_client_migration
+  - idempotency
+  - error_mapping
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash

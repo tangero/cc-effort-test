@@ -1,0 +1,3 @@
+The expense report workflow in src/expenseReport.ts is a TypeScript port of legacy/ExpenseReport.java. The port passes simple cases but changed several policy details.
+
+Repair the TypeScript implementation so it preserves the legacy Java behavior. Keep the exported TypeScript API unchanged and do not modify tests.

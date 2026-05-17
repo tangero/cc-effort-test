@@ -1,0 +1,5 @@
+The sequence allocator occasionally emits duplicate sequence numbers under concurrent load.
+
+Find and fix the nondeterministic root cause in `src/sequencer.ts`.
+
+Do not modify test files. Preserve the exported API and result order.

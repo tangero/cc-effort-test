@@ -1,0 +1,5 @@
+An internal security review found that some combined authorization checks may allow access when only one condition passes.
+
+Find and fix the root cause in `src/authz.ts`.
+
+Do not modify test files. Authentication and single-condition authorization behavior must keep working.

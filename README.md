@@ -111,6 +111,16 @@ results/
 | `06_strict_scope` | Scope compliance | Přidat validaci jen do jednoho souboru, nerozšiřovat scope | ⚠️ 33% |
 | `07_security_audit` | Security | 5 bezpečnostních chyb v Express API (SQL injection, XSS) | ✅ 100% |
 | `08_async_bugs` | Debugging | 4-5 async/Promise bugů v TypeScript pipeline | ✅ 100% |
+| `09_frontend_state_bug` | Frontend state | Stale state v long-lived navigačním callbacku | nová úloha |
+| `10_api_contract_regression` | API contract | JSON Schema → OpenAPI edge-case drift | nová úloha |
+| `11_auth_permission_bug` | Auth/security | Bypass kombinovaných authorization checks | nová úloha |
+| `12_performance_regression` | Performance | N+1 query s tenant-isolation pastí | nová úloha |
+| `13_flaky_nondeterministic_bug` | Flaky/race | Race v concurrent sequence allocatoru | nová úloha |
+| `14_build_config_failure` | Build/config | Scoped ESM/CJS/JSON config interop | nová úloha |
+| `15_legacy_php_billing_refactor` | Legacy refactor | Port starého PHP billing kalkulátoru do TypeScriptu | nová úloha |
+| `16_legacy_java_expense_report_refactor` | Legacy refactor | Port starého Java expense workflow do TypeScriptu | nová úloha |
+| `17_legacy_java_sql_repository_refactor` | Legacy refactor/security | Java SQL repository migrace na parametrizovaný query plán | nová úloha |
+| `18_legacy_php_api_client_migration` | Legacy refactor/API | PHP payment API client migrace na injektovaný TypeScript klient | nová úloha |
 | `swe_sympy__sympy-24909` | SWE-bench | `milli*W == 1` vrací True | ⚠️ ~50% |
 | `swe_sympy__sympy-22840` | SWE-bench | `cse()` extrahuje `MatrixSymbol` jako common subexpression | ⚠️ 50% (low neprovedl změnu) |
 | `swe_django__django-16379` | SWE-bench | `FileBasedCache.has_key` race condition | ✅ 100% |

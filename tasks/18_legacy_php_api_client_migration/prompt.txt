@@ -1,0 +1,3 @@
+src/paymentGateway.ts is a TypeScript migration of legacy/StripeGateway.php. The migration should use the injected client, not global state, and preserve legacy behavior around idempotency, metadata and error handling.
+
+Fix the TypeScript implementation while keeping the exported API unchanged. Do not modify tests.

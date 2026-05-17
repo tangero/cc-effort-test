@@ -1,0 +1,17 @@
+id: 16_legacy_java_expense_report_refactor
+type: refactoring
+language: typescript
+bug_type: legacy_refactor
+description: "Refactor a TypeScript port of a legacy Java expense report workflow while preserving policy behavior."
+difficulty_axes:
+  - behavior_preservation
+  - cross_language_migration
+  - policy_matrix
+  - boundary_conditions
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash

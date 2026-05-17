@@ -1,0 +1,17 @@
+id: 13_flaky_nondeterministic_bug
+type: flaky_nondeterministic_bug
+language: typescript
+description: Concurrent sequence allocation has a race that visible tests rarely expose.
+bug_type:
+  - flaky_nondeterministic_bug
+  - runtime_race_condition
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: hidden
+  required_exploration: high
+  regression_risk: high
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - Concurrent allocations produce unique contiguous sequences
+  - Repeated hidden runs are deterministic
+  - Input result order is preserved

@@ -1,0 +1,5 @@
+The invoice listing endpoint is correct for small fixtures but becomes slow on tenant accounts with many invoices.
+
+Find and fix the root cause in `src/repository.ts`.
+
+Do not modify test files. Preserve tenant isolation.

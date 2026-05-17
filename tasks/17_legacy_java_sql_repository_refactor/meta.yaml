@@ -1,0 +1,17 @@
+id: 17_legacy_java_sql_repository_refactor
+type: refactoring
+language: typescript
+bug_type: legacy_refactor_security
+description: "Refactor a legacy Java SQL repository port into safe TypeScript query planning without changing query semantics."
+difficulty_axes:
+  - behavior_preservation
+  - security
+  - query_semantics
+  - tenant_isolation
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash

@@ -1,0 +1,5 @@
+The OpenAPI 3.0 schema converter is producing invalid or incomplete API contracts for some customer models.
+
+Find and fix the root cause in `src/schema.ts`.
+
+Do not modify test files. Preserve support for real JSON references and existing schema fields.

@@ -1,0 +1,3 @@
+src/userRepository.ts is a TypeScript port of legacy/UserRepository.java. The port should preserve the repository query semantics, but it currently has security and filtering regressions.
+
+Fix the TypeScript implementation. Keep the exported API unchanged: buildUserSearchQuery must return a QueryPlan with sql and params. Do not modify tests.

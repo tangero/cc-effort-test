@@ -1,0 +1,18 @@
+id: 14_build_config_failure
+type: build_config_failure
+language: typescript
+description: Build config loader supports CommonJS/JSON but fails scoped ESM configs.
+bug_type:
+  - build_config_failure
+  - esm_cjs_interop
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: hidden
+  required_exploration: medium
+  regression_risk: high
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - ESM default configs load
+  - CommonJS configs still load
+  - JSON configs still load
+  - The package is not globally converted to ESM

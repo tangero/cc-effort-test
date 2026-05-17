@@ -54,6 +54,66 @@ TASK_META = {
         "desc_en": "Find and fix 4–5 async/Promise bugs in TypeScript pipeline.",
         "type": "synthetic",
     },
+    "09_frontend_state_bug": {
+        "label_cs": "Frontend State Bug", "label_en": "Frontend State Bug",
+        "desc_cs": "Stale state v dlouho žijícím callbacku navigační analytiky.",
+        "desc_en": "Stale state in a long-lived navigation analytics callback.",
+        "type": "synthetic",
+    },
+    "10_api_contract_regression": {
+        "label_cs": "API Contract Regression", "label_en": "API Contract Regression",
+        "desc_cs": "JSON Schema → OpenAPI drift: $ref property, const, nullable, examples.",
+        "desc_en": "JSON Schema → OpenAPI drift: $ref property, const, nullable, examples.",
+        "type": "synthetic",
+    },
+    "11_auth_permission_bug": {
+        "label_cs": "Auth Permission Bug", "label_en": "Auth Permission Bug",
+        "desc_cs": "Bypass kombinovaných authorization checks a redirect options.",
+        "desc_en": "Bypass in combined authorization checks and redirect options.",
+        "type": "synthetic",
+    },
+    "12_performance_regression": {
+        "label_cs": "Performance Regression", "label_en": "Performance Regression",
+        "desc_cs": "N+1 query s tenant-isolation pastí pro naivní cache.",
+        "desc_en": "N+1 query with a tenant-isolation trap for naive caching.",
+        "type": "synthetic",
+    },
+    "13_flaky_nondeterministic_bug": {
+        "label_cs": "Flaky Nondeterministic Bug", "label_en": "Flaky Nondeterministic Bug",
+        "desc_cs": "Race condition v concurrent sequence allocatoru.",
+        "desc_en": "Race condition in a concurrent sequence allocator.",
+        "type": "synthetic",
+    },
+    "14_build_config_failure": {
+        "label_cs": "Build Config Failure", "label_en": "Build Config Failure",
+        "desc_cs": "Scoped ESM/CJS/JSON build config interop bez globální konverze.",
+        "desc_en": "Scoped ESM/CJS/JSON build config interop without global conversion.",
+        "type": "synthetic",
+    },
+    "15_legacy_php_billing_refactor": {
+        "label_cs": "Legacy PHP Billing Refactor", "label_en": "Legacy PHP Billing Refactor",
+        "desc_cs": "Zachovat chování starého PHP billing kalkulátoru při TypeScript portu.",
+        "desc_en": "Preserve legacy PHP billing calculator behavior in a TypeScript port.",
+        "type": "synthetic",
+    },
+    "16_legacy_java_expense_report_refactor": {
+        "label_cs": "Legacy Java Expense Refactor", "label_en": "Legacy Java Expense Refactor",
+        "desc_cs": "Zachovat Java expense workflow politiku při TypeScript portu.",
+        "desc_en": "Preserve Java expense workflow policy behavior in a TypeScript port.",
+        "type": "synthetic",
+    },
+    "17_legacy_java_sql_repository_refactor": {
+        "label_cs": "Legacy Java SQL Repository", "label_en": "Legacy Java SQL Repository",
+        "desc_cs": "Migrace Java SQL repository na parametrizovaný TypeScript query plán.",
+        "desc_en": "Migrate a Java SQL repository to parameterized TypeScript query planning.",
+        "type": "synthetic",
+    },
+    "18_legacy_php_api_client_migration": {
+        "label_cs": "Legacy PHP API Client Migration", "label_en": "Legacy PHP API Client Migration",
+        "desc_cs": "Migrace PHP payment klienta na injektovaný TypeScript API klient.",
+        "desc_en": "Migrate a PHP payment client to an injected TypeScript API client.",
+        "type": "synthetic",
+    },
     "swe_sympy__sympy-24909": {
         "label_cs": "SWE: sympy milli prefix", "label_en": "SWE: sympy milli prefix",
         "desc_cs": "milli*W == 1 vrací True místo False. SWE-bench Lite #24909.",
@@ -275,6 +335,8 @@ def main():
   .controls{float:right;margin-top:.3rem;display:flex;gap:.5rem;}
   .controls button{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:.3rem .8rem;border-radius:6px;cursor:pointer;font-size:.85rem;transition:.2s;}
   .controls button.active,.controls button:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .model-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:.3rem .8rem;border-radius:6px;cursor:pointer;font-size:.85rem;transition:.2s;margin-right:.3rem;}
+  .model-btn.active,.model-btn:hover{background:#a855f7;color:#fff;border-color:#a855f7;}
   section{padding:2.5rem 0;border-bottom:1px solid var(--border);}
   h2{font-size:1.4rem;font-weight:700;margin-bottom:1rem;color:#fff;}
   h3{font-size:1.1rem;font-weight:600;margin-bottom:.6rem;color:#e2e8f0;}
@@ -310,7 +372,9 @@ def main():
 
     body = (
         '<header><div class="container">'
-        '<div class="controls"><button onclick="setLang(\'cs\')" id="btn-cs" class="active">CS</button>'
+        '<div class="controls">'
+        '<span id="model-sel" style="margin-right:.75rem;"></span>'
+        '<button onclick="setLang(\'cs\')" id="btn-cs" class="active">CS</button>'
         '<button onclick="setLang(\'en\')" id="btn-en">EN</button></div>'
         '<h1>Agent Effort Benchmark <span class="badge">Phase 1+SWE</span></h1>'
         '<p id="hdr-sub">Empirické měření dopadu reasoning effort napříč providery a modely</p>'
@@ -561,7 +625,21 @@ const i18n = {
 
 let lang = navigator.language.startsWith('en') ? 'en' : 'cs';
 const charts = {};
-const model = Object.keys(DATA)[0];
+let model = Object.keys(DATA)[0];
+const MODELS = Object.keys(DATA);
+const MODEL_LABELS = {"claude:claude-opus-4-7":"Opus 4.7","claude:claude-sonnet-4-6":"Sonnet 4.6","kimi:kimi-k2.6":"Kimi k2.6"};
+
+function setModel(m){
+  model=m;
+  MODELS.forEach(md=>{const b=document.getElementById('btn-'+md);if(b)b.classList.toggle('active',md===m);});
+  renderAll();
+}
+
+function buildModelSelector(){
+  const wrap=document.getElementById('model-sel');
+  if(!wrap||MODELS.length<2)return;
+  wrap.innerHTML=MODELS.map(md=>'<button id="btn-'+md+'" class="model-btn'+(md===model?' active':'')+'" onclick="setModel(\''+md+'\')">'+(MODEL_LABELS[md]||md)+'</button>').join('');
+}
 const _RF=['t','c','tc','score','ok','in','out','cr','cc','th','it','fs','ss'];
 function _U(a){return Object.fromEntries(_RF.map((k,i)=>[k,a[i]]));}
 for(const M in DATA)for(const T in DATA[M])for(const E in DATA[M][T])
@@ -948,7 +1026,7 @@ function renderAll() {
   if(errs.length){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;white-space:pre-wrap;';d.textContent='JS ERRORS:\n'+errs.join('\n');document.body.appendChild(d);}
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{ try{setLang(lang);}catch(e){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;';d.textContent='INIT ERROR: '+e.message;document.body.appendChild(d);} });
+document.addEventListener('DOMContentLoaded', ()=>{ try{buildModelSelector();setLang(lang);}catch(e){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;';d.textContent='INIT ERROR: '+e.message;document.body.appendChild(d);} });
 """
 
     html = (

@@ -1,0 +1,18 @@
+id: 09_frontend_state_bug
+type: frontend_state_bug
+language: typescript
+description: Stale navigation state in a long-lived frontend subscription callback.
+bug_type:
+  - frontend_state_bug
+  - stale_closure
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: hidden
+  required_exploration: medium
+  regression_risk: medium
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - Subscription callbacks use the latest router snapshot
+  - Manual flush reads current navigation state
+  - Dispose still removes the subscription
+  - Test files are not modified

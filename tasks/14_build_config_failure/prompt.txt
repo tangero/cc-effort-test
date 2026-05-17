@@ -1,0 +1,5 @@
+Some workspace packages fail to build after adopting ESM-style build config files, while older CommonJS and JSON configs must keep working.
+
+Find and fix the root cause in `src/configLoader.ts`.
+
+Do not switch the whole package to ESM. Do not modify test files.

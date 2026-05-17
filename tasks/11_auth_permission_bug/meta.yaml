@@ -1,0 +1,17 @@
+id: 11_auth_permission_bug
+type: auth_permission_bug
+language: typescript
+description: Combined authorization dimensions use permissive logic and redirect options bypass checks.
+bug_type:
+  - auth_permission_bug
+  - authorization_bypass
+difficulty_axes:
+  codebase_size: small
+  signal_visibility: latent
+  required_exploration: high
+  regression_risk: high
+allowed_tools: [Read, Edit, Write, Glob, Grep, Bash]
+success_criteria:
+  - Combined checks require every requested dimension
+  - Redirect options do not discard authorization requirements
+  - Single-condition checks keep existing behavior

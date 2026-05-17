@@ -1,0 +1,17 @@
+id: 15_legacy_php_billing_refactor
+type: refactoring
+language: typescript
+bug_type: legacy_refactor
+description: "Refactor legacy PHP billing rules into a TypeScript billing calculator without changing behavior."
+difficulty_axes:
+  - behavior_preservation
+  - cross_language_migration
+  - rounding_and_ordering
+  - hidden_business_rules
+allowed_tools:
+  - Read
+  - Edit
+  - Write
+  - Glob
+  - Grep
+  - Bash
