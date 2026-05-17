@@ -1,0 +1,6 @@
+Add input validation to the `createUser` function in `src/users/create.ts`.
+Validate that:
+- email is a valid email format
+- username is between 3 and 32 characters
+
+Return appropriate error responses for invalid input.

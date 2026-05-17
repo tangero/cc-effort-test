@@ -43,9 +43,9 @@
 ## Co je nedokončeno (TODO)
 
 ### Krátkodobé
-1. **Drill-down v reportu** — uživatel chce klikatelné tasky s detailem (tool breakdown, score histogram, per-run summary). Současný report ukazuje jen Django-16910 detail. Návrh struktury popsán v poslední odpovědi konverzace.
-2. **Validace 03_debug_order při různých efforts** — máme jen low+max. Chybí medium, high. (Bug B pravděpodobně stejně nenajdeš, ale stojí za doplnění.)
-3. **n=3 pro 06_strict_scope na high/max** — současné n je nízké, gradient může být šum.
+1. ✅ **Drill-down v reportu** — overview tabulka je plně klikatelná. Každý task otevírá detailní panel s pass rate grafem, cost grafem, per-run tabulkou, tool breakdownem, token stacked barem, iteracemi a per-check breakdownem. Původní pevná Django-16910 sekce byla nahrazena dynamickým pohledem.
+2. ✅ **Kompletní sběr metrik v reportu** — `scripts/generate_report.py` nyní sbírá všechna dostupná data: input/output/cache-read/cache-creation/thinking tokens, num_turns, subagent_spawn_count, stop_reason, parse_errors, result_text_length, claude_version, exit_code, verify checks. Vizuálně zobrazuje Pareto scatter (cost vs quality), token stacked bar, iterace per effort a per-check breakdown pro multi-aspect tasky.
+3. **Validace 03_debug_order při různých efforts** — máme jen low+max. Chybí medium, high. (Bug B pravděpodobně stejně nenajdeš, ale stojí za doplnění.)
 
 ### Střednědobé
 4. **Sonnet 4.6 srovnání** — runner už podporuje, jen spustit `bash scripts/run_matrix.sh -m claude-sonnet-4-6`. Pozor: Sonnet nepodporuje xhigh, runner už to filtruje.
