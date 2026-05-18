@@ -256,7 +256,7 @@ def main():
     tools_js = build_tools_js(runs_by)
     # Strip cs labels to save space; keep only en + type
     task_meta_js = json.dumps(
-        {tid: {"l":m.get("label_en",""),"d":m.get("desc_en",""),"y":m.get("type","")} for tid, m in TASK_META.items()},
+        {tid: {"l":m.get("label_en",tid),"d":m.get("desc_en",""),"y":m.get("type","")} for tid, m in TASK_META.items()},
         ensure_ascii=False
     )
     task_order_js = json.dumps(list(TASK_META.keys()))
@@ -454,9 +454,9 @@ const TASK_META = """ + task_meta_js + """;
 const TASK_ORDER = """ + task_order_js + """;
 """ + data_js + """
 """ + checks_js + """
-
-
-
+const TOOLS={};
+const SWE_FINDINGS={};
+const REC_ROWS={};
 
 const i18n={
   en:{
@@ -474,7 +474,7 @@ const i18n={
   }
 };
 
-let lang = navigator.language.startsWith('en') ? 'en' : 'cs';
+let lang = 'en';
 const charts = {};
 let model = Object.keys(DATA)[0];
 const MODELS = Object.keys(DATA);
@@ -489,7 +489,8 @@ function setModel(m){
 function buildModelSelector(){
   const wrap=document.getElementById('model-sel');
   if(!wrap||MODELS.length<2)return;
-  wrap.innerHTML=MODELS.map(md=>'<button id="btn-'+md+'" class="model-btn'+(md===model?' active':'')+'" onclick="setModel(\''+md+'\')">'+(MODEL_LABELS[md]||md)+'</button>').join('');
+  wrap.innerHTML=MODELS.map(md=>'<button id="btn-'+md+'" class="model-btn'+(md===model?' active':'')+'" data-model="'+md+'">'+(MODEL_LABELS[md]||md)+'</button>').join('');
+  wrap.addEventListener('click',e=>{const m=e.target.dataset.model;if(m)setModel(m);});
 }
 const _RF=['t','c','tc','score','ok','in','out','cr','cc','th','it'];
 function _U(a){return Object.fromEntries(_RF.map((k,i)=>[k,a[i]]));}
@@ -874,7 +875,7 @@ function renderAll() {
     renderTimeEfficiency, renderSynthCharts, renderRec
   ].forEach(fn=>{ try{fn();}catch(e){errs.push(fn.name+': '+e.message);} });
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(i18n[lang][k])el.innerHTML=i18n[lang][k];});
-  if(errs.length){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;white-space:pre-wrap;';d.textContent='JS ERRORS:\n'+errs.join('\n');document.body.appendChild(d);}
+  if(errs.length){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;white-space:pre-wrap;';d.textContent='JS ERRORS:\\n'+errs.join('\\n');document.body.appendChild(d);}
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{ try{buildModelSelector();setLang(lang);}catch(e){const d=document.createElement('div');d.style.cssText='position:fixed;top:0;left:0;right:0;background:#450a0a;color:#fca5a5;padding:1rem;z-index:9999;font-family:monospace;';d.textContent='INIT ERROR: '+e.message;document.body.appendChild(d);} });
