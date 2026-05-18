@@ -1,0 +1,9 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:05:53+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_high_run3_1779105945
+  task=03_debug_order  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.7T0lQdjOlj
+[2026-05-18T14:06:14+02:00] Claude exited code=0 wall=20335ms
+[2026-05-18T14:06:21+02:00] Completed: 03_debug_order_claude-sonnet-4-6_high_run3_1779105945
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_high_run3_1779105945

@@ -1,0 +1,177 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:17:09+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_low_run1_1779016622
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.c96opyrUvk
+[2026-05-17T13:18:15+02:00] Claude exited code=0 wall=66628ms
+[2026-05-17T13:18:24+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_low_run1_1779016622
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_low_run1_1779016622
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:18:33+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_low_run3_1779016705
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.sFHQDQJuGs
+[2026-05-17T13:19:27+02:00] Claude exited code=0 wall=54615ms
+[2026-05-17T13:19:34+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_low_run3_1779016705
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_low_run3_1779016705
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:19:42+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_medium_run2_1779016775
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.LG1AQwSOVw
+[2026-05-17T13:20:46+02:00] Claude exited code=0 wall=63719ms
+[2026-05-17T13:20:53+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_medium_run2_1779016775
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_medium_run2_1779016775
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:21:01+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_high_run1_1779016855
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.uGMzgW47Yj
+[2026-05-17T13:22:42+02:00] Claude exited code=0 wall=101237ms
+[2026-05-17T13:22:49+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_high_run1_1779016855
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_high_run1_1779016855
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:22:57+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_high_run3_1779016970
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.mY1T0DYS5O
+[2026-05-17T13:23:48+02:00] Claude exited code=0 wall=51347ms
+[2026-05-17T13:23:55+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_high_run3_1779016970
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_high_run3_1779016970
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:24:02+02:00] Starting run: 02_implement_ico_claude-sonnet-4-6_max_run2_1779017036
+  task=02_implement_ico  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.88TlAKEDXy
+[2026-05-17T13:24:55+02:00] Claude exited code=0 wall=52930ms
+[2026-05-17T13:25:02+02:00] Completed: 02_implement_ico_claude-sonnet-4-6_max_run2_1779017036
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/02_implement_ico_claude-sonnet-4-6_max_run2_1779017036
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:25:10+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_low_run1_1779017103
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.jDW3LLncZw
+[2026-05-17T13:25:27+02:00] Claude exited code=0 wall=17259ms
+[2026-05-17T13:25:33+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_low_run1_1779017103
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_low_run1_1779017103
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:25:40+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_low_run2_1779017134
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.gLm6iaUSLD
+[2026-05-17T13:25:54+02:00] Claude exited code=0 wall=13804ms
+[2026-05-17T13:26:02+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_low_run2_1779017134
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_low_run2_1779017134
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:26:12+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_medium_run1_1779017163
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.PIUovaZd1d
+[2026-05-17T13:26:29+02:00] Claude exited code=0 wall=16945ms
+[2026-05-17T13:26:36+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_medium_run1_1779017163
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_medium_run1_1779017163
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:26:46+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_medium_run3_1779017198
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.9d5YTU7chw
+[2026-05-17T13:27:09+02:00] Claude exited code=0 wall=22765ms
+[2026-05-17T13:27:17+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_medium_run3_1779017198
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_medium_run3_1779017198
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:27:28+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_high_run1_1779017239
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.SoGPsZmAzy
+[2026-05-17T13:27:51+02:00] Claude exited code=0 wall=22631ms
+[2026-05-17T13:27:56+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_high_run1_1779017239
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_high_run1_1779017239
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:28:07+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_high_run3_1779017277
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Ye9B5z3711
+[2026-05-17T13:28:54+02:00] Claude exited code=0 wall=47422ms
+[2026-05-17T13:29:01+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_high_run3_1779017277
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_high_run3_1779017277
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-17T13:29:08+02:00] Starting run: 06_strict_scope_claude-sonnet-4-6_max_run3_1779017342
+  task=06_strict_scope  model=claude-sonnet-4-6  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.HsHYuesMvT
+[2026-05-17T13:29:43+02:00] Claude exited code=0 wall=35109ms
+[2026-05-17T13:29:49+02:00] Completed: 06_strict_scope_claude-sonnet-4-6_max_run3_1779017342
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-sonnet-4-6_max_run3_1779017342
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:29:58+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_low_run2_1779017391
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.yJa18A7SZK
+[2026-05-17T13:30:27+02:00] Claude exited code=0 wall=29197ms
+[2026-05-17T13:30:31+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_low_run2_1779017391
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_low_run2_1779017391
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:30:37+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_medium_run1_1779017432
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.VXk841o54G
+[2026-05-17T13:33:23+02:00] Claude exited code=0 wall=165780ms
+[2026-05-17T13:33:25+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_medium_run1_1779017432
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_medium_run1_1779017432
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:33:31+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_high_run1_1779017606
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.BDGVWexeLA
+[2026-05-17T13:34:11+02:00] Claude exited code=0 wall=40061ms
+[2026-05-17T13:34:15+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_high_run1_1779017606
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_high_run1_1779017606
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:34:23+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_high_run2_1779017656
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.u7Ek6myidS
+[2026-05-17T13:35:45+02:00] Claude exited code=0 wall=81956ms
+[2026-05-17T13:35:48+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_high_run2_1779017656
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_high_run2_1779017656
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:35:54+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_max_run1_1779017748
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.iik03rexCm
+[2026-05-17T13:36:34+02:00] Claude exited code=0 wall=40151ms
+[2026-05-17T13:36:37+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_max_run1_1779017748
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_max_run1_1779017748
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-17T13:36:44+02:00] Starting run: swe_sympy__sympy-22840_claude-sonnet-4-6_max_run2_1779017798
+  task=swe_sympy__sympy-22840  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.wkEJkAo0Ek
+[2026-05-17T13:40:29+02:00] Claude exited code=0 wall=224625ms
+[2026-05-17T13:40:30+02:00] Completed: swe_sympy__sympy-22840_claude-sonnet-4-6_max_run2_1779017798
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_sympy__sympy-22840_claude-sonnet-4-6_max_run2_1779017798

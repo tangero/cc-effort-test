@@ -1,0 +1,263 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Claude Code Effort Benchmark — Matrix Runner                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  tasks:   01_rename 03_debug_order 08_async_bugs 05_find_validation_gaps 07_security_audit
+  efforts: low medium high max
+  provider: claude
+  model:   claude-sonnet-4-6
+  runs:    3 per cell
+  seed:    1779105649
+  resume:  1    dry-run: 0
+  total:   60 cells
+
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105649_manifest.json
+[14:00:50] ┌── Run  1/60  (1%)
+[14:00:50] │   → 01_rename / claude / claude-sonnet-4-6 / max / run3
+[14:02:47] └── ✓ OK    1m57s  (pass=1 fail=0 skip=0)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Matrix complete                                                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  elapsed:  1m58s
+  pass:     1
+  fail:     0
+  skip:     0
+  total:    60
+  log:      /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105649.log
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105649_manifest.json
+
+Next: python3 scripts/aggregate.py > results/summary.csv
+      python3 scripts/generate_report.py
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Claude Code Effort Benchmark — Matrix Runner                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  tasks:   01_rename 03_debug_order 08_async_bugs 05_find_validation_gaps 07_security_audit
+  efforts: low medium high max
+  provider: claude
+  model:   claude-sonnet-4-6
+  runs:    3 per cell
+  seed:    1779105945
+  resume:  1    dry-run: 0
+  total:   60 cells
+
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105945_manifest.json
+[14:05:45] ┌── Run  1/60  (1%)
+[14:05:45] │   → 03_debug_order / claude / claude-sonnet-4-6 / high / run3
+[14:06:22] └── ✓ OK    37s  (pass=1 fail=0 skip=0)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Matrix complete                                                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  elapsed:  37s
+  pass:     1
+  fail:     0
+  skip:     0
+  total:    60
+  log:      /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105945.log
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779105945_manifest.json
+
+Next: python3 scripts/aggregate.py > results/summary.csv
+      python3 scripts/generate_report.py
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Claude Code Effort Benchmark — Matrix Runner                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  tasks:   01_rename 03_debug_order 08_async_bugs 05_find_validation_gaps 07_security_audit
+  efforts: low medium high max
+  provider: claude
+  model:   claude-sonnet-4-6
+  runs:    3 per cell
+  seed:    1779106033
+  resume:  1    dry-run: 0
+  total:   60 cells
+
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779106034_manifest.json
+[14:07:14] ┌── Run  1/60  (1%)
+[14:07:14] │   → 08_async_bugs / claude / claude-sonnet-4-6 / low / run2
+[14:08:05] └── ✓ OK    51s  (pass=1 fail=0 skip=0)
+[14:08:05] ┌── Run  2/60  (3%)  elapsed: 51s  ETA: 50m9s
+[14:08:05] │   → 01_rename / claude / claude-sonnet-4-6 / low / run3
+[14:09:44] └── ✓ OK    1m39s  (pass=2 fail=0 skip=0)
+[14:09:44] ┌── Run  3/60  (5%)  elapsed: 2m30s  ETA: 1h12m
+[14:09:44] │   → 07_security_audit / claude / claude-sonnet-4-6 / low / run3
+[14:11:00] └── ✓ OK    1m16s  (pass=3 fail=0 skip=0)
+[14:11:00] ┌── Run  4/60  (6%)  elapsed: 3m46s  ETA: 1h11m
+[14:11:00] │   → 07_security_audit / claude / claude-sonnet-4-6 / max / run1
+[14:12:35] └── ✓ OK    1m35s  (pass=4 fail=0 skip=0)
+[14:12:35] ┌── Run  5/60  (8%)  elapsed: 5m21s  ETA: 1h14m
+[14:12:35] │   → 08_async_bugs / claude / claude-sonnet-4-6 / max / run3
+[14:13:47] └── ✓ OK    1m12s  (pass=5 fail=0 skip=0)
+[14:13:47] ┌── Run  6/60  (10%)  elapsed: 6m33s  ETA: 1h11m
+[14:13:47] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / max / run3
+[14:13:47] └── ✗ FAIL  0s  exit=2  (pass=5 fail=1 skip=0)
+[14:13:47] ┌── Run  7/60  (11%)  elapsed: 6m33s  ETA: 58m30s
+[14:13:47] │   → 08_async_bugs / claude / claude-sonnet-4-6 / max / run2
+[14:15:10] └── ✓ OK    1m23s  (pass=6 fail=1 skip=0)
+[14:15:10] ┌── Run  8/60  (13%)  elapsed: 7m56s  ETA: 1h0m
+[14:15:10] │   → 07_security_audit / claude / claude-sonnet-4-6 / low / run1
+[14:16:21] └── ✓ OK    1m11s  (pass=7 fail=1 skip=0)
+[14:16:21] ┌── Run  9/60  (15%)  elapsed: 9m7s  ETA: 58m56s
+[14:16:21] │   → 08_async_bugs / claude / claude-sonnet-4-6 / max / run1
+[14:17:59] └── ✓ OK    1m38s  (pass=8 fail=1 skip=0)
+[14:17:59] ┌── Run 10/60  (16%)  elapsed: 10m45s  ETA: 1h0m
+[14:17:59] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / low / run3
+[14:17:59] └── ✗ FAIL  0s  exit=2  (pass=8 fail=2 skip=0)
+[14:17:59] ┌── Run 11/60  (18%)  elapsed: 10m45s  ETA: 53m20s
+[14:17:59] │   → 08_async_bugs / claude / claude-sonnet-4-6 / medium / run1
+[14:19:20] └── ✓ OK    1m21s  (pass=9 fail=2 skip=0)
+[14:19:20] ┌── Run 12/60  (20%)  elapsed: 12m6s  ETA: 53m54s
+[14:19:20] │   → 03_debug_order / claude / claude-sonnet-4-6 / medium / run2
+[14:20:00] └── ✓ OK    40s  (pass=10 fail=2 skip=0)
+[14:20:00] ┌── Run 13/60  (21%)  elapsed: 12m46s  ETA: 50m24s
+[14:20:00] │   → 08_async_bugs / claude / claude-sonnet-4-6 / low / run1
+[14:21:16] └── ✓ OK    1m16s  (pass=11 fail=2 skip=0)
+[14:21:16] ┌── Run 14/60  (23%)  elapsed: 14m2s  ETA: 50m8s
+[14:21:16] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / medium / run2
+[14:21:16] └── ✗ FAIL  0s  exit=2  (pass=11 fail=3 skip=0)
+[14:21:16] ┌── Run 15/60  (25%)  elapsed: 14m2s  ETA: 46m0s
+[14:21:16] │   → 01_rename / claude / claude-sonnet-4-6 / medium / run2
+[14:23:45] └── ✓ OK    2m29s  (pass=12 fail=3 skip=0)
+[14:23:45] ┌── Run 16/60  (26%)  elapsed: 16m31s  ETA: 49m30s
+[14:23:45] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / medium / run3
+[14:23:45] └── ✗ FAIL  0s  exit=2  (pass=12 fail=4 skip=0)
+[14:23:45] ┌── Run 17/60  (28%)  elapsed: 16m31s  ETA: 44m44s
+[14:23:45] │   → 03_debug_order / claude / claude-sonnet-4-6 / high / run1
+[14:24:30] └── ✓ OK    45s  (pass=13 fail=4 skip=0)
+[14:24:30] ┌── Run 18/60  (30%)  elapsed: 17m16s  ETA: 43m0s
+[14:24:30] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / medium / run1
+[14:24:30] └── ✗ FAIL  0s  exit=2  (pass=13 fail=5 skip=0)
+[14:24:30] ┌── Run 19/60  (31%)  elapsed: 17m16s  ETA: 39m54s
+[14:24:30] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / low / run2
+[14:24:30] └── ✗ FAIL  0s  exit=2  (pass=13 fail=6 skip=0)
+[14:24:30] ┌── Run 20/60  (33%)  elapsed: 17m16s  ETA: 36m54s
+[14:24:30] │   → 01_rename / claude / claude-sonnet-4-6 / high / run2
+[14:26:51] └── ✓ OK    2m21s  (pass=14 fail=6 skip=0)
+[14:26:51] ┌── Run 21/60  (35%)  elapsed: 19m37s  ETA: 38m40s
+[14:26:51] │   → 08_async_bugs / claude / claude-sonnet-4-6 / low / run3
+[14:27:45] └── ✓ OK    54s  (pass=15 fail=6 skip=0)
+[14:27:45] ┌── Run 22/60  (36%)  elapsed: 20m31s  ETA: 37m42s
+[14:27:45] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / max / run1
+[14:27:45] └── ✗ FAIL  0s  exit=2  (pass=15 fail=7 skip=0)
+[14:27:45] ┌── Run 23/60  (38%)  elapsed: 20m31s  ETA: 34m50s
+[14:27:45] │   → 08_async_bugs / claude / claude-sonnet-4-6 / high / run2
+[14:28:53] └── ✓ OK    1m8s  (pass=16 fail=7 skip=0)
+[14:28:53] ┌── Run 24/60  (40%)  elapsed: 21m39s  ETA: 34m32s
+[14:28:53] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / high / run3
+[14:28:53] └── ✗ FAIL  0s  exit=2  (pass=16 fail=8 skip=0)
+[14:28:53] ┌── Run 25/60  (41%)  elapsed: 21m39s  ETA: 32m24s
+[14:28:53] │   → 03_debug_order / claude / claude-sonnet-4-6 / high / run2
+[14:29:41] └── ✓ OK    48s  (pass=17 fail=8 skip=0)
+[14:29:41] ┌── Run 26/60  (43%)  elapsed: 22m27s  ETA: 30m55s
+[14:29:41] │   → 07_security_audit / claude / claude-sonnet-4-6 / high / run3
+[14:31:09] └── ✓ OK    1m28s  (pass=18 fail=8 skip=0)
+[14:31:09] ┌── Run 27/60  (45%)  elapsed: 23m55s  ETA: 31m10s
+[14:31:09] │   → 08_async_bugs / claude / claude-sonnet-4-6 / high / run3
+[14:32:46] └── ✓ OK    1m37s  (pass=19 fail=8 skip=0)
+[14:32:46] ┌── Run 28/60  (46%)  elapsed: 25m32s  ETA: 30m48s
+[14:32:46] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / low / run1
+[14:32:46] └── ✗ FAIL  0s  exit=2  (pass=19 fail=9 skip=0)
+[14:32:46] ┌── Run 29/60  (48%)  elapsed: 25m32s  ETA: 28m48s
+[14:32:46] │   → 03_debug_order / claude / claude-sonnet-4-6 / max / run2
+[14:33:31] └── ✓ OK    45s  (pass=20 fail=9 skip=0)
+[14:33:31] ┌── Run 30/60  (50%)  elapsed: 26m17s  ETA: 27m54s
+[14:33:31] │   → 07_security_audit / claude / claude-sonnet-4-6 / max / run2
+[14:35:29] └── ✓ OK    1m58s  (pass=21 fail=9 skip=0)
+[14:35:29] ┌── Run 31/60  (51%)  elapsed: 28m15s  ETA: 28m0s
+[14:35:29] │   → 03_debug_order / claude / claude-sonnet-4-6 / low / run3
+[14:36:17] └── ✓ OK    48s  (pass=22 fail=9 skip=0)
+[14:36:17] ┌── Run 32/60  (53%)  elapsed: 29m3s  ETA: 27m4s
+[14:36:17] │   → 07_security_audit / claude / claude-sonnet-4-6 / low / run2
+[14:37:40] └── ✓ OK    1m23s  (pass=23 fail=9 skip=0)
+[14:37:40] ┌── Run 33/60  (55%)  elapsed: 30m26s  ETA: 26m36s
+[14:37:40] │   → 07_security_audit / claude / claude-sonnet-4-6 / high / run1
+[14:39:05] └── ✓ OK    1m25s  (pass=24 fail=9 skip=0)
+[14:39:05] ┌── Run 34/60  (56%)  elapsed: 31m51s  ETA: 25m39s
+[14:39:05] │   → 07_security_audit / claude / claude-sonnet-4-6 / max / run3
+[14:40:37] └── ✓ OK    1m32s  (pass=25 fail=9 skip=0)
+[14:40:37] ┌── Run 35/60  (58%)  elapsed: 33m23s  ETA: 25m8s
+[14:40:37] │   → 07_security_audit / claude / claude-sonnet-4-6 / high / run2
+[14:41:56] └── ✓ OK    1m19s  (pass=26 fail=9 skip=0)
+[14:41:56] [36/60] SKIP  01_rename / claude / claude-sonnet-4-6 / max / run3     (already exists)
+[14:41:56] ┌── Run 37/60  (61%)  elapsed: 34m42s  ETA: 22m48s
+[14:41:56] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / high / run1
+[14:41:56] └── ✗ FAIL  0s  exit=2  (pass=26 fail=10 skip=1)
+[14:41:56] ┌── Run 38/60  (63%)  elapsed: 34m42s  ETA: 21m28s
+[14:41:56] │   → 03_debug_order / claude / claude-sonnet-4-6 / low / run1
+[14:42:40] └── ✓ OK    44s  (pass=27 fail=10 skip=1)
+[14:42:40] ┌── Run 39/60  (65%)  elapsed: 35m26s  ETA: 20m10s
+[14:42:40] │   → 03_debug_order / claude / claude-sonnet-4-6 / max / run3
+[14:43:25] └── ✓ OK    45s  (pass=28 fail=10 skip=1)
+[14:43:25] ┌── Run 40/60  (66%)  elapsed: 36m11s  ETA: 19m15s
+[14:43:25] │   → 07_security_audit / claude / claude-sonnet-4-6 / medium / run2
+[14:44:36] └── ✓ OK    1m11s  (pass=29 fail=10 skip=1)
+[14:44:36] ┌── Run 41/60  (68%)  elapsed: 37m22s  ETA: 18m40s
+[14:44:36] │   → 01_rename / claude / claude-sonnet-4-6 / high / run3
+[14:47:06] └── ✓ OK    2m30s  (pass=30 fail=10 skip=1)
+[14:47:06] [42/60] SKIP  03_debug_order / claude / claude-sonnet-4-6 / high / run3 (already exists)
+[14:47:06] ┌── Run 43/60  (71%)  elapsed: 39m52s  ETA: 16m48s
+[14:47:06] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / max / run2
+[14:47:06] └── ✗ FAIL  0s  exit=2  (pass=30 fail=11 skip=2)
+[14:47:06] ┌── Run 44/60  (73%)  elapsed: 39m52s  ETA: 15m35s
+[14:47:06] │   → 08_async_bugs / claude / claude-sonnet-4-6 / medium / run2
+[14:48:19] └── ✓ OK    1m13s  (pass=31 fail=11 skip=2)
+[14:48:19] ┌── Run 45/60  (75%)  elapsed: 41m5s  ETA: 14m56s
+[14:48:19] │   → 01_rename / claude / claude-sonnet-4-6 / low / run2
+[14:49:57] └── ✓ OK    1m38s  (pass=32 fail=11 skip=2)
+[14:49:57] ┌── Run 46/60  (76%)  elapsed: 42m43s  ETA: 14m0s
+[14:49:57] │   → 07_security_audit / claude / claude-sonnet-4-6 / medium / run3
+[14:51:31] └── ✓ OK    1m34s  (pass=33 fail=11 skip=2)
+[14:51:31] ┌── Run 47/60  (78%)  elapsed: 44m17s  ETA: 13m18s
+[14:51:31] │   → 01_rename / claude / claude-sonnet-4-6 / high / run1
+[14:53:40] └── ✓ OK    2m9s  (pass=34 fail=11 skip=2)
+[14:53:40] ┌── Run 48/60  (80%)  elapsed: 46m26s  ETA: 12m47s
+[14:53:40] │   → 03_debug_order / claude / claude-sonnet-4-6 / medium / run3
+[14:54:20] └── ✓ OK    40s  (pass=35 fail=11 skip=2)
+[14:54:20] ┌── Run 49/60  (81%)  elapsed: 47m6s  ETA: 11m36s
+[14:54:20] │   → 08_async_bugs / claude / claude-sonnet-4-6 / medium / run3
+[14:55:35] └── ✓ OK    1m15s  (pass=36 fail=11 skip=2)
+[14:55:35] ┌── Run 50/60  (83%)  elapsed: 48m21s  ETA: 10m49s
+[14:55:35] │   → 01_rename / claude / claude-sonnet-4-6 / low / run1
+[14:57:16] └── ✓ OK    1m41s  (pass=37 fail=11 skip=2)
+[14:57:16] ┌── Run 51/60  (85%)  elapsed: 50m2s  ETA: 10m0s
+[14:57:16] │   → 07_security_audit / claude / claude-sonnet-4-6 / medium / run1
+[14:58:31] └── ✓ OK    1m15s  (pass=38 fail=11 skip=2)
+[14:58:31] ┌── Run 52/60  (86%)  elapsed: 51m17s  ETA: 9m0s
+[14:58:31] │   → 01_rename / claude / claude-sonnet-4-6 / max / run2
+[15:01:53] └── ✓ OK    3m22s  (pass=39 fail=11 skip=2)
+[15:01:53] ┌── Run 53/60  (88%)  elapsed: 54m39s  ETA: 8m24s
+[15:01:53] │   → 01_rename / claude / claude-sonnet-4-6 / medium / run1
+[15:04:20] └── ✓ OK    2m27s  (pass=40 fail=11 skip=2)
+[15:04:20] ┌── Run 54/60  (90%)  elapsed: 57m6s  ETA: 7m28s
+[15:04:20] │   → 01_rename / claude / claude-sonnet-4-6 / max / run1
+[15:07:39] └── ✓ OK    3m19s  (pass=41 fail=11 skip=2)
+[15:07:39] ┌── Run 55/60  (91%)  elapsed: 1h0m  ETA: 6m42s
+[15:07:39] │   → 03_debug_order / claude / claude-sonnet-4-6 / max / run1
+[15:08:23] └── ✓ OK    44s  (pass=42 fail=11 skip=2)
+[15:08:23] ┌── Run 56/60  (93%)  elapsed: 1h1m  ETA: 5m30s
+[15:08:23] │   → 03_debug_order / claude / claude-sonnet-4-6 / medium / run1
+[15:09:05] └── ✓ OK    42s  (pass=43 fail=11 skip=2)
+[15:09:05] ┌── Run 57/60  (95%)  elapsed: 1h1m  ETA: 4m24s
+[15:09:05] │   → 03_debug_order / claude / claude-sonnet-4-6 / low / run2
+[15:09:50] └── ✓ OK    45s  (pass=44 fail=11 skip=2)
+[15:09:50] ┌── Run 58/60  (96%)  elapsed: 1h2m  ETA: 3m15s
+[15:09:50] │   → 05_find_validation_gaps / claude / claude-sonnet-4-6 / high / run2
+[15:09:50] └── ✗ FAIL  0s  exit=2  (pass=44 fail=12 skip=2)
+[15:09:50] ┌── Run 59/60  (98%)  elapsed: 1h2m  ETA: 2m8s
+[15:09:50] │   → 08_async_bugs / claude / claude-sonnet-4-6 / high / run1
+[15:11:16] └── ✓ OK    1m26s  (pass=45 fail=12 skip=2)
+[15:11:16] ┌── Run 60/60  (100%)  elapsed: 1h4m  ETA: 1m5s
+[15:11:16] │   → 01_rename / claude / claude-sonnet-4-6 / medium / run3
+[15:13:05] └── ✓ OK    1m49s  (pass=46 fail=12 skip=2)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  Matrix complete                                                             ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+  elapsed:  1h5m
+  pass:     46
+  fail:     12
+  skip:     2
+  total:    60
+  log:      /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779106034.log
+  manifest: /Users/patrickzandl/GitHub/cc-effort-test/results/matrix_1779106034_manifest.json
+
+Next: python3 scripts/aggregate.py > results/summary.csv
+      python3 scripts/generate_report.py

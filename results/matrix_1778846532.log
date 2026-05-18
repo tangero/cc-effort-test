@@ -1,0 +1,120 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:02:16+02:00] Starting run: 06_strict_scope_claude-opus-4-7_low_run1_1778846532
+  task=06_strict_scope  model=claude-opus-4-7  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.gmeBVxBa9Q
+[2026-05-15T14:02:31+02:00] Claude exited code=0 wall=14877ms
+[2026-05-15T14:02:34+02:00] Completed: 06_strict_scope_claude-opus-4-7_low_run1_1778846532
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_low_run1_1778846532
+[ ok ] 06_strict_scope / claude-opus-4-7 / low / run1 (23s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:02:39+02:00] Starting run: 06_strict_scope_claude-opus-4-7_low_run2_1778846555
+  task=06_strict_scope  model=claude-opus-4-7  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.pEal8CxJb0
+[2026-05-15T14:02:55+02:00] Claude exited code=0 wall=16325ms
+[2026-05-15T14:02:58+02:00] Completed: 06_strict_scope_claude-opus-4-7_low_run2_1778846555
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_low_run2_1778846555
+[ ok ] 06_strict_scope / claude-opus-4-7 / low / run2 (23s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:03:02+02:00] Starting run: 06_strict_scope_claude-opus-4-7_low_run3_1778846578
+  task=06_strict_scope  model=claude-opus-4-7  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.MugbN3oiOr
+[2026-05-15T14:03:20+02:00] Claude exited code=0 wall=17284ms
+[2026-05-15T14:03:23+02:00] Completed: 06_strict_scope_claude-opus-4-7_low_run3_1778846578
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_low_run3_1778846578
+[ ok ] 06_strict_scope / claude-opus-4-7 / low / run3 (25s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:03:27+02:00] Starting run: 06_strict_scope_claude-opus-4-7_medium_run1_1778846603
+  task=06_strict_scope  model=claude-opus-4-7  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.XADTsBubTA
+[2026-05-15T14:03:47+02:00] Claude exited code=0 wall=19543ms
+[2026-05-15T14:03:50+02:00] Completed: 06_strict_scope_claude-opus-4-7_medium_run1_1778846603
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_medium_run1_1778846603
+[ ok ] 06_strict_scope / claude-opus-4-7 / medium / run1 (27s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:03:54+02:00] Starting run: 06_strict_scope_claude-opus-4-7_medium_run2_1778846630
+  task=06_strict_scope  model=claude-opus-4-7  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.6OaDplEUlC
+[2026-05-15T14:04:12+02:00] Claude exited code=0 wall=18021ms
+[2026-05-15T14:04:15+02:00] Completed: 06_strict_scope_claude-opus-4-7_medium_run2_1778846630
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_medium_run2_1778846630
+[ ok ] 06_strict_scope / claude-opus-4-7 / medium / run2 (26s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:04:20+02:00] Starting run: 06_strict_scope_claude-opus-4-7_medium_run3_1778846656
+  task=06_strict_scope  model=claude-opus-4-7  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.IPQLwRTqO5
+[2026-05-15T14:04:38+02:00] Claude exited code=0 wall=18439ms
+[2026-05-15T14:04:41+02:00] Completed: 06_strict_scope_claude-opus-4-7_medium_run3_1778846656
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_medium_run3_1778846656
+[ ok ] 06_strict_scope / claude-opus-4-7 / medium / run3 (26s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:04:46+02:00] Starting run: 06_strict_scope_claude-opus-4-7_high_run1_1778846682
+  task=06_strict_scope  model=claude-opus-4-7  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Vy93iWSKov
+[2026-05-15T14:05:11+02:00] Claude exited code=0 wall=25275ms
+[2026-05-15T14:05:14+02:00] Completed: 06_strict_scope_claude-opus-4-7_high_run1_1778846682
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_high_run1_1778846682
+[ ok ] 06_strict_scope / claude-opus-4-7 / high / run1 (33s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:05:19+02:00] Starting run: 06_strict_scope_claude-opus-4-7_high_run2_1778846715
+  task=06_strict_scope  model=claude-opus-4-7  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.EB9lrUILFP
+[2026-05-15T14:05:57+02:00] Claude exited code=0 wall=38462ms
+[2026-05-15T14:06:00+02:00] Completed: 06_strict_scope_claude-opus-4-7_high_run2_1778846715
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_high_run2_1778846715
+[ ok ] 06_strict_scope / claude-opus-4-7 / high / run2 (46s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:06:05+02:00] Starting run: 06_strict_scope_claude-opus-4-7_high_run3_1778846761
+  task=06_strict_scope  model=claude-opus-4-7  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.h3arPgDLNR
+[2026-05-15T14:06:31+02:00] Claude exited code=0 wall=25756ms
+[2026-05-15T14:06:34+02:00] Completed: 06_strict_scope_claude-opus-4-7_high_run3_1778846761
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_high_run3_1778846761
+[ ok ] 06_strict_scope / claude-opus-4-7 / high / run3 (33s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:06:39+02:00] Starting run: 06_strict_scope_claude-opus-4-7_max_run1_1778846794
+  task=06_strict_scope  model=claude-opus-4-7  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.2M0lDwy5lX
+[2026-05-15T14:07:17+02:00] Claude exited code=0 wall=38742ms
+[2026-05-15T14:07:20+02:00] Completed: 06_strict_scope_claude-opus-4-7_max_run1_1778846794
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_max_run1_1778846794
+[ ok ] 06_strict_scope / claude-opus-4-7 / max / run1 (47s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:07:25+02:00] Starting run: 06_strict_scope_claude-opus-4-7_max_run2_1778846841
+  task=06_strict_scope  model=claude-opus-4-7  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.riAxOPySiQ
+[2026-05-15T14:08:00+02:00] Claude exited code=0 wall=35120ms
+[2026-05-15T14:08:03+02:00] Completed: 06_strict_scope_claude-opus-4-7_max_run2_1778846841
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_max_run2_1778846841
+[ ok ] 06_strict_scope / claude-opus-4-7 / max / run2 (43s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:08:08+02:00] Starting run: 06_strict_scope_claude-opus-4-7_max_run3_1778846884
+  task=06_strict_scope  model=claude-opus-4-7  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.JLAz7znpC0
+[2026-05-15T14:08:58+02:00] Claude exited code=0 wall=50749ms
+[2026-05-15T14:09:02+02:00] Completed: 06_strict_scope_claude-opus-4-7_max_run3_1778846884
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_claude-opus-4-7_max_run3_1778846884
+[ ok ] 06_strict_scope / claude-opus-4-7 / max / run3 (58s)

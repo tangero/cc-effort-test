@@ -1,0 +1,624 @@
+{
+  "cells": [
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/low/run2",
+      "effort": "low",
+      "index": 1,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 2,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/low/run3",
+      "effort": "low",
+      "index": 2,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 3,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/low/run3",
+      "effort": "low",
+      "index": 3,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 3,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/max/run1",
+      "effort": "max",
+      "index": 4,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 1,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/max/run3",
+      "effort": "max",
+      "index": 5,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 3,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/max/run3",
+      "effort": "max",
+      "index": 6,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 3,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/max/run2",
+      "effort": "max",
+      "index": 7,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 2,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/low/run1",
+      "effort": "low",
+      "index": 8,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 1,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/max/run1",
+      "effort": "max",
+      "index": 9,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 1,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/low/run3",
+      "effort": "low",
+      "index": 10,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 3,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/medium/run1",
+      "effort": "medium",
+      "index": 11,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 1,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/medium/run2",
+      "effort": "medium",
+      "index": 12,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 2,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/low/run1",
+      "effort": "low",
+      "index": 13,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 1,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/medium/run2",
+      "effort": "medium",
+      "index": 14,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 2,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/medium/run2",
+      "effort": "medium",
+      "index": 15,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 2,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/medium/run3",
+      "effort": "medium",
+      "index": 16,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 3,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/high/run1",
+      "effort": "high",
+      "index": 17,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 1,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/medium/run1",
+      "effort": "medium",
+      "index": 18,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 1,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/low/run2",
+      "effort": "low",
+      "index": 19,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 2,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/high/run2",
+      "effort": "high",
+      "index": 20,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 2,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/low/run3",
+      "effort": "low",
+      "index": 21,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 3,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/max/run1",
+      "effort": "max",
+      "index": 22,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 1,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/high/run2",
+      "effort": "high",
+      "index": 23,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 2,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/high/run3",
+      "effort": "high",
+      "index": 24,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 3,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/high/run2",
+      "effort": "high",
+      "index": 25,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 2,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/high/run3",
+      "effort": "high",
+      "index": 26,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 3,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/high/run3",
+      "effort": "high",
+      "index": 27,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 3,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/low/run1",
+      "effort": "low",
+      "index": 28,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 1,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/max/run2",
+      "effort": "max",
+      "index": 29,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 2,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/max/run2",
+      "effort": "max",
+      "index": 30,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 2,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/low/run3",
+      "effort": "low",
+      "index": 31,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 3,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/low/run2",
+      "effort": "low",
+      "index": 32,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 2,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/high/run1",
+      "effort": "high",
+      "index": 33,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 1,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/max/run3",
+      "effort": "max",
+      "index": 34,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 3,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/high/run2",
+      "effort": "high",
+      "index": 35,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 2,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/max/run3",
+      "effort": "max",
+      "index": 36,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 3,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/high/run1",
+      "effort": "high",
+      "index": 37,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 1,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/low/run1",
+      "effort": "low",
+      "index": 38,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 1,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/max/run3",
+      "effort": "max",
+      "index": 39,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 3,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/medium/run2",
+      "effort": "medium",
+      "index": 40,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 2,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/high/run3",
+      "effort": "high",
+      "index": 41,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 3,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/high/run3",
+      "effort": "high",
+      "index": 42,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 3,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/max/run2",
+      "effort": "max",
+      "index": 43,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 2,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/medium/run2",
+      "effort": "medium",
+      "index": 44,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 2,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/low/run2",
+      "effort": "low",
+      "index": 45,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 2,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/medium/run3",
+      "effort": "medium",
+      "index": 46,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 3,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/high/run1",
+      "effort": "high",
+      "index": 47,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 1,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/medium/run3",
+      "effort": "medium",
+      "index": 48,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 3,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/medium/run3",
+      "effort": "medium",
+      "index": 49,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 3,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/low/run1",
+      "effort": "low",
+      "index": 50,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 1,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "07_security_audit/claude/claude-sonnet-4-6/medium/run1",
+      "effort": "medium",
+      "index": 51,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 1,
+      "task": "07_security_audit"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/max/run2",
+      "effort": "max",
+      "index": 52,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 2,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/medium/run1",
+      "effort": "medium",
+      "index": 53,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 1,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/max/run1",
+      "effort": "max",
+      "index": 54,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 1,
+      "task": "01_rename"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/max/run1",
+      "effort": "max",
+      "index": 55,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "max",
+      "run_number": 1,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/medium/run1",
+      "effort": "medium",
+      "index": 56,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 1,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "03_debug_order/claude/claude-sonnet-4-6/low/run2",
+      "effort": "low",
+      "index": 57,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "low",
+      "run_number": 2,
+      "task": "03_debug_order"
+    },
+    {
+      "cell_id": "05_find_validation_gaps/claude/claude-sonnet-4-6/high/run2",
+      "effort": "high",
+      "index": 58,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 2,
+      "task": "05_find_validation_gaps"
+    },
+    {
+      "cell_id": "08_async_bugs/claude/claude-sonnet-4-6/high/run1",
+      "effort": "high",
+      "index": 59,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "high",
+      "run_number": 1,
+      "task": "08_async_bugs"
+    },
+    {
+      "cell_id": "01_rename/claude/claude-sonnet-4-6/medium/run3",
+      "effort": "medium",
+      "index": 60,
+      "model": "claude-sonnet-4-6",
+      "provider": "claude",
+      "reasoning_effort": "medium",
+      "run_number": 3,
+      "task": "01_rename"
+    }
+  ],
+  "created_at_unix": 1779106034,
+  "efforts": [
+    "low",
+    "medium",
+    "high",
+    "max"
+  ],
+  "model": "claude-sonnet-4-6",
+  "provider": "claude",
+  "runs_per_cell": 3,
+  "schema_version": 1,
+  "seed": 1779106033,
+  "tasks": [
+    "01_rename",
+    "03_debug_order",
+    "08_async_bugs",
+    "05_find_validation_gaps",
+    "07_security_audit"
+  ],
+  "total_cells": 60
+}

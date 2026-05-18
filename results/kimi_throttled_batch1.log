@@ -1,0 +1,251 @@
+Throttled kimi runner
+  pause between runs: 25s
+  rate-limit backoff: 120s
+
+
+[RUN ] 06_strict_scope / low / run1  (done=0 skip=0 fail=0 / total=1)
+[2026-05-18T14:02:26+02:00] Starting run: 06_strict_scope_kimi-k2.6_low_run1_1779105740
+  task=06_strict_scope  model=kimi-k2.6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.FOPbBRWzJ8
+
+To resume this session: kimi -r e13a320f-b440-43dc-ad9a-f6bc4e8811b2
+[2026-05-18T14:02:56+02:00] kimi exited code=0 wall=30013ms
+[2026-05-18T14:03:01+02:00] Completed: 06_strict_scope_kimi-k2.6_low_run1_1779105740
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_low_run1_1779105740
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / low / run2  (done=1 skip=0 fail=0 / total=2)
+[2026-05-18T14:03:33+02:00] Starting run: 06_strict_scope_kimi-k2.6_low_run2_1779105807
+  task=06_strict_scope  model=kimi-k2.6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.HVvlH5HE84
+[2026-05-18T14:04:03+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 76e909d1-7181-45a6-b480-fc5ef556993f
+[2026-05-18T14:04:33+02:00] kimi exited code=1 wall=60030ms
+[2026-05-18T14:04:39+02:00] Completed: 06_strict_scope_kimi-k2.6_low_run2_1779105807
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_low_run2_1779105807
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / medium / run1  (done=2 skip=0 fail=0 / total=3)
+[2026-05-18T14:05:11+02:00] Starting run: 06_strict_scope_kimi-k2.6_medium_run1_1779105905
+  task=06_strict_scope  model=kimi-k2.6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.0zvf6ckl1J
+[2026-05-18T14:05:41+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r f744c3ca-5212-41b6-bf81-7431a6a62f05
+[2026-05-18T14:06:11+02:00] kimi exited code=0 wall=60031ms
+[2026-05-18T14:06:18+02:00] Completed: 06_strict_scope_kimi-k2.6_medium_run1_1779105905
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_medium_run1_1779105905
+strict_scope_kimi-k2.6_medium_run2_1779105948
+  task=06_strict_scope  model=kimi-k2.6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.e43yfAqWQP
+
+To resume this session: kimi -r 3e5caf6b-2c4e-448b-b087-a29e1622175d
+[2026-05-18T14:06:27+02:00] kimi exited code=0 wall=30010ms
+[2026-05-18T14:06:32+02:00] Completed: 06_strict_scope_kimi-k2.6_medium_run2_1779105948
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_medium_run2_1779105948
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / high / run1  (done=1 skip=3 fail=0 / total=5)
+[2026-05-18T14:07:05+02:00] Starting run: 06_strict_scope_kimi-k2.6_high_run1_1779106018
+  task=06_strict_scope  model=kimi-k2.6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.5kDdjIKcrL
+[2026-05-18T14:07:35+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:08:05+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 4868939b-2e87-4dc0-99cd-39279794ea73
+[2026-05-18T14:08:35+02:00] kimi exited code=0 wall=90048ms
+[2026-05-18T14:08:40+02:00] Completed: 06_strict_scope_kimi-k2.6_high_run1_1779106018
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_high_run1_1779106018
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / high / run2  (done=2 skip=3 fail=0 / total=6)
+[2026-05-18T14:09:12+02:00] Starting run: 06_strict_scope_kimi-k2.6_high_run2_1779106146
+  task=06_strict_scope  model=kimi-k2.6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.iQABOXJIjk
+[2026-05-18T14:09:42+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:10:12+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:10:42+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 4032f5b7-8f51-41b0-8cf3-937efbf76af9
+[2026-05-18T14:11:12+02:00] kimi exited code=0 wall=120070ms
+[2026-05-18T14:11:18+02:00] Completed: 06_strict_scope_kimi-k2.6_high_run2_1779106146
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_high_run2_1779106146
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / max / run1  (done=3 skip=3 fail=0 / total=7)
+[2026-05-18T14:11:50+02:00] Starting run: 06_strict_scope_kimi-k2.6_max_run1_1779106304
+  task=06_strict_scope  model=kimi-k2.6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.9k5VrPDJPI
+[2026-05-18T14:12:20+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:12:51+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:13:21+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+[2026-05-18T14:13:51+02:00] kimi still running elapsed=120s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 24f2197c-a8df-4ce6-822b-05ea994da5f7
+[2026-05-18T14:14:21+02:00] kimi exited code=0 wall=150091ms
+[2026-05-18T14:14:27+02:00] Completed: 06_strict_scope_kimi-k2.6_max_run1_1779106304
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_max_run1_1779106304
+[WAIT] Pausing 25s...
+
+[RUN ] 06_strict_scope / max / run2  (done=4 skip=3 fail=0 / total=8)
+[2026-05-18T14:15:00+02:00] Starting run: 06_strict_scope_kimi-k2.6_max_run2_1779106493
+  task=06_strict_scope  model=kimi-k2.6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.em2pWpocyd
+[2026-05-18T14:15:30+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:16:00+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:16:30+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r ffa5b117-443a-4cb0-b915-a12733270d8d
+[2026-05-18T14:17:00+02:00] kimi exited code=0 wall=120079ms
+[2026-05-18T14:17:07+02:00] Completed: 06_strict_scope_kimi-k2.6_max_run2_1779106493
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/06_strict_scope_kimi-k2.6_max_run2_1779106493
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / low / run1  (done=5 skip=3 fail=0 / total=9)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / low / run2  (done=5 skip=3 fail=1 / total=10)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / medium / run1  (done=5 skip=3 fail=2 / total=11)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / medium / run2  (done=5 skip=3 fail=3 / total=12)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / high / run1  (done=5 skip=3 fail=4 / total=13)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / high / run2  (done=5 skip=3 fail=5 / total=14)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / max / run1  (done=5 skip=3 fail=6 / total=15)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 05_find_validation_gaps / max / run2  (done=5 skip=3 fail=7 / total=16)
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / low / run1  (done=5 skip=3 fail=8 / total=17)
+[2026-05-18T14:21:04+02:00] Starting run: 07_security_audit_kimi-k2.6_low_run1_1779106854
+  task=07_security_audit  model=kimi-k2.6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.7vvrk0rx5s
+[2026-05-18T14:21:34+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 67658063-41df-4902-be61-4b4d6483ecd8
+[2026-05-18T14:22:04+02:00] kimi exited code=0 wall=60029ms
+[2026-05-18T14:22:12+02:00] Completed: 07_security_audit_kimi-k2.6_low_run1_1779106854
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_low_run1_1779106854
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / low / run2  (done=6 skip=3 fail=8 / total=18)
+[2026-05-18T14:22:48+02:00] Starting run: 07_security_audit_kimi-k2.6_low_run2_1779106959
+  task=07_security_audit  model=kimi-k2.6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.KtrxGeN9LF
+[2026-05-18T14:23:18+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:23:48+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r b584aa8e-12e9-4453-ae6b-ee35462b23b3
+[2026-05-18T14:24:18+02:00] kimi exited code=0 wall=90049ms
+[2026-05-18T14:24:29+02:00] Completed: 07_security_audit_kimi-k2.6_low_run2_1779106959
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_low_run2_1779106959
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / medium / run1  (done=7 skip=3 fail=8 / total=19)
+[2026-05-18T14:25:06+02:00] Starting run: 07_security_audit_kimi-k2.6_medium_run1_1779107097
+  task=07_security_audit  model=kimi-k2.6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.e0kjaoWRJc
+[2026-05-18T14:25:36+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:26:06+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 1cb0faa9-fbd4-496d-aee1-829011e8e137
+[2026-05-18T14:26:36+02:00] kimi exited code=0 wall=90058ms
+[2026-05-18T14:26:46+02:00] Completed: 07_security_audit_kimi-k2.6_medium_run1_1779107097
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_medium_run1_1779107097
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / medium / run2  (done=8 skip=3 fail=8 / total=20)
+[2026-05-18T14:27:23+02:00] Starting run: 07_security_audit_kimi-k2.6_medium_run2_1779107233
+  task=07_security_audit  model=kimi-k2.6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.Io4J5mZza7
+[2026-05-18T14:27:53+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:28:23+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 0dad6177-6455-4bbc-97c8-6588b950be4c
+[2026-05-18T14:28:53+02:00] kimi exited code=0 wall=90047ms
+[2026-05-18T14:29:05+02:00] Completed: 07_security_audit_kimi-k2.6_medium_run2_1779107233
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_medium_run2_1779107233
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / high / run1  (done=9 skip=3 fail=8 / total=21)
+[2026-05-18T14:29:45+02:00] Starting run: 07_security_audit_kimi-k2.6_high_run1_1779107371
+  task=07_security_audit  model=kimi-k2.6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.LTyfBjvLQe
+[2026-05-18T14:30:16+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:30:46+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r a619e206-14d0-46d0-8a4a-416fe7a7f9c9
+[2026-05-18T14:31:16+02:00] kimi exited code=0 wall=90050ms
+[2026-05-18T14:31:28+02:00] Completed: 07_security_audit_kimi-k2.6_high_run1_1779107371
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_high_run1_1779107371
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / high / run2  (done=10 skip=3 fail=8 / total=22)
+[2026-05-18T14:32:06+02:00] Starting run: 07_security_audit_kimi-k2.6_high_run2_1779107514
+  task=07_security_audit  model=kimi-k2.6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.o7Lv24lgS9
+[2026-05-18T14:32:36+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:33:06+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:33:36+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+[2026-05-18T14:34:06+02:00] kimi still running elapsed=120s stdout=       0B stderr=       0B
+[2026-05-18T14:34:36+02:00] kimi still running elapsed=150s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 58e86d78-0830-4214-9ce2-b4ac25e32797
+[2026-05-18T14:35:06+02:00] kimi exited code=0 wall=180174ms
+[2026-05-18T14:35:20+02:00] Completed: 07_security_audit_kimi-k2.6_high_run2_1779107514
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_high_run2_1779107514
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / max / run1  (done=11 skip=3 fail=8 / total=23)
+[2026-05-18T14:36:00+02:00] Starting run: 07_security_audit_kimi-k2.6_max_run1_1779107748
+  task=07_security_audit  model=kimi-k2.6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.oO5oMjWgB0
+[2026-05-18T14:36:30+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:37:00+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:37:30+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+[2026-05-18T14:38:00+02:00] kimi still running elapsed=120s stdout=       0B stderr=       0B
+[2026-05-18T14:38:30+02:00] kimi still running elapsed=150s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r c06c6fc7-0b11-4cda-9c56-b84da2640c89
+[2026-05-18T14:39:00+02:00] kimi exited code=0 wall=180145ms
+[2026-05-18T14:39:13+02:00] Completed: 07_security_audit_kimi-k2.6_max_run1_1779107748
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_max_run1_1779107748
+[WAIT] Pausing 25s...
+
+[RUN ] 07_security_audit / max / run2  (done=12 skip=3 fail=8 / total=24)
+[2026-05-18T14:39:51+02:00] Starting run: 07_security_audit_kimi-k2.6_max_run2_1779107980
+  task=07_security_audit  model=kimi-k2.6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-kimi-XXXXXX.v9Rsrd0CWW
+[2026-05-18T14:40:21+02:00] kimi still running elapsed=30s stdout=       0B stderr=       0B
+[2026-05-18T14:40:51+02:00] kimi still running elapsed=60s stdout=       0B stderr=       0B
+[2026-05-18T14:41:21+02:00] kimi still running elapsed=90s stdout=       0B stderr=       0B
+
+To resume this session: kimi -r 7f3f0e4e-6533-4b3d-ab12-9795908eb4d7
+[2026-05-18T14:41:51+02:00] kimi exited code=0 wall=120070ms
+[2026-05-18T14:42:03+02:00] Completed: 07_security_audit_kimi-k2.6_max_run2_1779107980
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_kimi-k2.6_max_run2_1779107980
+[WAIT] Pausing 25s...
+
+=== Done ===
+  completed: 13
+  skipped:   3
+  failed:    8
+  total:     24

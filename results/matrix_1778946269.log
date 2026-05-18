@@ -1,0 +1,92 @@
+[skip] swe_django__django-16910 / claude-opus-4-7 / low / run1 (resume: already exists)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T17:44:38+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_low_run2_1778946269
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.2pshhdzOzz
+[2026-05-16T17:46:52+02:00] Claude exited code=0 wall=134328ms
+[2026-05-16T17:46:53+02:00] Completed: swe_django__django-16910_claude-opus-4-7_low_run2_1778946269
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_low_run2_1778946269
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / low / run2 (145s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T17:47:03+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_low_run3_1778946414
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.1rI87VD7Rd
+[2026-05-16T17:47:18+02:00] Claude exited code=0 wall=14626ms
+[2026-05-16T17:47:19+02:00] Completed: swe_django__django-16910_claude-opus-4-7_low_run3_1778946414
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_low_run3_1778946414
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / low / run3 (26s)
+[skip] swe_django__django-16910 / claude-opus-4-7 / medium / run1 (resume: already exists)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T17:47:28+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_medium_run2_1778946440
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.N8v6bYIWky
+[2026-05-16T17:50:09+02:00] Claude exited code=0 wall=161172ms
+[2026-05-16T17:50:10+02:00] Completed: swe_django__django-16910_claude-opus-4-7_medium_run2_1778946440
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_medium_run2_1778946440
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / medium / run2 (171s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T17:50:19+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_medium_run3_1778946611
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.GCJzJCdxT9
+[2026-05-16T17:53:18+02:00] Claude exited code=0 wall=178384ms
+[2026-05-16T17:53:19+02:00] Completed: swe_django__django-16910_claude-opus-4-7_medium_run3_1778946611
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_medium_run3_1778946611
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / medium / run3 (188s)
+[skip] swe_django__django-16910 / claude-opus-4-7 / high / run1 (resume: already exists)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T17:53:28+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_high_run2_1778946799
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.BNNC8nAKiU
+[2026-05-16T18:06:01+02:00] Claude exited code=0 wall=752646ms
+[2026-05-16T18:06:02+02:00] Completed: swe_django__django-16910_claude-opus-4-7_high_run2_1778946799
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_high_run2_1778946799
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / high / run2 (763s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T18:06:11+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_high_run3_1778947562
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.ia1AR6pZPM
+[2026-05-16T18:07:24+02:00] Claude exited code=0 wall=72884ms
+[2026-05-16T18:07:25+02:00] Completed: swe_django__django-16910_claude-opus-4-7_high_run3_1778947562
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_high_run3_1778947562
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / high / run3 (84s)
+[skip] swe_django__django-16910 / claude-opus-4-7 / max / run1 (resume: already exists)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T18:07:34+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_max_run2_1778947646
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.LlhOWckWWe
+[2026-05-16T18:23:10+02:00] Claude exited code=0 wall=935507ms
+[2026-05-16T18:23:11+02:00] Completed: swe_django__django-16910_claude-opus-4-7_max_run2_1778947646
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_max_run2_1778947646
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / max / run2 (946s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] python 3.11 — running: pip3 install -e .[test] -q --break-system-packages 2>/dev/null || pip3 install -e . -q --break-system-packages 2>/dev/null || true
+[2026-05-16T18:23:20+02:00] Starting run: swe_django__django-16910_claude-opus-4-7_max_run3_1778948592
+  task=swe_django__django-16910  model=claude-opus-4-7  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.fneTFt4sDm
+[2026-05-16T18:37:05+02:00] Claude exited code=0 wall=824888ms
+[2026-05-16T18:37:06+02:00] Completed: swe_django__django-16910_claude-opus-4-7_max_run3_1778948592
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/swe_django__django-16910_claude-opus-4-7_max_run3_1778948592
+[ ok ] swe_django__django-16910 / claude-opus-4-7 / max / run3 (835s)

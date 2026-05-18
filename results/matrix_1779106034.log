@@ -1,0 +1,437 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:07:21+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_low_run2_1779106034
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.GOOCq7UZiz
+[2026-05-18T14:07:56+02:00] Claude exited code=0 wall=34858ms
+[2026-05-18T14:08:04+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_low_run2_1779106034
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_low_run2_1779106034
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:08:11+02:00] Starting run: 01_rename_claude-sonnet-4-6_low_run3_1779106085
+  task=01_rename  model=claude-sonnet-4-6  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.VcbzlR832s
+[2026-05-18T14:09:41+02:00] Claude exited code=0 wall=89721ms
+[2026-05-18T14:09:43+02:00] Completed: 01_rename_claude-sonnet-4-6_low_run3_1779106085
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_low_run3_1779106085
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:09:52+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_low_run3_1779106184
+  task=07_security_audit  model=claude-sonnet-4-6  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.0QELudNBmx
+[2026-05-18T14:10:50+02:00] Claude exited code=0 wall=57858ms
+[2026-05-18T14:10:58+02:00] Completed: 07_security_audit_claude-sonnet-4-6_low_run3_1779106184
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_low_run3_1779106184
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:11:08+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_max_run1_1779106260
+  task=07_security_audit  model=claude-sonnet-4-6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.mUrUidHGTv
+[2026-05-18T14:12:27+02:00] Claude exited code=0 wall=78475ms
+[2026-05-18T14:12:34+02:00] Completed: 07_security_audit_claude-sonnet-4-6_max_run1_1779106260
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_max_run1_1779106260
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:12:42+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_max_run3_1779106355
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.3qg4htG5AS
+[2026-05-18T14:13:39+02:00] Claude exited code=0 wall=57152ms
+[2026-05-18T14:13:46+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_max_run3_1779106355
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_max_run3_1779106355
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:13:55+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_max_run2_1779106427
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.RIYz20F9lP
+[2026-05-18T14:15:02+02:00] Claude exited code=0 wall=67120ms
+[2026-05-18T14:15:09+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_max_run2_1779106427
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_max_run2_1779106427
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:15:19+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_low_run1_1779106510
+  task=07_security_audit  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.iylvYmIw0Y
+[2026-05-18T14:16:11+02:00] Claude exited code=0 wall=51669ms
+[2026-05-18T14:16:19+02:00] Completed: 07_security_audit_claude-sonnet-4-6_low_run1_1779106510
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_low_run1_1779106510
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:16:28+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_max_run1_1779106581
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.1FU2gWO2TQ
+[2026-05-18T14:17:53+02:00] Claude exited code=0 wall=84330ms
+[2026-05-18T14:17:58+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_max_run1_1779106581
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_max_run1_1779106581
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:18:06+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_medium_run1_1779106679
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.JW3vhUBxwI
+[2026-05-18T14:19:13+02:00] Claude exited code=0 wall=67440ms
+[2026-05-18T14:19:19+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_medium_run1_1779106679
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_medium_run1_1779106679
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:19:27+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_medium_run2_1779106760
+  task=03_debug_order  model=claude-sonnet-4-6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.lxkbCTABcU
+[2026-05-18T14:19:52+02:00] Claude exited code=0 wall=25015ms
+[2026-05-18T14:19:58+02:00] Completed: 03_debug_order_claude-sonnet-4-6_medium_run2_1779106760
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_medium_run2_1779106760
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:20:06+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_low_run1_1779106800
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.j1Es9CYLPz
+[2026-05-18T14:21:10+02:00] Claude exited code=0 wall=63208ms
+[2026-05-18T14:21:15+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_low_run1_1779106800
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_low_run1_1779106800
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:21:23+02:00] Starting run: 01_rename_claude-sonnet-4-6_medium_run2_1779106876
+  task=01_rename  model=claude-sonnet-4-6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.GElEroAJab
+[2026-05-18T14:23:41+02:00] Claude exited code=0 wall=138036ms
+[2026-05-18T14:23:43+02:00] Completed: 01_rename_claude-sonnet-4-6_medium_run2_1779106876
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_medium_run2_1779106876
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:23:52+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_high_run1_1779107025
+  task=03_debug_order  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.I3NplkdL46
+[2026-05-18T14:24:18+02:00] Claude exited code=0 wall=25849ms
+[2026-05-18T14:24:28+02:00] Completed: 03_debug_order_claude-sonnet-4-6_high_run1_1779107025
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_high_run1_1779107025
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:24:37+02:00] Starting run: 01_rename_claude-sonnet-4-6_high_run2_1779107070
+  task=01_rename  model=claude-sonnet-4-6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.e1noXW01ym
+[2026-05-18T14:26:46+02:00] Claude exited code=0 wall=128626ms
+[2026-05-18T14:26:49+02:00] Completed: 01_rename_claude-sonnet-4-6_high_run2_1779107070
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_high_run2_1779107070
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:26:58+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_low_run3_1779107211
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.VfzccJ6vNT
+[2026-05-18T14:27:37+02:00] Claude exited code=0 wall=39876ms
+[2026-05-18T14:27:44+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_low_run3_1779107211
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_low_run3_1779107211
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:27:53+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_high_run2_1779107265
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.eDBMXy4s6E
+[2026-05-18T14:28:45+02:00] Claude exited code=0 wall=52875ms
+[2026-05-18T14:28:52+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_high_run2_1779107265
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_high_run2_1779107265
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:29:03+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_high_run2_1779107333
+  task=03_debug_order  model=claude-sonnet-4-6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.ShbnrtYYke
+[2026-05-18T14:29:30+02:00] Claude exited code=0 wall=26568ms
+[2026-05-18T14:29:39+02:00] Completed: 03_debug_order_claude-sonnet-4-6_high_run2_1779107333
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_high_run2_1779107333
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:29:54+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_high_run3_1779107381
+  task=07_security_audit  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.4EerhzCEIJ
+[2026-05-18T14:30:58+02:00] Claude exited code=0 wall=63980ms
+[2026-05-18T14:31:07+02:00] Completed: 07_security_audit_claude-sonnet-4-6_high_run3_1779107381
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_high_run3_1779107381
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:31:17+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_high_run3_1779107469
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.1aZpC8ZVEp
+[2026-05-18T14:32:35+02:00] Claude exited code=0 wall=78052ms
+[2026-05-18T14:32:44+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_high_run3_1779107469
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_high_run3_1779107469
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:32:56+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_max_run2_1779107566
+  task=03_debug_order  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.N12pp0JYtl
+[2026-05-18T14:33:21+02:00] Claude exited code=0 wall=24939ms
+[2026-05-18T14:33:29+02:00] Completed: 03_debug_order_claude-sonnet-4-6_max_run2_1779107566
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_max_run2_1779107566
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:33:41+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_max_run2_1779107611
+  task=07_security_audit  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.C3KYlefEOB
+[2026-05-18T14:35:13+02:00] Claude exited code=0 wall=92523ms
+[2026-05-18T14:35:27+02:00] Completed: 07_security_audit_claude-sonnet-4-6_max_run2_1779107611
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_max_run2_1779107611
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:35:37+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_low_run3_1779107729
+  task=03_debug_order  model=claude-sonnet-4-6  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.psx26gWCoN
+[2026-05-18T14:36:03+02:00] Claude exited code=0 wall=26348ms
+[2026-05-18T14:36:15+02:00] Completed: 03_debug_order_claude-sonnet-4-6_low_run3_1779107729
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_low_run3_1779107729
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:36:30+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_low_run2_1779107777
+  task=07_security_audit  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.HIaA58G3zi
+[2026-05-18T14:37:29+02:00] Claude exited code=0 wall=59342ms
+[2026-05-18T14:37:39+02:00] Completed: 07_security_audit_claude-sonnet-4-6_low_run2_1779107777
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_low_run2_1779107777
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:37:51+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_high_run1_1779107860
+  task=07_security_audit  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.6tMMSCCIjR
+[2026-05-18T14:38:53+02:00] Claude exited code=0 wall=61566ms
+[2026-05-18T14:39:02+02:00] Completed: 07_security_audit_claude-sonnet-4-6_high_run1_1779107860
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_high_run1_1779107860
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:39:18+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_max_run3_1779107945
+  task=07_security_audit  model=claude-sonnet-4-6  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.HojNJpHJ8g
+[2026-05-18T14:40:25+02:00] Claude exited code=0 wall=66809ms
+[2026-05-18T14:40:35+02:00] Completed: 07_security_audit_claude-sonnet-4-6_max_run3_1779107945
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_max_run3_1779107945
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:40:49+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_high_run2_1779108037
+  task=07_security_audit  model=claude-sonnet-4-6  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.HDa9Ck4NST
+[2026-05-18T14:41:44+02:00] Claude exited code=0 wall=55419ms
+[2026-05-18T14:41:54+02:00] Completed: 07_security_audit_claude-sonnet-4-6_high_run2_1779108037
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_high_run2_1779108037
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:42:08+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_low_run1_1779108116
+  task=03_debug_order  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.V7qKZgDibs
+[2026-05-18T14:42:31+02:00] Claude exited code=0 wall=23554ms
+[2026-05-18T14:42:39+02:00] Completed: 03_debug_order_claude-sonnet-4-6_low_run1_1779108116
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_low_run1_1779108116
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:42:49+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_max_run3_1779108160
+  task=03_debug_order  model=claude-sonnet-4-6  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.BUQ8ZgehfF
+[2026-05-18T14:43:14+02:00] Claude exited code=0 wall=25429ms
+[2026-05-18T14:43:24+02:00] Completed: 03_debug_order_claude-sonnet-4-6_max_run3_1779108160
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_max_run3_1779108160
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:43:38+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_medium_run2_1779108205
+  task=07_security_audit  model=claude-sonnet-4-6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Th02JDTY5T
+[2026-05-18T14:44:25+02:00] Claude exited code=0 wall=47014ms
+[2026-05-18T14:44:34+02:00] Completed: 07_security_audit_claude-sonnet-4-6_medium_run2_1779108205
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_medium_run2_1779108205
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:44:44+02:00] Starting run: 01_rename_claude-sonnet-4-6_high_run3_1779108276
+  task=01_rename  model=claude-sonnet-4-6  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.tOiaJdKrZu
+[2026-05-18T14:47:01+02:00] Claude exited code=0 wall=136281ms
+[2026-05-18T14:47:04+02:00] Completed: 01_rename_claude-sonnet-4-6_high_run3_1779108276
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_high_run3_1779108276
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:47:14+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_medium_run2_1779108426
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Za06BzlYRz
+[2026-05-18T14:48:10+02:00] Claude exited code=0 wall=55377ms
+[2026-05-18T14:48:17+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_medium_run2_1779108426
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_medium_run2_1779108426
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:48:28+02:00] Starting run: 01_rename_claude-sonnet-4-6_low_run2_1779108499
+  task=01_rename  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.ShZAeAaeAS
+[2026-05-18T14:49:53+02:00] Claude exited code=0 wall=84577ms
+[2026-05-18T14:49:56+02:00] Completed: 01_rename_claude-sonnet-4-6_low_run2_1779108499
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_low_run2_1779108499
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:50:07+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_medium_run3_1779108597
+  task=07_security_audit  model=claude-sonnet-4-6  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.yaFfuvFBrf
+[2026-05-18T14:51:20+02:00] Claude exited code=0 wall=73054ms
+[2026-05-18T14:51:29+02:00] Completed: 07_security_audit_claude-sonnet-4-6_medium_run3_1779108597
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_medium_run3_1779108597
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:51:38+02:00] Starting run: 01_rename_claude-sonnet-4-6_high_run1_1779108691
+  task=01_rename  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.8ZZ7kW7N0V
+[2026-05-18T14:53:35+02:00] Claude exited code=0 wall=117407ms
+[2026-05-18T14:53:39+02:00] Completed: 01_rename_claude-sonnet-4-6_high_run1_1779108691
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_high_run1_1779108691
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:53:48+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_medium_run3_1779108820
+  task=03_debug_order  model=claude-sonnet-4-6  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.9VN7m6H8Cn
+[2026-05-18T14:54:12+02:00] Claude exited code=0 wall=23684ms
+[2026-05-18T14:54:19+02:00] Completed: 03_debug_order_claude-sonnet-4-6_medium_run3_1779108820
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_medium_run3_1779108820
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:54:28+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_medium_run3_1779108860
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.KDN3qqLg57
+[2026-05-18T14:55:28+02:00] Claude exited code=0 wall=60512ms
+[2026-05-18T14:55:34+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_medium_run3_1779108860
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_medium_run3_1779108860
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:55:42+02:00] Starting run: 01_rename_claude-sonnet-4-6_low_run1_1779108935
+  task=01_rename  model=claude-sonnet-4-6  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.6WWv8nf7nz
+[2026-05-18T14:57:11+02:00] Claude exited code=0 wall=88774ms
+[2026-05-18T14:57:14+02:00] Completed: 01_rename_claude-sonnet-4-6_low_run1_1779108935
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_low_run1_1779108935
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T14:57:27+02:00] Starting run: 07_security_audit_claude-sonnet-4-6_medium_run1_1779109036
+  task=07_security_audit  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.TIorwEXCET
+[2026-05-18T14:58:20+02:00] Claude exited code=0 wall=53537ms
+[2026-05-18T14:58:29+02:00] Completed: 07_security_audit_claude-sonnet-4-6_medium_run1_1779109036
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/07_security_audit_claude-sonnet-4-6_medium_run1_1779109036
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:58:38+02:00] Starting run: 01_rename_claude-sonnet-4-6_max_run2_1779109111
+  task=01_rename  model=claude-sonnet-4-6  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.f8EDaoqALi
+[2026-05-18T15:01:48+02:00] Claude exited code=0 wall=189511ms
+[2026-05-18T15:01:52+02:00] Completed: 01_rename_claude-sonnet-4-6_max_run2_1779109111
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_max_run2_1779109111
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T15:02:01+02:00] Starting run: 01_rename_claude-sonnet-4-6_medium_run1_1779109313
+  task=01_rename  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.xnbCKjqEbt
+[2026-05-18T15:04:13+02:00] Claude exited code=0 wall=132732ms
+[2026-05-18T15:04:18+02:00] Completed: 01_rename_claude-sonnet-4-6_medium_run1_1779109313
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_medium_run1_1779109313
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T15:04:28+02:00] Starting run: 01_rename_claude-sonnet-4-6_max_run1_1779109460
+  task=01_rename  model=claude-sonnet-4-6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.RCLISBfTAF
+[2026-05-18T15:07:34+02:00] Claude exited code=0 wall=185531ms
+[2026-05-18T15:07:38+02:00] Completed: 01_rename_claude-sonnet-4-6_max_run1_1779109460
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_max_run1_1779109460
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T15:07:49+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_max_run1_1779109659
+  task=03_debug_order  model=claude-sonnet-4-6  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.9TadJ0EvSN
+[2026-05-18T15:08:13+02:00] Claude exited code=0 wall=24055ms
+[2026-05-18T15:08:21+02:00] Completed: 03_debug_order_claude-sonnet-4-6_max_run1_1779109659
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_max_run1_1779109659
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T15:08:31+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_medium_run1_1779109703
+  task=03_debug_order  model=claude-sonnet-4-6  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.RAIOBOxrQz
+[2026-05-18T15:08:55+02:00] Claude exited code=0 wall=23663ms
+[2026-05-18T15:09:04+02:00] Completed: 03_debug_order_claude-sonnet-4-6_medium_run1_1779109703
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_medium_run1_1779109703
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T15:09:14+02:00] Starting run: 03_debug_order_claude-sonnet-4-6_low_run2_1779109745
+  task=03_debug_order  model=claude-sonnet-4-6  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.vjIlx15pQH
+[2026-05-18T15:09:39+02:00] Claude exited code=0 wall=25823ms
+[2026-05-18T15:09:49+02:00] Completed: 03_debug_order_claude-sonnet-4-6_low_run2_1779109745
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/03_debug_order_claude-sonnet-4-6_low_run2_1779109745
+Error: missing prompt.txt in /Users/patrickzandl/GitHub/cc-effort-test/tasks/05_find_validation_gaps
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-18T15:10:01+02:00] Starting run: 08_async_bugs_claude-sonnet-4-6_high_run1_1779109790
+  task=08_async_bugs  model=claude-sonnet-4-6  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Ea5qsIatxH
+[2026-05-18T15:11:07+02:00] Claude exited code=0 wall=66200ms
+[2026-05-18T15:11:15+02:00] Completed: 08_async_bugs_claude-sonnet-4-6_high_run1_1779109790
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/08_async_bugs_claude-sonnet-4-6_high_run1_1779109790
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T15:11:25+02:00] Starting run: 01_rename_claude-sonnet-4-6_medium_run3_1779109876
+  task=01_rename  model=claude-sonnet-4-6  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.pnwmjp1DcK
+[2026-05-18T15:12:59+02:00] Claude exited code=0 wall=93968ms
+[2026-05-18T15:13:03+02:00] Completed: 01_rename_claude-sonnet-4-6_medium_run3_1779109876
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_medium_run3_1779109876

@@ -144,7 +144,19 @@ set +e
         --prompt "$PROMPT" \
         > "$RESULT_DIR/stdout.json" \
         2> >(tee "$RESULT_DIR/stderr.log" >&2)
-)
+) &
+KIMI_PID=$!
+while kill -0 "$KIMI_PID" 2>/dev/null; do
+    sleep 30
+    if kill -0 "$KIMI_PID" 2>/dev/null; then
+        NOW_NS="$(date +%s%N)"
+        ELAPSED_SEC=$(( (NOW_NS - START_NS) / 1000000000 ))
+        STDOUT_BYTES="$(wc -c < "$RESULT_DIR/stdout.json" 2>/dev/null || echo 0)"
+        STDERR_BYTES="$(wc -c < "$RESULT_DIR/stderr.log" 2>/dev/null || echo 0)"
+        echo "[$(date -Iseconds)] kimi still running elapsed=${ELAPSED_SEC}s stdout=${STDOUT_BYTES}B stderr=${STDERR_BYTES}B" >&2
+    fi
+done
+wait "$KIMI_PID"
 EXIT_CODE=$?
 set -e
 END_NS="$(date +%s%N)"
@@ -168,10 +180,35 @@ set +e
 VERIFY_EXIT=$?
 set -e
 
-# --- Metrics (kimi-cli doesn't expose token/cost metrics like Claude) ------
-# We write a minimal metrics.json with what we know.
-# Step count can be inferred from stderr if kimi logs it.
-STEP_COUNT=$(grep -c '\[step\|Step\|STEP' "$RESULT_DIR/stderr.log" 2>/dev/null || echo 0)
+# --- Metrics ---------------------------------------------------------------
+# kimi-cli prints only the final message in stdout, but `kimi export` includes
+# StatusUpdate events with token_usage. Export to a temp ZIP, parse it, then
+# delete the ZIP to avoid storing diagnostic logs from unrelated sessions.
+SESSION_ID="$(grep -hEo 'kimi -r [0-9a-f-]+' "$RESULT_DIR/stderr.log" "$RESULT_DIR/stdout.json" 2>/dev/null | tail -1 | awk '{print $3}' || true)"
+EXPORT_METRICS="$RESULT_DIR/kimi_export_metrics.json"
+if [[ -n "$SESSION_ID" ]]; then
+    EXPORT_TMPDIR="$(mktemp -d -t kimi-export-XXXXXX)"
+    EXPORT_ZIP="$EXPORT_TMPDIR/session.zip"
+    if kimi export "$SESSION_ID" -o "$EXPORT_ZIP" >/dev/null 2>> "$RESULT_DIR/stderr.log"; then
+        python3 "$REPO_ROOT/runner/lib/parse_kimi_export.py" "$EXPORT_ZIP" > "$EXPORT_METRICS" \
+            2>> "$RESULT_DIR/stderr.log" || true
+    fi
+    rm -rf "$EXPORT_TMPDIR"
+fi
+if [[ ! -s "$EXPORT_METRICS" ]]; then
+    cat > "$EXPORT_METRICS" <<'EOF'
+{"input_other":0,"output":0,"input_cache_read":0,"input_cache_creation":0,"context_tokens":0,"max_context_tokens":0,"num_turns":0,"tool_call_count":0,"tool_call_count_by_type":{},"status_update_count":0,"parse_errors":["kimi export metrics unavailable"]}
+EOF
+fi
+
+STEP_COUNT="$(jq -r '.num_turns // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+INPUT_TOKENS="$(jq -r '.input_other // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+OUTPUT_TOKENS="$(jq -r '.output // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+CACHE_READ_TOKENS="$(jq -r '.input_cache_read // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+CACHE_CREATION_TOKENS="$(jq -r '.input_cache_creation // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+TOOL_CALL_COUNT="$(jq -r '.tool_call_count // 0' "$EXPORT_METRICS" 2>/dev/null || echo 0)"
+TOOL_CALLS_BY_TYPE="$(jq -c '.tool_call_count_by_type // {}' "$EXPORT_METRICS" 2>/dev/null || echo '{}')"
+PARSE_ERRORS="$(jq -c '.parse_errors // []' "$EXPORT_METRICS" 2>/dev/null || echo '[]')"
 
 cat > "$RESULT_DIR/metrics.json" <<EOF
 {
@@ -179,16 +216,16 @@ cat > "$RESULT_DIR/metrics.json" <<EOF
   "num_turns": $STEP_COUNT,
   "stop_reason": "$(if [[ $EXIT_CODE -eq 0 ]]; then echo "success"; else echo "error"; fi)",
   "total_cost_usd": 0,
-  "input_tokens": 0,
-  "output_tokens": 0,
-  "cache_read_input_tokens": 0,
-  "cache_creation_input_tokens": 0,
+  "input_tokens": $INPUT_TOKENS,
+  "output_tokens": $OUTPUT_TOKENS,
+  "cache_read_input_tokens": $CACHE_READ_TOKENS,
+  "cache_creation_input_tokens": $CACHE_CREATION_TOKENS,
   "thinking_tokens": 0,
-  "tool_call_count": 0,
-  "tool_call_count_by_type": {},
+  "tool_call_count": $TOOL_CALL_COUNT,
+  "tool_call_count_by_type": $TOOL_CALLS_BY_TYPE,
   "result_text_length": 0,
-  "parse_errors": [],
-  "session_id": ""
+  "parse_errors": $PARSE_ERRORS,
+  "session_id": "$SESSION_ID"
 }
 EOF
 

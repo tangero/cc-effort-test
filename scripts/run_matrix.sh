@@ -182,7 +182,7 @@ while IFS=$'\t' read -r idx task provider model effort n; do
             if MATRIX_SEED="$SEED" MATRIX_MANIFEST="$MANIFEST" MATRIX_INDEX="$idx" \
                 bash "$RUNNER" \
                 "$task_dir" "$effort" "$n" "$model" \
-                >> "$CELL_LOG" 2>&1
+                < /dev/null >> "$CELL_LOG" 2>&1
             then
                 cell_dur=$(( SECONDS - cell_start ))
                 PASS=$((PASS+1))

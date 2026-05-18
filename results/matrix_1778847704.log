@@ -1,0 +1,120 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:21:48+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_low_run1_1778847704
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=low  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.RYEHTVen38
+[2026-05-15T14:22:25+02:00] Claude exited code=0 wall=37213ms
+[2026-05-15T14:22:25+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_low_run1_1778847704
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_low_run1_1778847704
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / low / run1 (42s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:22:30+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_low_run2_1778847746
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=low  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.d7T5vpuPgr
+[2026-05-15T14:23:09+02:00] Claude exited code=0 wall=39325ms
+[2026-05-15T14:23:09+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_low_run2_1778847746
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_low_run2_1778847746
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / low / run2 (44s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:23:14+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_low_run3_1778847790
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=low  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.CXU4jDnGGH
+[2026-05-15T14:23:50+02:00] Claude exited code=0 wall=36206ms
+[2026-05-15T14:23:50+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_low_run3_1778847790
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_low_run3_1778847790
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / low / run3 (41s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:23:55+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_medium_run1_1778847831
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=medium  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.wXtGh1VmJj
+[2026-05-15T14:24:38+02:00] Claude exited code=0 wall=43230ms
+[2026-05-15T14:24:38+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_medium_run1_1778847831
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_medium_run1_1778847831
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / medium / run1 (48s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:24:43+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_medium_run2_1778847879
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=medium  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.fhs5EYvi1w
+[2026-05-15T14:25:25+02:00] Claude exited code=0 wall=42297ms
+[2026-05-15T14:25:26+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_medium_run2_1778847879
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_medium_run2_1778847879
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / medium / run2 (47s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:25:30+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_medium_run3_1778847926
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=medium  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.s0wZrZ9qg9
+[2026-05-15T14:26:14+02:00] Claude exited code=0 wall=43982ms
+[2026-05-15T14:26:15+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_medium_run3_1778847926
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_medium_run3_1778847926
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / medium / run3 (49s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:26:19+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_high_run1_1778847975
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=high  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.ixOGklW2Bs
+[2026-05-15T14:27:09+02:00] Claude exited code=0 wall=49808ms
+[2026-05-15T14:27:09+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_high_run1_1778847975
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_high_run1_1778847975
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / high / run1 (55s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:27:14+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_high_run2_1778848030
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=high  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.zn410eHXIN
+[2026-05-15T14:27:58+02:00] Claude exited code=0 wall=44433ms
+[2026-05-15T14:27:58+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_high_run2_1778848030
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_high_run2_1778848030
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / high / run2 (49s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:28:03+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_high_run3_1778848079
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=high  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.CSu9BNXgUt
+[2026-05-15T14:28:53+02:00] Claude exited code=0 wall=50617ms
+[2026-05-15T14:28:54+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_high_run3_1778848079
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_high_run3_1778848079
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / high / run3 (55s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:28:58+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_max_run1_1778848134
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=max  run=1
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.Rtpb8sWM9w
+[2026-05-15T14:29:54+02:00] Claude exited code=0 wall=55907ms
+[2026-05-15T14:29:54+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_max_run1_1778848134
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_max_run1_1778848134
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / max / run1 (61s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:29:59+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_max_run2_1778848195
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=max  run=2
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.eGTmDSeK13
+[2026-05-15T14:30:50+02:00] Claude exited code=0 wall=50731ms
+[2026-05-15T14:30:50+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_max_run2_1778848195
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_max_run2_1778848195
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / max / run2 (56s)
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[2026-05-15T14:30:55+02:00] Starting run: 05_find_validation_gaps_claude-opus-4-7_max_run3_1778848251
+  task=05_find_validation_gaps  model=claude-opus-4-7  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.uK7K9iaYAE
+[2026-05-15T14:31:50+02:00] Claude exited code=0 wall=55494ms
+[2026-05-15T14:31:50+02:00] Completed: 05_find_validation_gaps_claude-opus-4-7_max_run3_1778848251
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/05_find_validation_gaps_claude-opus-4-7_max_run3_1778848251
+[ ok ] 05_find_validation_gaps / claude-opus-4-7 / max / run3 (60s)

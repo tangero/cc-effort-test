@@ -1,0 +1,10 @@
+Warning: ~/.claude/CLAUDE.md is non-empty; it will be auto-loaded into
+         every run and may pollute results. Consider temporarily moving it
+         aside before running the matrix (mv ~/.claude/CLAUDE.md{,.bench-bak}).
+[setup] typescript — npm install
+[2026-05-18T14:00:54+02:00] Starting run: 01_rename_claude-sonnet-4-6_max_run3_1779105650
+  task=01_rename  model=claude-sonnet-4-6  effort=max  run=3
+  workdir=/var/folders/dq/_3bx_n8d37595j6kpbcfmjqc0000gn/T/effort-test-XXXXXX.nClQdchJhp
+[2026-05-18T14:02:43+02:00] Claude exited code=0 wall=108667ms
+[2026-05-18T14:02:46+02:00] Completed: 01_rename_claude-sonnet-4-6_max_run3_1779105650
+  results: /Users/patrickzandl/GitHub/cc-effort-test/results/runs/01_rename_claude-sonnet-4-6_max_run3_1779105650

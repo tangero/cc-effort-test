@@ -13,170 +13,114 @@ INCOMPLETE_RUNS = 0
 
 TASK_META = {
     "01_rename": {
-        "label_cs": "Rename (syntetická)", "label_en": "Rename (synthetic)",
-        "desc_cs": "Přejmenovat userId→accountId v TypeScript. 57 výskytů. Verify: 7 checks.",
         "desc_en": "Rename userId→accountId in TypeScript. 57 occurrences. Verify: 7 checks.",
         "type": "synthetic",
     },
     "02_implement_ico": {
-        "label_cs": "Implement IČO (syntetická)", "label_en": "Implement IČO (synthetic)",
-        "desc_cs": "Implementovat český algoritmus IČO validace. Verify: 5 checks + hidden tests.",
         "desc_en": "Implement Czech IČO validation algorithm. Verify: 5 checks + hidden tests.",
         "type": "synthetic",
     },
     "03_debug_order": {
-        "label_cs": "Debug Order (syntetická)", "label_en": "Debug Order (synthetic)",
-        "desc_cs": "Najít 2 záměrné bugy v OrderService. Bug B záměrně skrytý v názvech.",
         "desc_en": "Find 2 intentional bugs in OrderService. Bug B deliberately hidden in naming.",
         "type": "synthetic",
     },
     "05_find_validation_gaps": {
-        "label_cs": "Find Validation Gaps (syntetická)", "label_en": "Find Validation Gaps (synthetic)",
-        "desc_cs": "Najít a opravit mezery ve validaci dat. 5 checks.",
         "desc_en": "Find and fix data validation gaps. 5 checks.",
         "type": "synthetic",
     },
     "06_strict_scope": {
-        "label_cs": "Strict Scope (syntetická)", "label_en": "Strict Scope (synthetic)",
-        "desc_cs": "Přidat validaci pouze do create.ts, neměnit ostatní soubory.",
         "desc_en": "Add validation only to create.ts, don't modify other files.",
         "type": "synthetic",
     },
     "07_security_audit": {
-        "label_cs": "Security Audit (syntetická)", "label_en": "Security Audit (synthetic)",
-        "desc_cs": "Najít a opravit bezpečnostní chyby v Express API. 5 checks (SQLi, XSS, exposure).",
         "desc_en": "Find and fix security bugs in Express API. 5 checks (SQLi, XSS, exposure).",
         "type": "synthetic",
     },
     "08_async_bugs": {
-        "label_cs": "Async Bugs (syntetická)", "label_en": "Async Bugs (synthetic)",
-        "desc_cs": "Najít a opravit 4–5 async/Promise bugů v TypeScript pipeline.",
         "desc_en": "Find and fix 4–5 async/Promise bugs in TypeScript pipeline.",
         "type": "synthetic",
     },
     "09_frontend_state_bug": {
-        "label_cs": "Frontend State Bug", "label_en": "Frontend State Bug",
-        "desc_cs": "Stale state v dlouho žijícím callbacku navigační analytiky.",
         "desc_en": "Stale state in a long-lived navigation analytics callback.",
         "type": "synthetic",
     },
     "10_api_contract_regression": {
-        "label_cs": "API Contract Regression", "label_en": "API Contract Regression",
-        "desc_cs": "JSON Schema → OpenAPI drift: $ref property, const, nullable, examples.",
         "desc_en": "JSON Schema → OpenAPI drift: $ref property, const, nullable, examples.",
         "type": "synthetic",
     },
     "11_auth_permission_bug": {
-        "label_cs": "Auth Permission Bug", "label_en": "Auth Permission Bug",
-        "desc_cs": "Bypass kombinovaných authorization checks a redirect options.",
         "desc_en": "Bypass in combined authorization checks and redirect options.",
         "type": "synthetic",
     },
     "12_performance_regression": {
-        "label_cs": "Performance Regression", "label_en": "Performance Regression",
-        "desc_cs": "N+1 query s tenant-isolation pastí pro naivní cache.",
         "desc_en": "N+1 query with a tenant-isolation trap for naive caching.",
         "type": "synthetic",
     },
     "13_flaky_nondeterministic_bug": {
-        "label_cs": "Flaky Nondeterministic Bug", "label_en": "Flaky Nondeterministic Bug",
-        "desc_cs": "Race condition v concurrent sequence allocatoru.",
         "desc_en": "Race condition in a concurrent sequence allocator.",
         "type": "synthetic",
     },
     "14_build_config_failure": {
-        "label_cs": "Build Config Failure", "label_en": "Build Config Failure",
-        "desc_cs": "Scoped ESM/CJS/JSON build config interop bez globální konverze.",
         "desc_en": "Scoped ESM/CJS/JSON build config interop without global conversion.",
         "type": "synthetic",
     },
     "15_legacy_php_billing_refactor": {
-        "label_cs": "Legacy PHP Billing Refactor", "label_en": "Legacy PHP Billing Refactor",
-        "desc_cs": "Zachovat chování starého PHP billing kalkulátoru při TypeScript portu.",
         "desc_en": "Preserve legacy PHP billing calculator behavior in a TypeScript port.",
         "type": "synthetic",
     },
     "16_legacy_java_expense_report_refactor": {
-        "label_cs": "Legacy Java Expense Refactor", "label_en": "Legacy Java Expense Refactor",
-        "desc_cs": "Zachovat Java expense workflow politiku při TypeScript portu.",
         "desc_en": "Preserve Java expense workflow policy behavior in a TypeScript port.",
         "type": "synthetic",
     },
     "17_legacy_java_sql_repository_refactor": {
-        "label_cs": "Legacy Java SQL Repository", "label_en": "Legacy Java SQL Repository",
-        "desc_cs": "Migrace Java SQL repository na parametrizovaný TypeScript query plán.",
         "desc_en": "Migrate a Java SQL repository to parameterized TypeScript query planning.",
         "type": "synthetic",
     },
     "18_legacy_php_api_client_migration": {
-        "label_cs": "Legacy PHP API Client Migration", "label_en": "Legacy PHP API Client Migration",
-        "desc_cs": "Migrace PHP payment klienta na injektovaný TypeScript API klient.",
         "desc_en": "Migrate a PHP payment client to an injected TypeScript API client.",
         "type": "synthetic",
     },
     "swe_sympy__sympy-24909": {
-        "label_cs": "SWE: sympy milli prefix", "label_en": "SWE: sympy milli prefix",
-        "desc_cs": "milli*W == 1 vrací True místo False. SWE-bench Lite #24909.",
         "desc_en": "milli*W == 1 returns True instead of False. SWE-bench Lite #24909.",
         "type": "swe",
     },
     "swe_django__django-16910": {
-        "label_cs": "SWE: django only()+select_related", "label_en": "SWE: django only()+select_related",
-        "desc_cs": "only() nefunguje se select_related() na reverse OneToOneField. SWE-bench #16910.",
         "desc_en": "only() doesn't work with select_related() on reverse OneToOneField. SWE-bench #16910.",
         "type": "swe",
     },
     "swe_django__django-17051": {
-        "label_cs": "SWE: django bulk_create", "label_en": "SWE: django bulk_create",
-        "desc_cs": "bulk_create(update_conflicts=True) nevrací IDs. SWE-bench #17051.",
         "desc_en": "bulk_create(update_conflicts=True) doesn't return IDs. SWE-bench #17051.",
         "type": "swe",
     },
     "swe_django__django-16379": {
-        "label_cs": "SWE: django cache race", "label_en": "SWE: django cache race",
-        "desc_cs": "FileBasedCache.has_key race condition. SWE-bench #16379.",
         "desc_en": "FileBasedCache.has_key race condition. SWE-bench #16379.",
         "type": "swe",
     },
     "swe_django__django-16408": {
-        "label_cs": "SWE: django FilteredRelation", "label_en": "SWE: django FilteredRelation",
-        "desc_cs": "Multi-level FilteredRelation + select_related. SWE-bench #16408.",
         "desc_en": "Multi-level FilteredRelation + select_related. SWE-bench #16408.",
         "type": "swe",
     },
     "swe_django__django-16820": {
-        "label_cs": "SWE: django migrations", "label_en": "SWE: django migrations",
-        "desc_cs": "Migration squashing index_together → indexes. SWE-bench #16820.",
         "desc_en": "Migration squashing index_together → indexes. SWE-bench #16820.",
         "type": "swe",
     },
     "swe_django__django-14016": {
-        "label_cs": "SWE: django 14016", "label_en": "SWE: django 14016",
-        "desc_cs": "Django SWE-bench instance #14016.",
         "desc_en": "Django SWE-bench instance #14016.",
         "type": "swe",
     },
     "swe_sympy__sympy-22840": {
-        "label_cs": "SWE: sympy cse() MatrixSymbol", "label_en": "SWE: sympy cse() MatrixSymbol",
-        "desc_cs": "cse() extrahuje MatrixSymbol jako common subexpression. Multi-aspect bug. SWE-bench #22840.",
         "desc_en": "cse() extracts MatrixSymbol as common subexpression. Multi-aspect bug. SWE-bench #22840.",
         "type": "swe",
     },
     "swe_sympy__sympy-11400": {
-        "label_cs": "SWE: sympy ccode sinc", "label_en": "SWE: sympy ccode sinc",
-        "desc_cs": "ccode(sinc(x)) nefunguje. SWE-bench #11400.",
         "desc_en": "ccode(sinc(x)) doesn't work. SWE-bench #11400.",
         "type": "swe",
     },
     "swe_sympy__sympy-21612": {
-        "label_cs": "SWE: sympy latex fractions", "label_en": "SWE: sympy latex fractions",
-        "desc_cs": "Latex parsing frakcí vrací špatný výraz. SWE-bench #21612.",
         "desc_en": "Latex parsing of fractions yields wrong expression. SWE-bench #21612.",
         "type": "swe",
     },
     "swe_astropy__astropy-12907": {
-        "label_cs": "SWE: astropy separability matrix", "label_en": "SWE: astropy separability matrix",
-        "desc_cs": "separability_matrix nepočítá správně pro nested CompoundModels. SWE-bench #12907.",
         "desc_en": "separability_matrix doesn't compute correctly for nested CompoundModels. SWE-bench #12907.",
         "type": "swe",
     },
@@ -231,10 +175,9 @@ def build_data_js(runs_by):
                     continue
                 rows = []
                 for r in runs:
-                    # packed: [t,c,tc,score,ok,in,out,cr,cc,th,it,functional_score,scope_score]
+                    # packed: [t,c,tc,score,ok,in,out,cr,cc,th,it]
                     ok_val = "1" if r["ok"] else "0"
-                    scope_val = "null" if r["ss"] is None else str(r["ss"])
-                    rows.append("[" + ",".join(str(r[k]) for k in ["t","c","tc","score"]) + "," + ok_val + "," + ",".join(str(r[k]) for k in ["in","out","cr","cc","th","it","fs"]) + "," + scope_val + "]")
+                rows.append("[" + ",".join(str(r[k]) for k in ["t","c","tc","score"]) + "," + ok_val + "," + ",".join(str(r[k]) for k in ["in","out","cr","cc","th","it"]) + "]")
                 out.append(effort + ":{runs:[" + ",".join(rows) + "]},")
             out.append("},")
         out.append("},")
@@ -511,116 +454,24 @@ const TASK_META = """ + task_meta_js + """;
 const TASK_ORDER = """ + task_order_js + """;
 """ + data_js + """
 """ + checks_js + """
-""" + tools_js + """
 
 
-const SWE_FINDINGS = {
-  cs: {
-    'swe_sympy__sympy-24909': 'Low selhal, medium+ opravil. One-file fix.',
-    'swe_django__django-16910': 'Low/medium selhávají, high uspívá.',
-    'swe_django__django-17051': 'I low opravil. Příliš snadné.',
-    'swe_django__django-16379': 'Cache race condition — snadné, low občas stačí.',
-    'swe_django__django-16408': 'Ostrý práh: low 25%, medium+ 100%. Multi-level ORM bug.',
-    'swe_django__django-16820': 'Ostrý práh: low 25%, medium+ ~100%. Migration squashing.',
-    'swe_django__django-14016': 'Jeden run, low selhal.',
-    'swe_sympy__sympy-22840': 'Pozvolný gradient — 2-aspect bug, max 60% full fix, medium/high stuck na 2/3.',
-    'swe_sympy__sympy-11400': 'Nedostatek dat (n=2).',
-    'swe_sympy__sympy-21612': 'Nedostatek dat (n=2).',
-    'swe_astropy__astropy-12907': 'C extensions — n=5, všechny selhaly.',
-  },
-  en: {
-    'swe_sympy__sympy-24909': 'Low failed, medium+ fixed. One-file fix.',
-    'swe_django__django-16910': 'Low/medium fail, high succeeds.',
-    'swe_django__django-17051': 'Even low fixed it. Too easy.',
-    'swe_django__django-16379': 'Cache race condition — easy, low sometimes works.',
-    'swe_django__django-16408': 'Sharp threshold: low 25%, medium+ 100%. Multi-level ORM bug.',
-    'swe_django__django-16820': 'Sharp threshold: low 25%, medium+ ~100%. Migration squashing.',
-    'swe_django__django-14016': 'Single run, low failed.',
-    'swe_sympy__sympy-22840': 'Gradual gradient — 2-aspect bug, max 60% full fix, medium/high stuck at 2/3.',
-    'swe_sympy__sympy-11400': 'Insufficient data (n=2).',
-    'swe_sympy__sympy-21612': 'Insufficient data (n=2).',
-    'swe_astropy__astropy-12907': 'C extensions — n=5, all failed.',
-  },
-};
 
-const REC_ROWS = {
-  cs: [
-    ['Refaktoring, rename, bulk změny','low','100% úspěšnost, nejlevnější, nejrychlejší'],
-    ['Implementace dle specifikace','low / medium','Srovnatelné výsledky; low je dobrý default'],
-    ['Reálné bugy z codebase','high','Low/medium selhávají; high sweet spot (potvrzen n=3)'],
-    ['Scope compliance','max','Konzistentnější dodržení hranic zadání'],
-    ['Debugging bez failing testů','—','Žádný effort nepomůže — nejdřív napiš testy'],
-  ],
-  en: [
-    ['Refactoring, rename, bulk changes','low','100% success rate, cheapest, fastest'],
-    ['Implementation from spec','low / medium','Comparable results; low is a good default'],
-    ['Real bugs from codebase','high','Low/medium fail; high sweet spot (n=3 confirmed)'],
-    ['Scope compliance','max','More consistent boundary respect'],
-    ['Debugging without failing tests','—','No effort helps — write tests first'],
-  ],
-};
 
-const i18n = {
-  cs: {
-    kpi_runs:'celkem runů', kpi_tasks:'úlohy', kpi_pass:'verify pass', kpi_cost:'celkem náklady',
-    overview_h:'Přehled výsledků', ov_task:'Úloha', ov_signal:'Effort gradient',
-    detail_pass_h:'Pass rate per effort', detail_cost_h:'Průměrná cena per effort',
-    detail_tokens_h:'Tokeny per effort', detail_iter_h:'Iterace (turns) per effort',
-    detail_checks_h:'Per-check breakdown',
-    pareto_h:'Efektivita: cena vs. kvalita', pareto_desc:'Každý bod = jeden run. Ideální = levý horní roh.',
-    token_h:'Tokeny a iterace napříč úlohami', token_stack_h:'Token consumption per effort (stacked)',
-    iter_h:'Průměrné iterace per effort',
-    time_h:'Čas a efektivita', wall_h:'Průměrný wall time (s)', eff_h:'Cena per úspěšný run', sr_h:'Success rate podle typu',
-    swe_h:'SWE-bench výsledky', swe_desc:'Reálné bugy z open-source projektů.',
-    swe_instance:'Instance', swe_finding:'Finding',
-    synth_h:'Syntetické úlohy',
-    synth_desc:'Na dobře specifikovaných úlohách jsou všechny effort úrovně funkčně ekvivalentní.',
-    synth_scope_h:'Pass rate — 06_strict_scope', synth_cost_h:'Průměrná cena — 01_rename',
-    findings_h:'Klíčová zjištění',
-    f1_h:'SWE-bench diferenciuje effort',
-    f1_p:'Na reálných bugech (django-16910) low/medium konzistentně selhávají, high uspívá.',
-    f2_h:'Max ≠ lepší výsledek',
-    f2_p:'Max effort stojí 2–4× více než high, ale výsledek je stejný.',
-    f3_h:'Debug bez testu = nulový efekt',
-    f3_p:'Bug B nebyl nalezen ani max effortem.',
-    f4_h:'Python 3.14 limituje SWE-bench',
-    f4_p:'Pre-2022 projekty nekompatibilní — volte Django 4.2+ / Sympy 1.11+.',
-    rec_h:'Doporučení', rec_uc:'Use case', rec_effort:'Effort', rec_why:'Proč',
-    col_n:'n', col_pass:'Pass%', col_score:'Avg score', col_cost:'Avg cost',
-    col_wall:'Avg wall', col_tools:'Avg tools', col_iter:'Avg iter', col_tokens:'Tokens',
-    col_tools_breakdown:'Nástroje',
-    hdr_sub:'Empirické měření dopadu parametru --effort · claude-opus-4-7',
-  },
-  en: {
-    kpi_runs:'total runs', kpi_tasks:'tasks', kpi_pass:'verify pass', kpi_cost:'total cost',
-    overview_h:'Results Overview', ov_task:'Task', ov_signal:'Effort gradient',
-    detail_pass_h:'Pass rate per effort', detail_cost_h:'Avg cost per effort',
-    detail_tokens_h:'Tokens per effort', detail_iter_h:'Iterations per effort',
-    detail_checks_h:'Per-check breakdown',
-    pareto_h:'Efficiency: cost vs. quality', pareto_desc:'Each dot = one run. Ideal = top-left corner.',
-    token_h:'Tokens and iterations across tasks', token_stack_h:'Token consumption per effort (stacked)',
-    iter_h:'Avg iterations per effort',
-    time_h:'Time and efficiency', wall_h:'Avg wall time (s)', eff_h:'Cost per successful run', sr_h:'Success rate by task type',
-    swe_h:'SWE-bench Results', swe_desc:'Real bugs from open-source projects.',
-    swe_instance:'Instance', swe_finding:'Finding',
-    synth_h:'Synthetic Tasks',
-    synth_desc:'On well-specified tasks all effort levels are functionally equivalent.',
-    synth_scope_h:'Pass rate — 06_strict_scope', synth_cost_h:'Avg cost — 01_rename',
-    findings_h:'Key Findings',
-    f1_h:'SWE-bench differentiates effort',
-    f1_p:'On real bugs (django-16910) low/medium consistently fail, high succeeds.',
-    f2_h:'Max ≠ better result',
-    f2_p:'Max effort costs 2–4× more than high with the same result.',
-    f3_h:'Debug without tests = zero effect',
-    f3_p:'Bug B was not found even at max effort.',
-    f4_h:'Python 3.14 limits SWE-bench',
-    f4_p:'Pre-2022 projects incompatible — use Django 4.2+ / Sympy 1.11+.',
-    rec_h:'Recommendations', rec_uc:'Use case', rec_effort:'Effort', rec_why:'Why',
-    col_n:'n', col_pass:'Pass%', col_score:'Avg score', col_cost:'Avg cost',
-    col_wall:'Avg wall', col_tools:'Avg tools', col_iter:'Avg iter', col_tokens:'Tokens',
-    col_tools_breakdown:'Tools',
-    hdr_sub:'Empirical measurement of reasoning effort across providers and models',
-  },
+const i18n={
+  en:{
+    kpi_runs:'Total runs',kpi_cost:'Avg cost',kpi_time:'Avg time',kpi_pass:'Pass rate',
+    ov_h:'Overview',ov_sub:'Click task for details',type_syn:'Synthetic',type_swe:'SWE-bench',
+    pass_h:'Pass rate by effort',cost_h:'Cost per run',time_h:'Time & efficiency',
+    wall_h:'Avg wall time (s)',eff_h:'Cost per success',sr_h:'Success by type',
+    token_h:'Tokens & iterations',token_stack_h:'Token consumption',
+    pareto_h:'Efficiency',pareto_desc:'Ideal = top-left',
+    detail_h:'Task Detail',detail_close:'Close',checks_h:'Check pass rates',
+    tools_h:'Tool usage',runs_h:'Individual runs',model_h:'Model',
+    rec_h:'Recommendations',rec_uc:'Use case',rec_effort:'Effort',rec_why:'Why',
+    task_type:'Task type',effort:'Effort',avg_cost:'Avg cost',avg_time:'Avg time',
+    avg_tokens:'Avg tokens',success_rate:'Success rate',iterations:'Iterations'
+  }
 };
 
 let lang = navigator.language.startsWith('en') ? 'en' : 'cs';
@@ -640,7 +491,7 @@ function buildModelSelector(){
   if(!wrap||MODELS.length<2)return;
   wrap.innerHTML=MODELS.map(md=>'<button id="btn-'+md+'" class="model-btn'+(md===model?' active':'')+'" onclick="setModel(\''+md+'\')">'+(MODEL_LABELS[md]||md)+'</button>').join('');
 }
-const _RF=['t','c','tc','score','ok','in','out','cr','cc','th','it','fs','ss'];
+const _RF=['t','c','tc','score','ok','in','out','cr','cc','th','it'];
 function _U(a){return Object.fromEntries(_RF.map((k,i)=>[k,a[i]]));}
 for(const M in DATA)for(const T in DATA[M])for(const E in DATA[M][T])
   if(DATA[M][T][E].runs)DATA[M][T][E].runs=DATA[M][T][E].runs.map(_U);
